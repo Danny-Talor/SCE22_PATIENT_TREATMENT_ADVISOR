@@ -40,7 +40,7 @@
             this.UserSignUpBtn.TabIndex = 0;
             this.UserSignUpBtn.Text = "Sign Up";
             this.UserSignUpBtn.UseVisualStyleBackColor = true;
-            this.UserSignUpBtn.Click += new System.EventHandler(this.button1_Click);
+            this.UserSignUpBtn.Click += new System.EventHandler(this.UserSignUpBtn_Click);
             // 
             // UserSignInBtn
             // 
@@ -50,6 +50,7 @@
             this.UserSignInBtn.TabIndex = 1;
             this.UserSignInBtn.Text = "Sign in";
             this.UserSignInBtn.UseVisualStyleBackColor = true;
+            this.UserSignInBtn.Click += new System.EventHandler(this.UserSignInBtn_Click);
             // 
             // UserMainPage
             // 
