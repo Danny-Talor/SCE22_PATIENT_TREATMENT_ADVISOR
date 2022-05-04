@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "F:\\projects\\sce22test project\\PATIENT_TREATMENT_ADVISOR\\PATIENT_TREATMENT_ADVISOR.csproj": {}
+    "D:\\Projects\\SCE22_PATIENT_TREATMENT_ADVISOR\\PATIENT_TREATMENT_ADVISOR\\PATIENT_TREATMENT_ADVISOR.csproj": {}
   },
   "projects": {
-    "F:\\projects\\sce22test project\\PATIENT_TREATMENT_ADVISOR\\PATIENT_TREATMENT_ADVISOR.csproj": {
+    "D:\\Projects\\SCE22_PATIENT_TREATMENT_ADVISOR\\PATIENT_TREATMENT_ADVISOR\\PATIENT_TREATMENT_ADVISOR.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\projects\\sce22test project\\PATIENT_TREATMENT_ADVISOR\\PATIENT_TREATMENT_ADVISOR.csproj",
+        "projectUniqueName": "D:\\Projects\\SCE22_PATIENT_TREATMENT_ADVISOR\\PATIENT_TREATMENT_ADVISOR\\PATIENT_TREATMENT_ADVISOR.csproj",
         "projectName": "PATIENT_TREATMENT_ADVISOR",
-        "projectPath": "F:\\projects\\sce22test project\\PATIENT_TREATMENT_ADVISOR\\PATIENT_TREATMENT_ADVISOR.csproj",
-        "packagesPath": "C:\\Users\\sagie\\.nuget\\packages\\",
-        "outputPath": "F:\\projects\\sce22test project\\PATIENT_TREATMENT_ADVISOR\\obj\\",
+        "projectPath": "D:\\Projects\\SCE22_PATIENT_TREATMENT_ADVISOR\\PATIENT_TREATMENT_ADVISOR\\PATIENT_TREATMENT_ADVISOR.csproj",
+        "packagesPath": "C:\\Users\\danny\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects\\SCE22_PATIENT_TREATMENT_ADVISOR\\PATIENT_TREATMENT_ADVISOR\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\sagie\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\danny\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -57,7 +57,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

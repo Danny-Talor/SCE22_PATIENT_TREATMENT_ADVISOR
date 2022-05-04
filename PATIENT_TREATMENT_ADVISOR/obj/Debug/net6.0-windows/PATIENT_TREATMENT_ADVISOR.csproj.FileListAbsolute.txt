@@ -42,3 +42,5 @@ F:\projects\sce22test project\PATIENT_TREATMENT_ADVISOR\obj\Debug\net6.0-windows
 F:\projects\sce22test project\PATIENT_TREATMENT_ADVISOR\obj\Debug\net6.0-windows\ref\PATIENT_TREATMENT_ADVISOR.dll
 F:\projects\sce22test project\PATIENT_TREATMENT_ADVISOR\obj\Debug\net6.0-windows\PATIENT_TREATMENT_ADVISOR.TreatmentPage.resources
 F:\projects\sce22test project\PATIENT_TREATMENT_ADVISOR\obj\Debug\net6.0-windows\PATIENT_TREATMENT_ADVISOR.NewPatient.resources
+D:\Projects\SCE22_PATIENT_TREATMENT_ADVISOR\PATIENT_TREATMENT_ADVISOR\obj\Debug\net6.0-windows\PATIENT_TREATMENT_ADVISOR.NewPatient.resources
+D:\Projects\SCE22_PATIENT_TREATMENT_ADVISOR\PATIENT_TREATMENT_ADVISOR\obj\Debug\net6.0-windows\PATIENT_TREATMENT_ADVISOR.TreatmentPage.resources
