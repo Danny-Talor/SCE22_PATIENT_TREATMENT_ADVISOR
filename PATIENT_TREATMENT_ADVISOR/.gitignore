@@ -1,8 +1,8 @@
 # folders
-/.vs/
-/bin/
-/obj/
-/Properties/
+.vs/
+bin/
+obj/
+Properties/
 
 #database
 *.xlsx
