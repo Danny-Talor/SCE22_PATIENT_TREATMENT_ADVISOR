@@ -60,6 +60,7 @@ namespace PATIENT_TREATMENT_ADVISOR
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            this.Close();
             UserSignUpPage register = new();
             register.Show();
         }

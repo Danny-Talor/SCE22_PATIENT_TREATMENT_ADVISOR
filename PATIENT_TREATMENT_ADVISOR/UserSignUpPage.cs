@@ -176,15 +176,18 @@ namespace PATIENT_TREATMENT_ADVISOR
                 excel_Worksheet.Cells[i, 1] = username;
                 excel_Worksheet.Cells[i, 2] = password;
                 excel_Worksheet.Cells[i, 3] = id;
+                this.Close();
+                UserSignInPage userSignInPage = new();
+                userSignInPage.Show();
             }
-            excel_Workbook.Close(true);
-            this.Close(); 
-            
+            excel_Workbook.Close(true, Type.Missing, Type.Missing); //close file with saving
+           
         }
-       
 
-
-
-
+        private void UserSignUpPage_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            UserSignInPage userSignInPage = new();
+            userSignInPage.Show();
+        }
     }
 }
