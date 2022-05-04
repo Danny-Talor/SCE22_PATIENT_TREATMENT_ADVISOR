@@ -12,14 +12,10 @@ namespace PATIENT_TREATMENT_ADVISOR
 {
     public partial class TreatmentPage : Form
     {
+
         public TreatmentPage()
         {
             InitializeComponent();
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void AddPatientButton_Click(object sender, EventArgs e)

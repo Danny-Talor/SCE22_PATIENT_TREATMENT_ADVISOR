@@ -28,11 +28,11 @@ namespace PATIENT_TREATMENT_ADVISOR
             {
                 MessageBox.Show("!אנא הכנס שם משתמש באורך בין 6 ל8 תווים");
             }
-            else if(usernameCheck == 2)
+            else if (usernameCheck == 2)
             {
                 MessageBox.Show("!שם משתמש יכול להכיל עד 2 ספרות");
             }
-            else if(PasswordCheck == 1)
+            else if (PasswordCheck == 1)
             {
                 MessageBox.Show("!אנא הכנס סיסמה באורך בין 8 ל10 תווים");
             }
@@ -55,7 +55,7 @@ namespace PATIENT_TREATMENT_ADVISOR
 
             else
             {
-              RegisterUser(UsernameBox.Text, PasswordBox.Text, IDBox.Text);
+                RegisterUser(UsernameBox.Text, PasswordBox.Text, IDBox.Text);
             }
         }
 
@@ -76,12 +76,12 @@ namespace PATIENT_TREATMENT_ADVISOR
                 UsernameBox.Focus();
             }
         }
-       
+
         private void PasswordBox_TextChanged(object sender, EventArgs e)
         {
             try
             {
-                if (System.Text.RegularExpressions.Regex.IsMatch(PasswordBox.Text, "[^$&+,:;=?@#|'<>.-^*()%!a-zA-Z0-9]"))
+                if (System.Text.RegularExpressions.Regex.IsMatch(PasswordBox.Text, "[^_$&+,:;=?@#|'<>.-^*()%!a-zA-Z0-9]"))
                 {
                     MessageBox.Show("!אנא הכנס אותיות באנגלית,מספרים וסימנים בלבד");
                     PasswordBox.Text = PasswordBox.Text.Remove(PasswordBox.Text.Length - 1);
@@ -159,9 +159,9 @@ namespace PATIENT_TREATMENT_ADVISOR
         private void RegisterUser(string username, string password, string id)
         {
             int i = 2;
-            Excel.Application excel_Application = new(); //Launch Excel
+            Excel.Application excel_Application = new(); // Launch Excel
             Excel.Workbook excel_Workbook = excel_Application.Workbooks.Open(Directory.GetCurrentDirectory() + @"\database"); //Open database
-            Excel.Worksheet excel_Worksheet = (Excel.Worksheet)excel_Workbook.Sheets[1]; //Select sheet number 1
+            Excel.Worksheet excel_Worksheet = (Excel.Worksheet)excel_Workbook.Sheets[1]; // Select worksheet number 1
             while (excel_Worksheet.Cells[i, 1].Value != null)
             {
                 if (excel_Worksheet.Cells[i, 1].Value == username)
@@ -176,18 +176,12 @@ namespace PATIENT_TREATMENT_ADVISOR
                 excel_Worksheet.Cells[i, 1] = username;
                 excel_Worksheet.Cells[i, 2] = password;
                 excel_Worksheet.Cells[i, 3] = id;
+                excel_Workbook.Close(true); // Close worksheet with saving
+                excel_Application.Quit(); // Close Excel 
+                MessageBox.Show("Registration successful");
                 this.Close();
-                UserSignInPage userSignInPage = new();
-                userSignInPage.Show();
             }
-            excel_Workbook.Close(true, Type.Missing, Type.Missing); //close file with saving
-           
-        }
-
-        private void UserSignUpPage_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            UserSignInPage userSignInPage = new();
-            userSignInPage.Show();
+            excel_Application.Quit();
         }
     }
 }

@@ -16,31 +16,30 @@ namespace PATIENT_TREATMENT_ADVISOR
         public UserSignInPage()
         {
             InitializeComponent();
+            
         }
 
         private void LoginUserButton_Click(object sender, EventArgs e)
         {
             LoginUser(UsernameBox.Text, PasswordBox.Text);
-           
-            
         }
         private void LoginUser(string username, string password)
         {
             int i = 2;
-            Excel.Application excel_Application = new(); //Launch Excel
+            Excel.Application excel_Application = new(); // Launch Excel
             Excel.Workbook excel_Workbook = excel_Application.Workbooks.Open(Directory.GetCurrentDirectory() + @"\database"); //Open database
-            Excel.Worksheet excel_Worksheet = (Excel.Worksheet)excel_Workbook.Sheets[1]; //Select sheet number 1
+            Excel.Worksheet excel_Worksheet = (Excel.Worksheet)excel_Workbook.Sheets[1]; // Select worksheet number 1
             while (excel_Worksheet.Cells[i, 1].Value != null)
             {
                 if (excel_Worksheet.Cells[i, 1].Value == username)
                 {
                     if (excel_Worksheet.Cells[i, 2].Value == password)
                     {
-                        //TODO: Create main page form
                         MessageBox.Show("Login Successful!");
-                        this.Close();
+                        this.Hide();
                         TreatmentPage treatment = new();
-                        treatment.Show();
+                        treatment.ShowDialog();
+                        this.Show();
                         break;
                     }
                     else
@@ -55,15 +54,16 @@ namespace PATIENT_TREATMENT_ADVISOR
             {
                 MessageBox.Show("User does not exist!");
             }
-
+            excel_Application.Quit();
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            this.Close();
+            this.Hide();
             UserSignUpPage register = new();
-            register.Show();
+            register.ShowDialog();
+            this.Show();
         }
-       
+        
     }
 }

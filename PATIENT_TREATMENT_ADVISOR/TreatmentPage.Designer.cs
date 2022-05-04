@@ -33,7 +33,7 @@
             this.AddPatientButton = new System.Windows.Forms.Button();
             this.ImportPatientButton = new System.Windows.Forms.Button();
             this.DiagnosisAndRecommendationButton = new System.Windows.Forms.Button();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.ListView = new System.Windows.Forms.ListView();
             this.FirstNameColumn = new System.Windows.Forms.ColumnHeader();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
@@ -70,16 +70,16 @@
             this.DiagnosisAndRecommendationButton.Text = "אבחון והמלצות";
             this.DiagnosisAndRecommendationButton.UseVisualStyleBackColor = true;
             // 
-            // listView1
+            // ListView
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.ListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.FirstNameColumn});
-            this.listView1.Location = new System.Drawing.Point(56, 87);
-            this.listView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(702, 355);
-            this.listView1.TabIndex = 1;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.ListView.Location = new System.Drawing.Point(56, 87);
+            this.ListView.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.ListView.Name = "ListView";
+            this.ListView.Size = new System.Drawing.Size(702, 355);
+            this.ListView.TabIndex = 1;
+            this.ListView.UseCompatibleStateImageBehavior = false;
             // 
             // FirstNameColumn
             // 
@@ -90,7 +90,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(843, 600);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.ListView);
             this.Controls.Add(this.DiagnosisAndRecommendationButton);
             this.Controls.Add(this.ImportPatientButton);
             this.Controls.Add(this.AddPatientButton);
@@ -108,7 +108,7 @@
         private Button AddPatientButton;
         private Button ImportPatientButton;
         private Button DiagnosisAndRecommendationButton;
-        private ListView listView1;
+        private ListView ListView;
         private ColumnHeader FirstNameColumn;
     }
 }

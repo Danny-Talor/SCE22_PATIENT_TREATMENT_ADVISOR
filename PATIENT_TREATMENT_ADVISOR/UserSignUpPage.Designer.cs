@@ -119,7 +119,6 @@
             this.Controls.Add(this.RegisterUserButton);
             this.Name = "UserSignUpPage";
             this.Text = "Sign Up";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UserSignUpPage_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 
