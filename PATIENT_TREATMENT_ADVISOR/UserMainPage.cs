@@ -15,6 +15,8 @@ namespace PATIENT_TREATMENT_ADVISOR
         {
             UserSignUpPage userSignUpPage = new();
             userSignUpPage.Show();
+            
+            
         }
 
         public void InitializeDatabase()
@@ -49,65 +51,17 @@ namespace PATIENT_TREATMENT_ADVISOR
             }
         }
 
-        public static void RegisterUser(string username, string password, string id)
-        {
-            int i = 2;
-            Excel.Application excel_Application = new(); //Launch Excel
-            Excel.Workbook excel_Workbook = excel_Application.Workbooks.Open(Directory.GetCurrentDirectory() + @"\database"); //Open database
-            Excel.Worksheet excel_Worksheet = (Excel.Worksheet)excel_Workbook.Sheets[1]; //Select sheet number 1
-            while (excel_Worksheet.Cells[i,1].Value != null)
-            {
-                if (excel_Worksheet.Cells[i, 1].Value == username)
-                {
-                    MessageBox.Show("User already exists!");
-                    break;
-                }
-                i++;
-            }
-            if (excel_Worksheet.Cells[i, 1].Value == null)
-            {
-                excel_Worksheet.Cells[i, 1] = username;
-                excel_Worksheet.Cells[i, 2] = password;
-                excel_Worksheet.Cells[i, 3] = id;
-            }
-            excel_Workbook.Close(true);
-        }
-
-        public static void LoginUser(string username, string password)
-        {
-            int i = 2;
-            Excel.Application excel_Application = new(); //Launch Excel
-            Excel.Workbook excel_Workbook = excel_Application.Workbooks.Open(Directory.GetCurrentDirectory() + @"\database"); //Open database
-            Excel.Worksheet excel_Worksheet = (Excel.Worksheet)excel_Workbook.Sheets[1]; //Select sheet number 1
-            while (excel_Worksheet.Cells[i, 1].Value != null)
-            {
-                if (excel_Worksheet.Cells[i, 1].Value == username)
-                {
-                    if (excel_Worksheet.Cells[i, 2].Value == password)
-                    {
-                        //TODO: Create main page form
-                        MessageBox.Show("Login Successful!");
-                        break;
-                    }
-                    else
-                    {
-                        MessageBox.Show("Wrong password!");
-                        break;
-                    }
-                }
-                i++;
-            }
-            if(excel_Worksheet.Cells[i, 1].Value == null)
-            {
-                MessageBox.Show("User does not exist!");
-            }
-            
-        }
+       
+        
 
         private void UserSignInBtn_Click(object sender, EventArgs e)
         {
             UserSignInPage dialog = new();
             dialog.Show();
+            this.Hide();
+            
+
         }
+       
     }
 }

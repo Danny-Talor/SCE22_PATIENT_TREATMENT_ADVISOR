@@ -4,6 +4,12 @@
     <_LastSelectedProfileId>D:\Projects\SCE22_PATIENT_TREATMENT_ADVISOR\PATIENT_TREATMENT_ADVISOR\Properties\PublishProfiles\FolderProfile.pubxml</_LastSelectedProfileId>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Update="NewPatient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="TreatmentPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="UserMainPage.cs">
       <SubType>Form</SubType>
     </Compile>

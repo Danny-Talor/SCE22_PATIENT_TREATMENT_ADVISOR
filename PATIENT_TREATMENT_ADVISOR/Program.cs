@@ -12,6 +12,9 @@ namespace PATIENT_TREATMENT_ADVISOR
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new UserMainPage());
+            
+
         }
+        
     }
 }

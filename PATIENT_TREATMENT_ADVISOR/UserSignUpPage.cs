@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Excel = Microsoft.Office.Interop.Excel;
+
 
 namespace PATIENT_TREATMENT_ADVISOR
 {
@@ -53,7 +55,7 @@ namespace PATIENT_TREATMENT_ADVISOR
 
             else
             {
-                UserMainPage.RegisterUser(UsernameBox.Text, PasswordBox.Text, IDBox.Text);
+              RegisterUser(UsernameBox.Text, PasswordBox.Text, IDBox.Text);
             }
         }
 
@@ -154,6 +156,33 @@ namespace PATIENT_TREATMENT_ADVISOR
             }
             return (counter % 10 == 0);
         }
+        private void RegisterUser(string username, string password, string id)
+        {
+            int i = 2;
+            Excel.Application excel_Application = new(); //Launch Excel
+            Excel.Workbook excel_Workbook = excel_Application.Workbooks.Open(Directory.GetCurrentDirectory() + @"\database"); //Open database
+            Excel.Worksheet excel_Worksheet = (Excel.Worksheet)excel_Workbook.Sheets[1]; //Select sheet number 1
+            while (excel_Worksheet.Cells[i, 1].Value != null)
+            {
+                if (excel_Worksheet.Cells[i, 1].Value == username)
+                {
+                    MessageBox.Show("User already exists!");
+                    break;
+                }
+                i++;
+            }
+            if (excel_Worksheet.Cells[i, 1].Value == null)
+            {
+                excel_Worksheet.Cells[i, 1] = username;
+                excel_Worksheet.Cells[i, 2] = password;
+                excel_Worksheet.Cells[i, 3] = id;
+            }
+            excel_Workbook.Close(true);
+            this.Close(); 
+            
+        }
+       
+
 
 
 
