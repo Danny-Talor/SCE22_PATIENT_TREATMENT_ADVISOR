@@ -40,10 +40,11 @@
             // 
             // AddPatientButton
             // 
-            this.AddPatientButton.Location = new System.Drawing.Point(463, 338);
+            this.AddPatientButton.Location = new System.Drawing.Point(529, 451);
+            this.AddPatientButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.AddPatientButton.Name = "AddPatientButton";
             this.AddPatientButton.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.AddPatientButton.Size = new System.Drawing.Size(201, 74);
+            this.AddPatientButton.Size = new System.Drawing.Size(230, 99);
             this.AddPatientButton.TabIndex = 0;
             this.AddPatientButton.Text = "הוסף מטופל";
             this.AddPatientButton.UseVisualStyleBackColor = true;
@@ -51,18 +52,20 @@
             // 
             // ImportPatientButton
             // 
-            this.ImportPatientButton.Location = new System.Drawing.Point(256, 338);
+            this.ImportPatientButton.Location = new System.Drawing.Point(293, 451);
+            this.ImportPatientButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ImportPatientButton.Name = "ImportPatientButton";
-            this.ImportPatientButton.Size = new System.Drawing.Size(201, 74);
+            this.ImportPatientButton.Size = new System.Drawing.Size(230, 99);
             this.ImportPatientButton.TabIndex = 0;
             this.ImportPatientButton.Text = "ייבא מטופל מקובץ אקסל";
             this.ImportPatientButton.UseVisualStyleBackColor = true;
             // 
             // DiagnosisAndRecommendationButton
             // 
-            this.DiagnosisAndRecommendationButton.Location = new System.Drawing.Point(49, 338);
+            this.DiagnosisAndRecommendationButton.Location = new System.Drawing.Point(56, 451);
+            this.DiagnosisAndRecommendationButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.DiagnosisAndRecommendationButton.Name = "DiagnosisAndRecommendationButton";
-            this.DiagnosisAndRecommendationButton.Size = new System.Drawing.Size(201, 74);
+            this.DiagnosisAndRecommendationButton.Size = new System.Drawing.Size(230, 99);
             this.DiagnosisAndRecommendationButton.TabIndex = 0;
             this.DiagnosisAndRecommendationButton.Text = "אבחון והמלצות";
             this.DiagnosisAndRecommendationButton.UseVisualStyleBackColor = true;
@@ -71,9 +74,10 @@
             // 
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.FirstNameColumn});
-            this.listView1.Location = new System.Drawing.Point(49, 65);
+            this.listView1.Location = new System.Drawing.Point(56, 87);
+            this.listView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(615, 267);
+            this.listView1.Size = new System.Drawing.Size(702, 355);
             this.listView1.TabIndex = 1;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
@@ -83,13 +87,14 @@
             // 
             // TreatmentPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(738, 450);
+            this.ClientSize = new System.Drawing.Size(843, 600);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.DiagnosisAndRecommendationButton);
             this.Controls.Add(this.ImportPatientButton);
             this.Controls.Add(this.AddPatientButton);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "TreatmentPage";
             this.Text = "TreatmentPage";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TreatmentPage_FormClosing);
