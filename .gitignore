@@ -12,6 +12,8 @@ Properties/
 *.user
 *.userosscache
 *.sln.docstates
+
+#unnecessary files
 PATIENT_TREATMENT_ADVISOR/bin/Debug/net6.0-windows/PATIENT_TREATMENT_ADVISOR.deps.json
 PATIENT_TREATMENT_ADVISOR/bin/Debug/net6.0-windows/PATIENT_TREATMENT_ADVISOR.dll
 PATIENT_TREATMENT_ADVISOR/bin/Debug/net6.0-windows/PATIENT_TREATMENT_ADVISOR.exe
