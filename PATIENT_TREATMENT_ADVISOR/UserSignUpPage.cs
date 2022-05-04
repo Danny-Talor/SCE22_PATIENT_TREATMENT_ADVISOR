@@ -125,7 +125,7 @@ namespace PATIENT_TREATMENT_ADVISOR
         }
         private int CheckPassword(string Password)
         {
-            if (Password.Length <= 8 || Password.Length >= 10)
+            if (Password.Length < 8 || Password.Length > 10)
             {
                 return 1;
             }
