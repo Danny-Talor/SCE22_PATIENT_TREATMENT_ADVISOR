@@ -51,5 +51,10 @@ namespace PATIENT_TREATMENT_ADVISOR
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void LogoutBtn_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }
