@@ -111,7 +111,7 @@ namespace PATIENT_TREATMENT_ADVISOR
                 IDBox.Focus();
             }
         }
-        private int CheckUsername(string username)
+        private static int CheckUsername(string username)
         {
             if (username.Length < 6 || username.Length > 8)
             {
@@ -123,7 +123,7 @@ namespace PATIENT_TREATMENT_ADVISOR
             }
             return 0;
         }
-        private int CheckPassword(string Password)
+        private static int CheckPassword(string Password)
         {
             if (Password.Length < 8 || Password.Length > 10)
             {
@@ -143,7 +143,7 @@ namespace PATIENT_TREATMENT_ADVISOR
             }
             return 0;
         }
-        private bool CheckID(string id)
+        private static bool CheckID(string id)
         {
             if (id.Length != 9) return false;
             int counter = 0, incNum, i;

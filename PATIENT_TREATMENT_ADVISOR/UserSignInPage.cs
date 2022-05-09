@@ -57,13 +57,12 @@ namespace PATIENT_TREATMENT_ADVISOR
             excel_Application.Quit();
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void RegisterLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Hide();
             UserSignUpPage register = new();
             register.ShowDialog();
             this.Show();
         }
-        
     }
 }
