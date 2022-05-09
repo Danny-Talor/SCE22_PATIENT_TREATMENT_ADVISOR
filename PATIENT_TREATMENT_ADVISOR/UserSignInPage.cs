@@ -35,6 +35,7 @@ namespace PATIENT_TREATMENT_ADVISOR
                 {
                     if (excel_Worksheet.Cells[i, 2].Value == password)
                     {
+                        excel_Application.Quit();
                         MessageBox.Show("Login Successful!");
                         this.Hide();
                         TreatmentPage treatment = new();

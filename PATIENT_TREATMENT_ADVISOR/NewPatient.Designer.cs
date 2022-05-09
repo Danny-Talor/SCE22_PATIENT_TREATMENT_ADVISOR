@@ -63,7 +63,6 @@
             this.GenderBox = new System.Windows.Forms.ComboBox();
             this.ImportButton = new System.Windows.Forms.Button();
             this.FileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // APBox
@@ -345,6 +344,7 @@
             this.AddPatientButton.TabIndex = 35;
             this.AddPatientButton.Text = "הוסף מטופל";
             this.AddPatientButton.UseVisualStyleBackColor = true;
+            this.AddPatientButton.Click += new System.EventHandler(this.AddPatientButton_Click);
             // 
             // GenderLabel
             // 
@@ -389,21 +389,11 @@
             this.FileDialog.Title = "ייבוא פרטי מטופל";
             this.FileDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.FileDialog_FileOk);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(200, 392);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 20);
-            this.label1.TabIndex = 39;
-            this.label1.Text = "label1";
-            // 
             // NewPatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(914, 600);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.ImportButton);
             this.Controls.Add(this.GenderBox);
             this.Controls.Add(this.GenderLabel);
@@ -482,6 +472,5 @@
         private ComboBox GenderBox;
         private Button ImportButton;
         private OpenFileDialog FileDialog;
-        private Label label1;
     }
 }

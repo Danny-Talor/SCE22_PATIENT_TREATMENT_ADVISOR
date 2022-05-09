@@ -95,7 +95,7 @@ namespace PATIENT_TREATMENT_ADVISOR
         {
             try
             {
-                if (System.Text.RegularExpressions.Regex.IsMatch(WBCBox.Text, "[^0-9.]"))
+                if (System.Text.RegularExpressions.Regex.IsMatch(WBCBox.Text, "[^0-9]"))
                 {
                     MessageBox.Show("!אנא הכנס מספרים בלבד");
                     WBCBox.Text = WBCBox.Text.Remove(WBCBox.Text.Length - 1);
@@ -311,6 +311,34 @@ namespace PATIENT_TREATMENT_ADVISOR
             HDLBox.Text = (excel_Worksheet.Cells[2, 10].Value2).ToString();
             APBox.Text = (excel_Worksheet.Cells[2, 11].Value2).ToString();
             excel_Application.Quit();
+        }
+
+        private void AddPatientButton_Click(object sender, EventArgs e)
+        {
+            int i = 2;
+            Excel.Application excel_Application = new(); // Launch Excel
+            Excel.Workbook excel_Workbook = excel_Application.Workbooks.Open(Directory.GetCurrentDirectory() + @"\database"); //Open database
+            Excel.Worksheet excel_Worksheet = (Excel.Worksheet)excel_Workbook.Sheets[2]; // Select patients sheet
+            while (excel_Worksheet.Cells[i, 1].Value != null) { i++; }
+            excel_Worksheet.Cells[i, 1] = FirstNameBox.Text;
+            excel_Worksheet.Cells[i, 2] = LastNameBox.Text;
+            excel_Worksheet.Cells[i, 3] = IDBox.Text;
+            excel_Worksheet.Cells[i, 4] = AgeBox.Text;
+            excel_Worksheet.Cells[i, 5] = GenderBox.Text;
+            excel_Worksheet.Cells[i, 6] = WBCBox.Text;
+            excel_Worksheet.Cells[i, 7] = NeutBox.Text;
+            excel_Worksheet.Cells[i, 8] = LymphBox.Text;
+            excel_Worksheet.Cells[i, 9] = RBCBox.Text;
+            excel_Worksheet.Cells[i, 10] = HCTBox.Text;
+            excel_Worksheet.Cells[i, 11] = UreaBox.Text;
+            excel_Worksheet.Cells[i, 12] = HbBox.Text;
+            excel_Worksheet.Cells[i, 13] = CrtnBox.Text;
+            excel_Worksheet.Cells[i, 14] = IronBox.Text;
+            excel_Worksheet.Cells[i, 15] = HDLBox.Text;
+            excel_Worksheet.Cells[i, 16] = APBox.Text;
+            excel_Workbook.Close(true);
+            excel_Application.Quit();
+            this.Close();
         }
     }
 }

@@ -40,23 +40,24 @@ namespace PATIENT_TREATMENT_ADVISOR
                 excel_Worksheet = (Excel.Worksheet)excel_Workbook.Sheets[2]; // Select worksheet number 2
                 excel_Worksheet.Name = "patients";// Set worksheet number 2 name
                 // Add patient titles
-                excel_Worksheet.Cells[1, 1] = "ID";
-                excel_Worksheet.Cells[1, 2] = "First Name";
-                excel_Worksheet.Cells[1, 3] = "Age";
-                excel_Worksheet.Cells[1, 4] = "Gender";
-                excel_Worksheet.Cells[1, 5] = "WBC";
-                excel_Worksheet.Cells[1, 6] = "Neut";
-                excel_Worksheet.Cells[1, 7] = "Lymph";
-                excel_Worksheet.Cells[1, 8] = "RBC";
-                excel_Worksheet.Cells[1, 9] = "HCT";
-                excel_Worksheet.Cells[1, 10] = "Urea";
-                excel_Worksheet.Cells[1, 11] = "Hb";
-                excel_Worksheet.Cells[1, 12] = "Crtn";
-                excel_Worksheet.Cells[1, 13] = "Iron";
-                excel_Worksheet.Cells[1, 14] = "HDL";
-                excel_Worksheet.Cells[1, 15] = "AP";
-                excel_Worksheet.Cells[1, 16] = "Diagnosis";
-                excel_Worksheet.Cells[1, 17] = "Recommendation";
+                excel_Worksheet.Cells[1, 1] = "First Name";
+                excel_Worksheet.Cells[1, 2] = "Last Name";
+                excel_Worksheet.Cells[1, 3] = "ID";
+                excel_Worksheet.Cells[1, 4] = "Age";
+                excel_Worksheet.Cells[1, 5] = "Gender";
+                excel_Worksheet.Cells[1, 6] = "WBC";
+                excel_Worksheet.Cells[1, 7] = "Neut";
+                excel_Worksheet.Cells[1, 8] = "Lymph";
+                excel_Worksheet.Cells[1, 9] = "RBC";
+                excel_Worksheet.Cells[1, 10] = "HCT";
+                excel_Worksheet.Cells[1, 11] = "Urea";
+                excel_Worksheet.Cells[1, 12] = "Hb";
+                excel_Worksheet.Cells[1, 13] = "Crtn";
+                excel_Worksheet.Cells[1, 14] = "Iron";
+                excel_Worksheet.Cells[1, 15] = "HDL";
+                excel_Worksheet.Cells[1, 16] = "AP";
+                excel_Worksheet.Cells[1, 17] = "Diagnosis";
+                excel_Worksheet.Cells[1, 18] = "Recommendation";
                 // Save worksheets
                 excel_Worksheet.SaveAs2(Directory.GetCurrentDirectory() + @"\database", Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlNoChange, Type.Missing, Type.Missing, Type.Missing);
                 excel_Application.Quit(); // Close Excel
