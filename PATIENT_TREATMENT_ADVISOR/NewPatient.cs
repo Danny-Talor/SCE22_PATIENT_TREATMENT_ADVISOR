@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace PATIENT_TREATMENT_ADVISOR
 {
@@ -76,7 +77,7 @@ namespace PATIENT_TREATMENT_ADVISOR
         {
             try
             {
-                if (System.Text.RegularExpressions.Regex.IsMatch(AgeBox.Text, "[^0-9]"))
+                if (System.Text.RegularExpressions.Regex.IsMatch(AgeBox.Text, "[^0-9.]"))
                 {
                     MessageBox.Show("!אנא הכנס מספרים בלבד");
                     AgeBox.Text = AgeBox.Text.Remove(AgeBox.Text.Length - 1);
@@ -94,7 +95,7 @@ namespace PATIENT_TREATMENT_ADVISOR
         {
             try
             {
-                if (System.Text.RegularExpressions.Regex.IsMatch(WBCBox.Text, "[^0-9]"))
+                if (System.Text.RegularExpressions.Regex.IsMatch(WBCBox.Text, "[^0-9.]"))
                 {
                     MessageBox.Show("!אנא הכנס מספרים בלבד");
                     WBCBox.Text = WBCBox.Text.Remove(WBCBox.Text.Length - 1);
@@ -112,7 +113,7 @@ namespace PATIENT_TREATMENT_ADVISOR
         {
             try
             {
-                if (System.Text.RegularExpressions.Regex.IsMatch(NeutBox.Text, "[^0-9]"))
+                if (System.Text.RegularExpressions.Regex.IsMatch(NeutBox.Text, "[^0-9.]"))
                 {
                     MessageBox.Show("!אנא הכנס מספרים בלבד");
                     NeutBox.Text = NeutBox.Text.Remove(NeutBox.Text.Length - 1);
@@ -130,7 +131,7 @@ namespace PATIENT_TREATMENT_ADVISOR
         {
             try
             {
-                if (System.Text.RegularExpressions.Regex.IsMatch(LymphBox.Text, "[^0-9]"))
+                if (System.Text.RegularExpressions.Regex.IsMatch(LymphBox.Text, "[^0-9.]"))
                 {
                     MessageBox.Show("!אנא הכנס מספרים בלבד");
                     LymphBox.Text = LymphBox.Text.Remove(LymphBox.Text.Length - 1);
@@ -148,7 +149,7 @@ namespace PATIENT_TREATMENT_ADVISOR
         {
             try
             {
-                if (System.Text.RegularExpressions.Regex.IsMatch(RBCBox.Text, "[^0-9]"))
+                if (System.Text.RegularExpressions.Regex.IsMatch(RBCBox.Text, "[^0-9.]"))
                 {
                     MessageBox.Show("!אנא הכנס מספרים בלבד");
                     RBCBox.Text = RBCBox.Text.Remove(RBCBox.Text.Length - 1);
@@ -166,7 +167,7 @@ namespace PATIENT_TREATMENT_ADVISOR
         {
             try
             {
-                if (System.Text.RegularExpressions.Regex.IsMatch(HCTBox.Text, "[^0-9]"))
+                if (System.Text.RegularExpressions.Regex.IsMatch(HCTBox.Text, "[^0-9.]"))
                 {
                     MessageBox.Show("!אנא הכנס מספרים בלבד");
                     HCTBox.Text = HCTBox.Text.Remove(HCTBox.Text.Length - 1);
@@ -184,7 +185,7 @@ namespace PATIENT_TREATMENT_ADVISOR
         {
             try
             {
-                if (System.Text.RegularExpressions.Regex.IsMatch(UreaBox.Text, "[^0-9]"))
+                if (System.Text.RegularExpressions.Regex.IsMatch(UreaBox.Text, "[^0-9.]"))
                 {
                     MessageBox.Show("!אנא הכנס מספרים בלבד");
                     UreaBox.Text = UreaBox.Text.Remove(UreaBox.Text.Length - 1);
@@ -202,7 +203,7 @@ namespace PATIENT_TREATMENT_ADVISOR
         {
             try
             {
-                if (System.Text.RegularExpressions.Regex.IsMatch(HbBox.Text, "[^0-9]"))
+                if (System.Text.RegularExpressions.Regex.IsMatch(HbBox.Text, "[^0-9.]"))
                 {
                     MessageBox.Show("!אנא הכנס מספרים בלבד");
                     HbBox.Text = HbBox.Text.Remove(HbBox.Text.Length - 1);
@@ -220,7 +221,7 @@ namespace PATIENT_TREATMENT_ADVISOR
         {
             try
             {
-                if (System.Text.RegularExpressions.Regex.IsMatch(CrtnBox.Text, "[^0-9]"))
+                if (System.Text.RegularExpressions.Regex.IsMatch(CrtnBox.Text, "[^0-9.]"))
                 {
                     MessageBox.Show("!אנא הכנס מספרים בלבד");
                     CrtnBox.Text = CrtnBox.Text.Remove(CrtnBox.Text.Length - 1);
@@ -238,7 +239,7 @@ namespace PATIENT_TREATMENT_ADVISOR
         {
             try
             {
-                if (System.Text.RegularExpressions.Regex.IsMatch(IronBox.Text, "[^0-9]"))
+                if (System.Text.RegularExpressions.Regex.IsMatch(IronBox.Text, "[^0-9.]"))
                 {
                     MessageBox.Show("!אנא הכנס מספרים בלבד");
                     IronBox.Text = IronBox.Text.Remove(IronBox.Text.Length - 1);
@@ -256,7 +257,7 @@ namespace PATIENT_TREATMENT_ADVISOR
         {
             try
             {
-                if (System.Text.RegularExpressions.Regex.IsMatch(HDLBox.Text, "[^0-9]"))
+                if (System.Text.RegularExpressions.Regex.IsMatch(HDLBox.Text, "[^0-9.]"))
                 {
                     MessageBox.Show("!אנא הכנס מספרים בלבד");
                     HDLBox.Text = HDLBox.Text.Remove(HDLBox.Text.Length - 1);
@@ -274,7 +275,7 @@ namespace PATIENT_TREATMENT_ADVISOR
         {
             try
             {
-                if (System.Text.RegularExpressions.Regex.IsMatch(APBox.Text, "[^0-9]"))
+                if (System.Text.RegularExpressions.Regex.IsMatch(APBox.Text, "[^0-9.]"))
                 {
                     MessageBox.Show("!אנא הכנס מספרים בלבד");
                     APBox.Text = APBox.Text.Remove(APBox.Text.Length - 1);
@@ -290,27 +291,26 @@ namespace PATIENT_TREATMENT_ADVISOR
 
         private void ImportButton_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog1 = new OpenFileDialog
-            {
-                InitialDirectory = @"D:\",
-                Title = "Browse excel Files",
+            FileDialog.ShowDialog();
+        }
 
-                CheckFileExists = true,
-                CheckPathExists = true,
-
-                DefaultExt = "excel",
-                Filter = "excel files (*.xlsx)|*.xlsx",
-                FilterIndex = 2,
-                RestoreDirectory = true,
-
-                ReadOnlyChecked = true,
-                ShowReadOnly = true
-            };
-
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                MessageBox.Show("!gcus");
-            }
+        private void FileDialog_FileOk(object sender, CancelEventArgs e)
+        {
+            Excel.Application excel_Application = new(); // Launch Excel
+            Excel.Workbook excel_Workbook = excel_Application.Workbooks.Open(FileDialog.FileName); //Open database
+            Excel.Worksheet excel_Worksheet = (Excel.Worksheet)excel_Workbook.ActiveSheet; // Select active sheet
+            WBCBox.Text = (excel_Worksheet.Cells[2, 1].Value2).ToString();
+            NeutBox.Text = (excel_Worksheet.Cells[2, 2].Value2).ToString();
+            LymphBox.Text = (excel_Worksheet.Cells[2, 3].Value2).ToString();
+            RBCBox.Text = (excel_Worksheet.Cells[2, 4].Value2).ToString();
+            HCTBox.Text = (excel_Worksheet.Cells[2, 5].Value2).ToString();
+            UreaBox.Text = (excel_Worksheet.Cells[2, 6].Value2).ToString();
+            HbBox.Text = (excel_Worksheet.Cells[2, 7].Value2).ToString();
+            CrtnBox.Text = (excel_Worksheet.Cells[2, 8].Value2).ToString();
+            IronBox.Text = (excel_Worksheet.Cells[2, 9].Value2).ToString();
+            HDLBox.Text = (excel_Worksheet.Cells[2, 10].Value2).ToString();
+            APBox.Text = (excel_Worksheet.Cells[2, 11].Value2).ToString();
+            excel_Application.Quit();
         }
     }
 }
