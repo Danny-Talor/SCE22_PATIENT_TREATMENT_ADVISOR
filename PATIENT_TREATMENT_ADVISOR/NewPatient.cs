@@ -297,8 +297,9 @@ namespace PATIENT_TREATMENT_ADVISOR
         private void FileDialog_FileOk(object sender, CancelEventArgs e)
         {
             Excel.Application excel_Application = new(); // Launch Excel
-            Excel.Workbook excel_Workbook = excel_Application.Workbooks.Open(FileDialog.FileName); //Open database
+            Excel.Workbook excel_Workbook = excel_Application.Workbooks.Open(FileDialog.FileName); // Open given Excel file
             Excel.Worksheet excel_Worksheet = (Excel.Worksheet)excel_Workbook.ActiveSheet; // Select active sheet
+            // Read given Excel file info and save to each corresponding text box
             WBCBox.Text = (excel_Worksheet.Cells[2, 1].Value2).ToString();
             NeutBox.Text = (excel_Worksheet.Cells[2, 2].Value2).ToString();
             LymphBox.Text = (excel_Worksheet.Cells[2, 3].Value2).ToString();
@@ -319,23 +320,24 @@ namespace PATIENT_TREATMENT_ADVISOR
             Excel.Application excel_Application = new(); // Launch Excel
             Excel.Workbook excel_Workbook = excel_Application.Workbooks.Open(Directory.GetCurrentDirectory() + @"\database"); //Open database
             Excel.Worksheet excel_Worksheet = (Excel.Worksheet)excel_Workbook.Sheets[2]; // Select patients sheet
-            while (excel_Worksheet.Cells[i, 1].Value != null) { i++; }
+            while (excel_Worksheet.Cells[i, 1].Value != null) { i++; } // Find empty row
             excel_Worksheet.Cells[i, 1] = FirstNameBox.Text;
             excel_Worksheet.Cells[i, 2] = LastNameBox.Text;
             excel_Worksheet.Cells[i, 3] = IDBox.Text;
             excel_Worksheet.Cells[i, 4] = AgeBox.Text;
             excel_Worksheet.Cells[i, 5] = GenderBox.Text;
-            excel_Worksheet.Cells[i, 6] = WBCBox.Text;
-            excel_Worksheet.Cells[i, 7] = NeutBox.Text;
-            excel_Worksheet.Cells[i, 8] = LymphBox.Text;
-            excel_Worksheet.Cells[i, 9] = RBCBox.Text;
-            excel_Worksheet.Cells[i, 10] = HCTBox.Text;
-            excel_Worksheet.Cells[i, 11] = UreaBox.Text;
-            excel_Worksheet.Cells[i, 12] = HbBox.Text;
-            excel_Worksheet.Cells[i, 13] = CrtnBox.Text;
-            excel_Worksheet.Cells[i, 14] = IronBox.Text;
-            excel_Worksheet.Cells[i, 15] = HDLBox.Text;
-            excel_Worksheet.Cells[i, 16] = APBox.Text;
+            excel_Worksheet.Cells[i, 6] = ""; //TODO: save current doctor id in this field
+            excel_Worksheet.Cells[i, 7] = WBCBox.Text;
+            excel_Worksheet.Cells[i, 8] = NeutBox.Text;
+            excel_Worksheet.Cells[i, 9] = LymphBox.Text;
+            excel_Worksheet.Cells[i, 10] = RBCBox.Text;
+            excel_Worksheet.Cells[i, 11] = HCTBox.Text;
+            excel_Worksheet.Cells[i, 12] = UreaBox.Text;
+            excel_Worksheet.Cells[i, 13] = HbBox.Text;
+            excel_Worksheet.Cells[i, 14] = CrtnBox.Text;
+            excel_Worksheet.Cells[i, 15] = IronBox.Text;
+            excel_Worksheet.Cells[i, 16] = HDLBox.Text;
+            excel_Worksheet.Cells[i, 17] = APBox.Text;
             excel_Workbook.Close(true);
             excel_Application.Quit();
             this.Close();
