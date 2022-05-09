@@ -3,6 +3,7 @@ namespace PATIENT_TREATMENT_ADVISOR
 {
     internal static class Program
     {
+        public static Excel.Application? excel_Application = null;
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>
@@ -13,6 +14,7 @@ namespace PATIENT_TREATMENT_ADVISOR
             {
                 // To customize application configuration such as set high DPI settings or default font,
                 // see https://aka.ms/applicationconfiguration.
+                excel_Application = new(); // Launch Excel
                 ApplicationConfiguration.Initialize();
                 InitializeDatabase();
                 Application.Run(new UserSignInPage());
@@ -21,14 +23,21 @@ namespace PATIENT_TREATMENT_ADVISOR
             {
                 MessageBox.Show(ex.Message);
             }
+            finally
+            {
+                if(excel_Application != null)
+                {
+                    excel_Application.Quit(); // Close Excel
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(excel_Application); // Cleanup
+                }
+            }
         }
 
-        public static void InitializeDatabase()
+        private static void InitializeDatabase()
         {
             string db_path = Directory.GetCurrentDirectory() + @"\database.xlsx";
-            if (!File.Exists(db_path)) // Check if database file exists, if it doesn't - make a new one
+            if (!File.Exists(db_path) && excel_Application != null) // Create new database file if it doesn't exist
             {
-                Excel.Application excel_Application = new(); // Launch Excel
                 Excel.Workbook excel_Workbook = excel_Application.Workbooks.Add(System.Reflection.Missing.Value); // Create new Excel file
                 Excel.Worksheet excel_Worksheet = (Excel.Worksheet)excel_Workbook.Sheets[1]; // Select worksheet number 1
                 excel_Worksheet.Name = "users"; // Set worksheet number 1 name
@@ -59,14 +68,9 @@ namespace PATIENT_TREATMENT_ADVISOR
                 excel_Worksheet.Cells[1, 17] = "AP";
                 excel_Worksheet.Cells[1, 18] = "Diagnosis";
                 excel_Worksheet.Cells[1, 19] = "Recommendation";
-                // Save worksheets
-                excel_Worksheet.SaveAs2(db_path, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlNoChange, Type.Missing, Type.Missing, Type.Missing);
-                excel_Workbook.Close(true);
-                excel_Application.Quit(); // Close Excel
-                System.Runtime.InteropServices.Marshal.ReleaseComObject(excel_Worksheet);
-                System.Runtime.InteropServices.Marshal.ReleaseComObject(excel_Workbook); // Cleanup
-                System.Runtime.InteropServices.Marshal.ReleaseComObject(excel_Application);
-            }
+                // Save workbook
+                excel_Workbook.SaveAs2(db_path, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlNoChange, Type.Missing, Type.Missing, Type.Missing);}
+
         }
     }
 }
