@@ -36,6 +36,8 @@
             this.ListView = new System.Windows.Forms.ListView();
             this.FirstNameColumn = new System.Windows.Forms.ColumnHeader();
             this.LogoutBtn = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -88,19 +90,39 @@
             // 
             // LogoutBtn
             // 
-            this.LogoutBtn.Location = new System.Drawing.Point(12, 12);
+            this.LogoutBtn.Location = new System.Drawing.Point(737, 9);
             this.LogoutBtn.Name = "LogoutBtn";
             this.LogoutBtn.Size = new System.Drawing.Size(94, 29);
             this.LogoutBtn.TabIndex = 2;
-            this.LogoutBtn.Text = "Logout";
+            this.LogoutBtn.Text = "התנתק";
             this.LogoutBtn.UseVisualStyleBackColor = true;
             this.LogoutBtn.Click += new System.EventHandler(this.LogoutBtn_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(80, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(50, 20);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "label1";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(62, 20);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "מחובר כ";
             // 
             // TreatmentPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(843, 600);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.LogoutBtn);
             this.Controls.Add(this.ListView);
             this.Controls.Add(this.DiagnosisAndRecommendationButton);
@@ -108,10 +130,13 @@
             this.Controls.Add(this.AddPatientButton);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "TreatmentPage";
+            this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.RightToLeftLayout = true;
             this.Text = "TreatmentPage";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TreatmentPage_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -123,5 +148,7 @@
         private ListView ListView;
         private ColumnHeader FirstNameColumn;
         private Button LogoutBtn;
+        private Label label1;
+        private Label label2;
     }
 }

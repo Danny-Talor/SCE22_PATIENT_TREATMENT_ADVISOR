@@ -13,8 +13,10 @@ namespace PATIENT_TREATMENT_ADVISOR
 {
     public partial class NewPatient : Form
     {
-        public NewPatient()
+        private readonly string doctor_id;
+        public NewPatient(string id)
         {
+            this.doctor_id = id;
             InitializeComponent();
         }
 
@@ -326,7 +328,7 @@ namespace PATIENT_TREATMENT_ADVISOR
             excel_Worksheet.Cells[i, 3] = IDBox.Text;
             excel_Worksheet.Cells[i, 4] = AgeBox.Text;
             excel_Worksheet.Cells[i, 5] = GenderBox.Text;
-            excel_Worksheet.Cells[i, 6] = ""; //TODO: save current doctor id in this field
+            excel_Worksheet.Cells[i, 6] = this.doctor_id;
             excel_Worksheet.Cells[i, 7] = WBCBox.Text;
             excel_Worksheet.Cells[i, 8] = NeutBox.Text;
             excel_Worksheet.Cells[i, 9] = LymphBox.Text;

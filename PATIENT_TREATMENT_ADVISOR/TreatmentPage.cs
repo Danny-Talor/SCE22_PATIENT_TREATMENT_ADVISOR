@@ -12,15 +12,19 @@ namespace PATIENT_TREATMENT_ADVISOR
 {
     public partial class TreatmentPage : Form
     {
-
-        public TreatmentPage()
+        private readonly string current_doctor_username;
+        private readonly string current_doctor_id;
+        public TreatmentPage(string username, string id)
         {
+            this.current_doctor_username = username;
+            this.current_doctor_id=id;
             InitializeComponent();
+            label1.Text = username;
         }
 
         private void AddPatientButton_Click(object sender, EventArgs e)
         {
-            NewPatient patient = new();
+            NewPatient patient = new(this.current_doctor_id);
             patient.Show();
         }
      
