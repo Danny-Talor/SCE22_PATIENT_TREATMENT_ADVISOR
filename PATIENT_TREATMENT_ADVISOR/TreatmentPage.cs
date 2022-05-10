@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace PATIENT_TREATMENT_ADVISOR
 {
@@ -38,6 +39,13 @@ namespace PATIENT_TREATMENT_ADVISOR
                     DialogResult result = MessageBox.Show("Do you really want to exit?", "Dialog Title", MessageBoxButtons.YesNo);
                     if (result == DialogResult.Yes)
                     {
+                        var processes = from p in Process.GetProcessesByName("EXCEL")
+                                        select p;
+
+                        foreach (var process in processes)
+                        {
+                                process.Kill();
+                        }
                         Environment.Exit(0);
                     }
                     else
@@ -60,5 +68,7 @@ namespace PATIENT_TREATMENT_ADVISOR
         {
             this.Dispose();
         }
+
+       
     }
 }
