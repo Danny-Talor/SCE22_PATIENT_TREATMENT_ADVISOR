@@ -69,7 +69,9 @@ namespace PATIENT_TREATMENT_ADVISOR
                 excel_Worksheet.Cells[1, 18] = "Diagnosis";
                 excel_Worksheet.Cells[1, 19] = "Recommendation";
                 // Save workbook
-                excel_Workbook.SaveAs2(db_path, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlNoChange, Type.Missing, Type.Missing, Type.Missing);}
+                excel_Workbook.SaveAs2(db_path, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlNoChange, Type.Missing, Type.Missing, Type.Missing);
+            }
+            excel_Application.Quit();
 
         }
     }
