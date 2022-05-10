@@ -39,7 +39,7 @@
             // 
             // RegisterUserButton
             // 
-            this.RegisterUserButton.Location = new System.Drawing.Point(327, 299);
+            this.RegisterUserButton.Location = new System.Drawing.Point(177, 224);
             this.RegisterUserButton.Name = "RegisterUserButton";
             this.RegisterUserButton.Size = new System.Drawing.Size(94, 29);
             this.RegisterUserButton.TabIndex = 0;
@@ -49,39 +49,39 @@
             // 
             // UsernameBox
             // 
-            this.UsernameBox.Location = new System.Drawing.Point(122, 91);
+            this.UsernameBox.Location = new System.Drawing.Point(82, 60);
             this.UsernameBox.Name = "UsernameBox";
             this.UsernameBox.PlaceholderText = "אנא הכנס אותיות באנגלית ומספרים בלבד";
-            this.UsernameBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.UsernameBox.Size = new System.Drawing.Size(298, 27);
+            this.UsernameBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.UsernameBox.Size = new System.Drawing.Size(277, 27);
             this.UsernameBox.TabIndex = 1;
             this.UsernameBox.TextChanged += new System.EventHandler(this.UsernameBox_TextChanged);
             // 
             // PasswordBox
             // 
-            this.PasswordBox.Location = new System.Drawing.Point(122, 141);
+            this.PasswordBox.Location = new System.Drawing.Point(53, 123);
             this.PasswordBox.Name = "PasswordBox";
             this.PasswordBox.PlaceholderText = "אנא הכנס אותיות באנגלית,מספרים וסימנים בלבד";
-            this.PasswordBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.PasswordBox.Size = new System.Drawing.Size(298, 27);
+            this.PasswordBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.PasswordBox.Size = new System.Drawing.Size(321, 27);
             this.PasswordBox.TabIndex = 2;
             this.PasswordBox.UseSystemPasswordChar = true;
             this.PasswordBox.TextChanged += new System.EventHandler(this.PasswordBox_TextChanged);
             // 
             // IDBox
             // 
-            this.IDBox.Location = new System.Drawing.Point(227, 191);
+            this.IDBox.Location = new System.Drawing.Point(145, 180);
             this.IDBox.Name = "IDBox";
             this.IDBox.PlaceholderText = "אנא הכנס מספרים בלבד";
-            this.IDBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.IDBox.Size = new System.Drawing.Size(193, 27);
+            this.IDBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.IDBox.Size = new System.Drawing.Size(165, 27);
             this.IDBox.TabIndex = 3;
             this.IDBox.TextChanged += new System.EventHandler(this.IDBox_TextChanged);
             // 
             // UserNameLabel
             // 
             this.UserNameLabel.AutoSize = true;
-            this.UserNameLabel.Location = new System.Drawing.Point(466, 96);
+            this.UserNameLabel.Location = new System.Drawing.Point(181, 37);
             this.UserNameLabel.Name = "UserNameLabel";
             this.UserNameLabel.Size = new System.Drawing.Size(90, 20);
             this.UserNameLabel.TabIndex = 4;
@@ -90,7 +90,7 @@
             // PasswordLabel
             // 
             this.PasswordLabel.AutoSize = true;
-            this.PasswordLabel.Location = new System.Drawing.Point(498, 152);
+            this.PasswordLabel.Location = new System.Drawing.Point(199, 100);
             this.PasswordLabel.Name = "PasswordLabel";
             this.PasswordLabel.Size = new System.Drawing.Size(53, 20);
             this.PasswordLabel.TabIndex = 4;
@@ -99,7 +99,7 @@
             // IDLabel
             // 
             this.IDLabel.AutoSize = true;
-            this.IDLabel.Location = new System.Drawing.Point(466, 201);
+            this.IDLabel.Location = new System.Drawing.Point(181, 157);
             this.IDLabel.Name = "IDLabel";
             this.IDLabel.Size = new System.Drawing.Size(85, 20);
             this.IDLabel.TabIndex = 4;
@@ -110,7 +110,7 @@
             this.AcceptButton = this.RegisterUserButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 451);
+            this.ClientSize = new System.Drawing.Size(422, 297);
             this.Controls.Add(this.IDLabel);
             this.Controls.Add(this.PasswordLabel);
             this.Controls.Add(this.UserNameLabel);
@@ -119,7 +119,11 @@
             this.Controls.Add(this.UsernameBox);
             this.Controls.Add(this.RegisterUserButton);
             this.Name = "UserSignUpPage";
-            this.Text = "Sign Up";
+            this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.RightToLeftLayout = true;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "איגואנה";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UserSignUpPage_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

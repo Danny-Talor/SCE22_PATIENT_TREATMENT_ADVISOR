@@ -159,29 +159,33 @@ namespace PATIENT_TREATMENT_ADVISOR
         private void RegisterUser(string username, string password, string id)
         {
             int i = 2;
-            Excel.Application excel_Application = new(); // Launch Excel
-            Excel.Workbook excel_Workbook = excel_Application.Workbooks.Open(Directory.GetCurrentDirectory() + @"\database"); //Open database
-            Excel.Worksheet excel_Worksheet = (Excel.Worksheet)excel_Workbook.Sheets[1]; // Select worksheet number 1
-            while (excel_Worksheet.Cells[i, 1].Value != null)
+            if(Program.excel_Workbook != null)
             {
-                if (excel_Worksheet.Cells[i, 1].Value == username)
+                Excel.Worksheet excel_Worksheet = (Excel.Worksheet)Program.excel_Workbook.Sheets[1]; // Select worksheet number 1 (users)
+                while (excel_Worksheet.Cells[i, 1].Value != null) // Look for empty row
                 {
-                    MessageBox.Show("User already exists!");
-                    break;
+                    if (excel_Worksheet.Cells[i, 1].Value == username)
+                    {
+                        MessageBox.Show("שם משתמש כבר קיים");
+                        break;
+                    }
+                    i++;
                 }
-                i++;
+                if (excel_Worksheet.Cells[i, 1].Value == null) // Found empty row
+                {
+                    excel_Worksheet.Cells[i, 1] = username;
+                    excel_Worksheet.Cells[i, 2] = password;
+                    excel_Worksheet.Cells[i, 3] = id;
+                    MessageBox.Show("ההרשמה התבצעה בהצלחה");
+                    this.Close();
+                }
+                System.Runtime.InteropServices.Marshal.FinalReleaseComObject(excel_Worksheet); // Cleanup
             }
-            if (excel_Worksheet.Cells[i, 1].Value == null)
-            {
-                excel_Worksheet.Cells[i, 1] = username;
-                excel_Worksheet.Cells[i, 2] = password;
-                excel_Worksheet.Cells[i, 3] = id;
-                excel_Workbook.Close(true); // Close worksheet with saving
-                excel_Application.Quit(); // Close Excel 
-                MessageBox.Show("Registration successful");
-                this.Close();
-            }
-            excel_Application.Quit();
+        }
+
+        private void UserSignUpPage_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
         }
     }
 }

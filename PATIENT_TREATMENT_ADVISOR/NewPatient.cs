@@ -298,51 +298,73 @@ namespace PATIENT_TREATMENT_ADVISOR
 
         private void FileDialog_FileOk(object sender, CancelEventArgs e)
         {
-            Excel.Application excel_Application = new(); // Launch Excel
-            Excel.Workbook excel_Workbook = excel_Application.Workbooks.Open(FileDialog.FileName); // Open given Excel file
-            Excel.Worksheet excel_Worksheet = (Excel.Worksheet)excel_Workbook.ActiveSheet; // Select active sheet
-            // Read given Excel file info and save to each corresponding text box
-            WBCBox.Text = (excel_Worksheet.Cells[2, 1].Value2).ToString();
-            NeutBox.Text = (excel_Worksheet.Cells[2, 2].Value2).ToString();
-            LymphBox.Text = (excel_Worksheet.Cells[2, 3].Value2).ToString();
-            RBCBox.Text = (excel_Worksheet.Cells[2, 4].Value2).ToString();
-            HCTBox.Text = (excel_Worksheet.Cells[2, 5].Value2).ToString();
-            UreaBox.Text = (excel_Worksheet.Cells[2, 6].Value2).ToString();
-            HbBox.Text = (excel_Worksheet.Cells[2, 7].Value2).ToString();
-            CrtnBox.Text = (excel_Worksheet.Cells[2, 8].Value2).ToString();
-            IronBox.Text = (excel_Worksheet.Cells[2, 9].Value2).ToString();
-            HDLBox.Text = (excel_Worksheet.Cells[2, 10].Value2).ToString();
-            APBox.Text = (excel_Worksheet.Cells[2, 11].Value2).ToString();
-            excel_Application.Quit();
+            if (Program.excel_Application != null)
+            {
+                Program.excel_Workbook = Program.excel_Application.Workbooks.Open(FileDialog.FileName); // Open given Excel file
+                Excel.Worksheet excel_Worksheet = (Excel.Worksheet)Program.excel_Workbook.ActiveSheet; // Select active sheet
+                // Read given Excel file info and save to each corresponding text box
+                WBCBox.Text = (excel_Worksheet.Cells[2, 1].Value2).ToString();
+                NeutBox.Text = (excel_Worksheet.Cells[2, 2].Value2).ToString();
+                LymphBox.Text = (excel_Worksheet.Cells[2, 3].Value2).ToString();
+                RBCBox.Text = (excel_Worksheet.Cells[2, 4].Value2).ToString();
+                HCTBox.Text = (excel_Worksheet.Cells[2, 5].Value2).ToString();
+                UreaBox.Text = (excel_Worksheet.Cells[2, 6].Value2).ToString();
+                HbBox.Text = (excel_Worksheet.Cells[2, 7].Value2).ToString();
+                CrtnBox.Text = (excel_Worksheet.Cells[2, 8].Value2).ToString();
+                IronBox.Text = (excel_Worksheet.Cells[2, 9].Value2).ToString();
+                HDLBox.Text = (excel_Worksheet.Cells[2, 10].Value2).ToString();
+                APBox.Text = (excel_Worksheet.Cells[2, 11].Value2).ToString();
+                System.Runtime.InteropServices.Marshal.FinalReleaseComObject(excel_Worksheet);
+                Program.excel_Workbook.Close(false);
+                Program.excel_Workbook = Program.excel_Application.Workbooks.Open(Program.db_path);
+            }
         }
 
         private void AddPatientButton_Click(object sender, EventArgs e)
         {
-            int i = 2;
-            Excel.Application excel_Application = new(); // Launch Excel
-            Excel.Workbook excel_Workbook = excel_Application.Workbooks.Open(Directory.GetCurrentDirectory() + @"\database"); //Open database
-            Excel.Worksheet excel_Worksheet = (Excel.Worksheet)excel_Workbook.Sheets[2]; // Select patients sheet
-            while (excel_Worksheet.Cells[i, 1].Value != null) { i++; } // Find empty row
-            excel_Worksheet.Cells[i, 1] = FirstNameBox.Text;
-            excel_Worksheet.Cells[i, 2] = LastNameBox.Text;
-            excel_Worksheet.Cells[i, 3] = IDBox.Text;
-            excel_Worksheet.Cells[i, 4] = AgeBox.Text;
-            excel_Worksheet.Cells[i, 5] = GenderBox.Text;
-            excel_Worksheet.Cells[i, 6] = this.doctor_id;
-            excel_Worksheet.Cells[i, 7] = WBCBox.Text;
-            excel_Worksheet.Cells[i, 8] = NeutBox.Text;
-            excel_Worksheet.Cells[i, 9] = LymphBox.Text;
-            excel_Worksheet.Cells[i, 10] = RBCBox.Text;
-            excel_Worksheet.Cells[i, 11] = HCTBox.Text;
-            excel_Worksheet.Cells[i, 12] = UreaBox.Text;
-            excel_Worksheet.Cells[i, 13] = HbBox.Text;
-            excel_Worksheet.Cells[i, 14] = CrtnBox.Text;
-            excel_Worksheet.Cells[i, 15] = IronBox.Text;
-            excel_Worksheet.Cells[i, 16] = HDLBox.Text;
-            excel_Worksheet.Cells[i, 17] = APBox.Text;
-            excel_Workbook.Close(true);
-            excel_Application.Quit();
-            this.Close();
+            if (CheckInputIsEmpty())
+            {
+                MessageBox.Show("אנא מלא את כל התאים");
+            }
+            else
+            {
+                if (Program.excel_Workbook != null)
+                {
+                    int i = 2;
+                    Excel.Worksheet excel_Worksheet = (Excel.Worksheet)Program.excel_Workbook.Sheets[2]; // Select patients sheet
+                    while (excel_Worksheet.Cells[i, 1].Value != null) { i++; } // Find empty row
+                    excel_Worksheet.Cells[i, 1] = FirstNameBox.Text;
+                    excel_Worksheet.Cells[i, 2] = LastNameBox.Text;
+                    excel_Worksheet.Cells[i, 3] = IDBox.Text;
+                    excel_Worksheet.Cells[i, 4] = AgeBox.Text;
+                    excel_Worksheet.Cells[i, 5] = GenderBox.Text;
+                    excel_Worksheet.Cells[i, 6] = this.doctor_id;
+                    excel_Worksheet.Cells[i, 7] = WBCBox.Text;
+                    excel_Worksheet.Cells[i, 8] = NeutBox.Text;
+                    excel_Worksheet.Cells[i, 9] = LymphBox.Text;
+                    excel_Worksheet.Cells[i, 10] = RBCBox.Text;
+                    excel_Worksheet.Cells[i, 11] = HCTBox.Text;
+                    excel_Worksheet.Cells[i, 12] = UreaBox.Text;
+                    excel_Worksheet.Cells[i, 13] = HbBox.Text;
+                    excel_Worksheet.Cells[i, 14] = CrtnBox.Text;
+                    excel_Worksheet.Cells[i, 15] = IronBox.Text;
+                    excel_Worksheet.Cells[i, 16] = HDLBox.Text;
+                    excel_Worksheet.Cells[i, 17] = APBox.Text;
+                    System.Runtime.InteropServices.Marshal.FinalReleaseComObject(excel_Worksheet);
+                    Program.excel_Workbook.Save();
+                }
+                this.Close();
+            }
+        }
+
+        private bool CheckInputIsEmpty()
+        {
+            return FirstNameBox.Text == "" || LastNameBox.Text == "" || IDBox.Text == "" || 
+                AgeBox.Text == "" || GenderBox.Text == "" || WBCBox.Text == "" || 
+                NeutBox.Text == "" || LymphBox.Text == "" || RBCBox.Text == "" || 
+                HCTBox.Text == "" || UreaBox.Text == "" || HbBox.Text == "" || 
+                CrtnBox.Text == "" || IronBox.Text == "" || HDLBox.Text == "" || 
+                APBox.Text == "";
         }
     }
 }

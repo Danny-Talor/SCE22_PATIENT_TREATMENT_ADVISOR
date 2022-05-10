@@ -26,35 +26,47 @@ namespace PATIENT_TREATMENT_ADVISOR
         private void LoginUser(string username, string password)
         {
             int i = 2;
-            Excel.Application excel_Application = new(); // Launch Excel
-            Excel.Workbook excel_Workbook = excel_Application.Workbooks.Open(Directory.GetCurrentDirectory() + @"\database"); //Open database
-            Excel.Worksheet excel_Worksheet = (Excel.Worksheet)excel_Workbook.Sheets[1]; // Select worksheet number 1
-            while (excel_Worksheet.Cells[i, 1].Value != null)
+            if(Program.excel_Workbook != null)
             {
-                if (excel_Worksheet.Cells[i, 1].Value == username)
+                bool login_success = false;
+                string doctor_UserName = "";
+                string doctor_ID = "";
+                Excel.Worksheet excel_Worksheet = (Excel.Worksheet)Program.excel_Workbook.Sheets[1]; // Select worksheet number 1 (users)
+                while (excel_Worksheet.Cells[i, 1].Value != null) // While not empty cell
                 {
-                    if (excel_Worksheet.Cells[i, 2].Value == password)
+                    if (excel_Worksheet.Cells[i, 1].Value == username) // Username found
                     {
-                        MessageBox.Show("Login Successful!");
-                        this.Hide();
-                        TreatmentPage treatment = new(excel_Worksheet.Cells[i, 1].Value.ToString(),excel_Worksheet.Cells[i, 3].Value.ToString());
-                        treatment.ShowDialog();
-                        this.Show();
-                        break;
+                        if (excel_Worksheet.Cells[i, 2].Value == password) // Password match
+                        {
+                            login_success = true;
+                            doctor_UserName = excel_Worksheet.Cells[i, 1].Value.ToString();
+                            doctor_ID = excel_Worksheet.Cells[i, 3].Value.ToString();
+                            break;
+                        }
+                        else // Password mismatch
+                        {
+                            MessageBox.Show("סיסמה לא נכונה");
+                            break;
+                        }
                     }
-                    else
+                    i++;
+                }
+                if (excel_Worksheet.Cells[i, 1].Value == null) // If empty row
+                {
+                    MessageBox.Show("המשתמש אינו קיים");
+                }
+                System.Runtime.InteropServices.Marshal.FinalReleaseComObject(excel_Worksheet); // Cleanup
+                if (login_success)
+                {
+                    this.Hide();
+                    TreatmentPage treatment = new(doctor_UserName, doctor_ID);
+                    treatment.ShowDialog();
+                    if (treatment.IsDisposed && !this.IsDisposed)
                     {
-                        MessageBox.Show("Wrong password!");
-                        break;
+                        this.Show();
                     }
                 }
-                i++;
             }
-            if (excel_Worksheet.Cells[i, 1].Value == null)
-            {
-                MessageBox.Show("User does not exist!");
-            }
-            excel_Application.Quit();
         }
 
         private void RegisterLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -63,6 +75,15 @@ namespace PATIENT_TREATMENT_ADVISOR
             UserSignUpPage register = new();
             register.ShowDialog();
             this.Show();
+        }
+
+        private void UserSignInPage_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult result = MessageBox.Show("פעולה זו תסגור את התכנית", "יציאה", MessageBoxButtons.YesNo);
+            if (result != DialogResult.Yes)
+            {
+                e.Cancel = true;
+            }
         }
     }
 }
