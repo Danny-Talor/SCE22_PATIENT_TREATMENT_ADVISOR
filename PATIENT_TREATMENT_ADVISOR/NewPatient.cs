@@ -13,10 +13,8 @@ namespace PATIENT_TREATMENT_ADVISOR
 {
     public partial class NewPatient : Form
     {
-        private readonly string doctor_id;
-        public NewPatient(string id)
+        public NewPatient()
         {
-            this.doctor_id = id;
             InitializeComponent();
         }
 
@@ -338,18 +336,31 @@ namespace PATIENT_TREATMENT_ADVISOR
                     excel_Worksheet.Cells[i, 3] = IDBox.Text;
                     excel_Worksheet.Cells[i, 4] = AgeBox.Text;
                     excel_Worksheet.Cells[i, 5] = GenderBox.Text;
-                    excel_Worksheet.Cells[i, 6] = this.doctor_id;
-                    excel_Worksheet.Cells[i, 7] = WBCBox.Text;
-                    excel_Worksheet.Cells[i, 8] = NeutBox.Text;
-                    excel_Worksheet.Cells[i, 9] = LymphBox.Text;
-                    excel_Worksheet.Cells[i, 10] = RBCBox.Text;
-                    excel_Worksheet.Cells[i, 11] = HCTBox.Text;
-                    excel_Worksheet.Cells[i, 12] = UreaBox.Text;
-                    excel_Worksheet.Cells[i, 13] = HbBox.Text;
-                    excel_Worksheet.Cells[i, 14] = CrtnBox.Text;
-                    excel_Worksheet.Cells[i, 15] = IronBox.Text;
-                    excel_Worksheet.Cells[i, 16] = HDLBox.Text;
-                    excel_Worksheet.Cells[i, 17] = APBox.Text;
+                    excel_Worksheet.Cells[i, 6] = EthnicityBox.Text;
+                    excel_Worksheet.Cells[i, 7] = QFeverCB.Checked ?  "כן" : "לא";
+                    excel_Worksheet.Cells[i, 8] = QSmokerCB.Checked ? "כן" : "לא";
+                    excel_Worksheet.Cells[i, 9] = QLungCB.Checked ? "כן" : "לא";
+                    if (GenderBox.Text == "גבר")
+                    {
+                        excel_Worksheet.Cells[i, 10] = "לא";
+                    }
+                    else
+                    {
+                        excel_Worksheet.Cells[i, 10] = QPregCB.Checked ? "כן" : "לא";
+                    }
+                    excel_Worksheet.Cells[i, 11] = QDiaVomCV.Checked ? "כן" : "לא";
+                    excel_Worksheet.Cells[i, 12] = QVegCB.Checked ? "כן" : "לא";
+                    excel_Worksheet.Cells[i, 13] = WBCBox.Text;
+                    excel_Worksheet.Cells[i, 14] = NeutBox.Text + "%";
+                    excel_Worksheet.Cells[i, 15] = LymphBox.Text + "%";
+                    excel_Worksheet.Cells[i, 16] = RBCBox.Text;
+                    excel_Worksheet.Cells[i, 17] = HCTBox.Text + "%";
+                    excel_Worksheet.Cells[i, 18] = UreaBox.Text;
+                    excel_Worksheet.Cells[i, 19] = HbBox.Text;
+                    excel_Worksheet.Cells[i, 20] = CrtnBox.Text;
+                    excel_Worksheet.Cells[i, 21] = IronBox.Text;
+                    excel_Worksheet.Cells[i, 22] = HDLBox.Text;
+                    excel_Worksheet.Cells[i, 23] = APBox.Text;
                     System.Runtime.InteropServices.Marshal.FinalReleaseComObject(excel_Worksheet);
                     Program.excel_Workbook.Save();
                 }
@@ -365,6 +376,18 @@ namespace PATIENT_TREATMENT_ADVISOR
                 HCTBox.Text == "" || UreaBox.Text == "" || HbBox.Text == "" || 
                 CrtnBox.Text == "" || IronBox.Text == "" || HDLBox.Text == "" || 
                 APBox.Text == "";
+        }
+
+        private void GenderBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(GenderBox.SelectedIndex == 1)
+            {
+                QPregCB.Visible = true;
+            }
+            else
+            {
+                QPregCB.Visible = false;
+            }
         }
     }
 }

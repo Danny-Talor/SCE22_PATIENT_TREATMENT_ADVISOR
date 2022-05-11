@@ -29,10 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("");
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.AddPatientButton = new System.Windows.Forms.Button();
-            this.DiagnosisAndRecommendationButton = new System.Windows.Forms.Button();
             this.PatientListView = new System.Windows.Forms.ListView();
             this.FirstNameColumn = new System.Windows.Forms.ColumnHeader();
             this.LastNameColumn = new System.Windows.Forms.ColumnHeader();
@@ -48,25 +47,15 @@
             // 
             // AddPatientButton
             // 
-            this.AddPatientButton.Location = new System.Drawing.Point(26, 429);
+            this.AddPatientButton.Location = new System.Drawing.Point(11, 411);
             this.AddPatientButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.AddPatientButton.Name = "AddPatientButton";
             this.AddPatientButton.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.AddPatientButton.Size = new System.Drawing.Size(215, 68);
+            this.AddPatientButton.Size = new System.Drawing.Size(535, 39);
             this.AddPatientButton.TabIndex = 0;
             this.AddPatientButton.Text = "הוסף מטופל";
             this.AddPatientButton.UseVisualStyleBackColor = true;
             this.AddPatientButton.Click += new System.EventHandler(this.AddPatientButton_Click);
-            // 
-            // DiagnosisAndRecommendationButton
-            // 
-            this.DiagnosisAndRecommendationButton.Location = new System.Drawing.Point(278, 429);
-            this.DiagnosisAndRecommendationButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.DiagnosisAndRecommendationButton.Name = "DiagnosisAndRecommendationButton";
-            this.DiagnosisAndRecommendationButton.Size = new System.Drawing.Size(215, 68);
-            this.DiagnosisAndRecommendationButton.TabIndex = 0;
-            this.DiagnosisAndRecommendationButton.Text = "אבחון והמלצות";
-            this.DiagnosisAndRecommendationButton.UseVisualStyleBackColor = true;
             // 
             // PatientListView
             // 
@@ -80,12 +69,12 @@
             this.PatientListView.FullRowSelect = true;
             this.PatientListView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.PatientListView.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1});
-            this.PatientListView.Location = new System.Drawing.Point(26, 48);
+            listViewItem2});
+            this.PatientListView.Location = new System.Drawing.Point(12, 41);
             this.PatientListView.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.PatientListView.Name = "PatientListView";
             this.PatientListView.RightToLeftLayout = true;
-            this.PatientListView.Size = new System.Drawing.Size(467, 355);
+            this.PatientListView.Size = new System.Drawing.Size(534, 362);
             this.PatientListView.TabIndex = 1;
             this.PatientListView.TabStop = false;
             this.PatientListView.UseCompatibleStateImageBehavior = false;
@@ -117,7 +106,7 @@
             // 
             // LogoutBtn
             // 
-            this.LogoutBtn.Location = new System.Drawing.Point(257, 12);
+            this.LogoutBtn.Location = new System.Drawing.Point(317, 5);
             this.LogoutBtn.Name = "LogoutBtn";
             this.LogoutBtn.Size = new System.Drawing.Size(94, 29);
             this.LogoutBtn.TabIndex = 2;
@@ -128,7 +117,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(80, 9);
+            this.label1.Location = new System.Drawing.Point(70, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(50, 20);
             this.label1.TabIndex = 3;
@@ -145,7 +134,7 @@
             // 
             // ExitBtn
             // 
-            this.ExitBtn.Location = new System.Drawing.Point(357, 12);
+            this.ExitBtn.Location = new System.Drawing.Point(417, 5);
             this.ExitBtn.Name = "ExitBtn";
             this.ExitBtn.Size = new System.Drawing.Size(94, 29);
             this.ExitBtn.TabIndex = 5;
@@ -157,13 +146,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(523, 523);
+            this.ClientSize = new System.Drawing.Size(558, 484);
             this.Controls.Add(this.ExitBtn);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.LogoutBtn);
             this.Controls.Add(this.PatientListView);
-            this.Controls.Add(this.DiagnosisAndRecommendationButton);
             this.Controls.Add(this.AddPatientButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -184,7 +172,6 @@
         #endregion
         private BindingSource bindingSource1;
         private Button AddPatientButton;
-        private Button DiagnosisAndRecommendationButton;
         private ListView PatientListView;
         private ColumnHeader FirstNameColumn;
         private Button LogoutBtn;

@@ -16,15 +16,13 @@ namespace PATIENT_TREATMENT_ADVISOR
     public partial class TreatmentPage : Form
     {
         private readonly string current_doctor_username;
-        private readonly string current_doctor_id;
 
         private bool dragging = false;
         private Point dragCursorPoint;
         private Point dragFormPoint;
-        public TreatmentPage(string username, string id)
+        public TreatmentPage(string username)
         {
             this.current_doctor_username = username;
-            this.current_doctor_id = id;
             InitializeComponent();
             label1.Text = current_doctor_username;
             InitializeTable();
@@ -32,7 +30,7 @@ namespace PATIENT_TREATMENT_ADVISOR
 
         private void AddPatientButton_Click(object sender, EventArgs e)
         {
-            NewPatient patient = new(this.current_doctor_id);
+            NewPatient patient = new();
             patient.ShowDialog();
             InitializeTable();
         }

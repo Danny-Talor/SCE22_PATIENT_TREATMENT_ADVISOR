@@ -1,4 +1,4 @@
-using Excel = Microsoft.Office.Interop.Excel;
+﻿using Excel = Microsoft.Office.Interop.Excel;
 namespace PATIENT_TREATMENT_ADVISOR
 {
     internal static class Program
@@ -58,25 +58,31 @@ namespace PATIENT_TREATMENT_ADVISOR
                 excel_Worksheet = (Excel.Worksheet)new_Excel_Workbook.Sheets[2]; // Select worksheet number 2
                 excel_Worksheet.Name = "patients";// Set worksheet number 2 name
                 // Add patient titles
-                excel_Worksheet.Cells[1, 1] = "First Name";
-                excel_Worksheet.Cells[1, 2] = "Last Name";
-                excel_Worksheet.Cells[1, 3] = "ID";
-                excel_Worksheet.Cells[1, 4] = "Age";
-                excel_Worksheet.Cells[1, 5] = "Gender";
-                excel_Worksheet.Cells[1, 6] = "Doctor ID";
-                excel_Worksheet.Cells[1, 7] = "WBC";
-                excel_Worksheet.Cells[1, 8] = "Neut";
-                excel_Worksheet.Cells[1, 9] = "Lymph";
-                excel_Worksheet.Cells[1, 10] = "RBC";
-                excel_Worksheet.Cells[1, 11] = "HCT";
-                excel_Worksheet.Cells[1, 12] = "Urea";
-                excel_Worksheet.Cells[1, 13] = "Hb";
-                excel_Worksheet.Cells[1, 14] = "Crtn";
-                excel_Worksheet.Cells[1, 15] = "Iron";
-                excel_Worksheet.Cells[1, 16] = "HDL";
-                excel_Worksheet.Cells[1, 17] = "AP";
-                excel_Worksheet.Cells[1, 18] = "Diagnosis";
-                excel_Worksheet.Cells[1, 19] = "Recommendation";
+                excel_Worksheet.Cells[1, 1] = "שם פרטי";
+                excel_Worksheet.Cells[1, 2] = "שם משפחה";
+                excel_Worksheet.Cells[1, 3] = "מספר זהות";
+                excel_Worksheet.Cells[1, 4] = "גיל";
+                excel_Worksheet.Cells[1, 5] = "מין";
+                excel_Worksheet.Cells[1, 6] = "מוצא";
+                excel_Worksheet.Cells[1, 7] = "חום גבוה";
+                excel_Worksheet.Cells[1, 8] = "מעשן";
+                excel_Worksheet.Cells[1, 9] = "מחלת ריאות";
+                excel_Worksheet.Cells[1, 10] = "בהריון";
+                excel_Worksheet.Cells[1, 11] = "שילשולים ו/או הקאות";
+                excel_Worksheet.Cells[1, 12] = "צמחוני/טבעוני";
+                excel_Worksheet.Cells[1, 13] = "WBC";
+                excel_Worksheet.Cells[1, 14] = "Neut";
+                excel_Worksheet.Cells[1, 15] = "Lymph";
+                excel_Worksheet.Cells[1, 16] = "RBC";
+                excel_Worksheet.Cells[1, 17] = "HCT";
+                excel_Worksheet.Cells[1, 18] = "Urea";
+                excel_Worksheet.Cells[1, 19] = "Hb";
+                excel_Worksheet.Cells[1, 20] = "Crtn";
+                excel_Worksheet.Cells[1, 21] = "Iron";
+                excel_Worksheet.Cells[1, 22] = "HDL";
+                excel_Worksheet.Cells[1, 23] = "AP";
+                excel_Worksheet.Cells[1, 24] = "Diagnosis";
+                excel_Worksheet.Cells[1, 25] = "Recommendation";
                 System.Runtime.InteropServices.Marshal.FinalReleaseComObject(excel_Worksheet); // Cleanup
                 // Save new workbook, close, and release ComObject
                 new_Excel_Workbook.SaveAs2(db_path, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlNoChange, Type.Missing, Type.Missing, Type.Missing);

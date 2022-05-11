@@ -30,7 +30,6 @@ namespace PATIENT_TREATMENT_ADVISOR
             {
                 bool login_success = false;
                 string doctor_UserName = "";
-                string doctor_ID = "";
                 Excel.Worksheet excel_Worksheet = (Excel.Worksheet)Program.excel_Workbook.Sheets[1]; // Select worksheet number 1 (users)
                 while (excel_Worksheet.Cells[i, 1].Value != null) // While not empty cell
                 {
@@ -40,7 +39,6 @@ namespace PATIENT_TREATMENT_ADVISOR
                         {
                             login_success = true;
                             doctor_UserName = excel_Worksheet.Cells[i, 1].Value.ToString();
-                            doctor_ID = excel_Worksheet.Cells[i, 3].Value.ToString();
                             break;
                         }
                         else // Password mismatch
@@ -59,7 +57,7 @@ namespace PATIENT_TREATMENT_ADVISOR
                 if (login_success)
                 {
                     this.Hide();
-                    TreatmentPage treatment = new(doctor_UserName, doctor_ID);
+                    TreatmentPage treatment = new(doctor_UserName);
                     treatment.ShowDialog();
                     if (treatment.IsDisposed && !this.IsDisposed)
                     {
