@@ -65,7 +65,8 @@ namespace PATIENT_TREATMENT_ADVISOR
             {
                 if (System.Text.RegularExpressions.Regex.IsMatch(UsernameBox.Text, "[^a-zA-Z0-9]"))
                 {
-                    MessageBox.Show("!אנא הכנס אותיות באנגלית ומספרים בלבד");
+                    ToolTip tt = new();
+                    tt.Show("אנא הכנס אותיות באנגלית ומספרים בלבד", (TextBox)sender, -30, 30, 3000);
                     UsernameBox.Text = UsernameBox.Text.Remove(UsernameBox.Text.Length - 1);
                     UsernameBox.Focus();
                 }
@@ -83,7 +84,8 @@ namespace PATIENT_TREATMENT_ADVISOR
             {
                 if (System.Text.RegularExpressions.Regex.IsMatch(PasswordBox.Text, "[^_$&+,:;=?@#|'<>.-^*()%!a-zA-Z0-9]"))
                 {
-                    MessageBox.Show("!אנא הכנס אותיות באנגלית,מספרים וסימנים בלבד");
+                    ToolTip tt = new();
+                    tt.Show("!אנא הכנס אותיות באנגלית,מספרים וסימנים בלבד", (TextBox)sender, -30, 30, 3000);
                     PasswordBox.Text = PasswordBox.Text.Remove(PasswordBox.Text.Length - 1);
                     PasswordBox.Focus();
                 }
@@ -98,9 +100,10 @@ namespace PATIENT_TREATMENT_ADVISOR
         {
             try
             {
-                if (System.Text.RegularExpressions.Regex.IsMatch(IDBox.Text, "[^a-zA-Z0-9]"))
+                if (System.Text.RegularExpressions.Regex.IsMatch(IDBox.Text, "[^0-9]"))
                 {
-                    MessageBox.Show("!אנא הכנס מספרים בלבד");
+                    ToolTip tt = new();
+                    tt.Show("!אנא הכנס מספרים בלבד", (TextBox)sender, -30, 30, 3000);
                     IDBox.Text = IDBox.Text.Remove(IDBox.Text.Length - 1);
                     IDBox.Focus();
                 }
@@ -156,6 +159,17 @@ namespace PATIENT_TREATMENT_ADVISOR
             }
             return (counter % 10 == 0);
         }
+
+        //function is_israeli_id_number(id)
+        //{
+        //    id = String(id).trim();
+        //    if (id.length > 9 || isNaN(id)) return false;
+        //    id = id.length < 9 ? ("00000000" + id).slice(-9) : id;
+        //    return Array.from(id, Number).reduce((counter, digit, i) => {
+        //        const step = digit * ((i % 2) + 1);
+        //        return counter + (step > 9 ? step - 9 : step);
+        //    }) % 10 === 0;
+        //}
         private void RegisterUser(string username, string password, string id)
         {
             int i = 2;
@@ -183,9 +197,14 @@ namespace PATIENT_TREATMENT_ADVISOR
             }
         }
 
-        private void UserSignUpPage_FormClosing(object sender, FormClosingEventArgs e)
+        private void ExitBtn_Click(object sender, EventArgs e)
         {
+            Application.Exit();
+        }
 
+        private void ReturnBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

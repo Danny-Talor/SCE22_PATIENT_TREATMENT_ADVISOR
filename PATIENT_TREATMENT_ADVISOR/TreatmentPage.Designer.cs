@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("");
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.AddPatientButton = new System.Windows.Forms.Button();
             this.PatientListView = new System.Windows.Forms.ListView();
@@ -59,7 +59,9 @@
             // 
             // PatientListView
             // 
-            this.PatientListView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.PatientListView.Activation = System.Windows.Forms.ItemActivation.OneClick;
+            this.PatientListView.BackColor = System.Drawing.SystemColors.Info;
+            this.PatientListView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PatientListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.FirstNameColumn,
             this.LastNameColumn,
@@ -68,12 +70,17 @@
             this.GenderColumn});
             this.PatientListView.FullRowSelect = true;
             this.PatientListView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.PatientListView.HoverSelection = true;
+            listViewItem1.StateImageIndex = 0;
             this.PatientListView.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem2});
+            listViewItem1});
             this.PatientListView.Location = new System.Drawing.Point(12, 41);
             this.PatientListView.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.PatientListView.MultiSelect = false;
             this.PatientListView.Name = "PatientListView";
             this.PatientListView.RightToLeftLayout = true;
+            this.PatientListView.ShowGroups = false;
+            this.PatientListView.ShowItemToolTips = true;
             this.PatientListView.Size = new System.Drawing.Size(534, 362);
             this.PatientListView.TabIndex = 1;
             this.PatientListView.TabStop = false;
@@ -106,7 +113,7 @@
             // 
             // LogoutBtn
             // 
-            this.LogoutBtn.Location = new System.Drawing.Point(317, 5);
+            this.LogoutBtn.Location = new System.Drawing.Point(352, 5);
             this.LogoutBtn.Name = "LogoutBtn";
             this.LogoutBtn.Size = new System.Drawing.Size(94, 29);
             this.LogoutBtn.TabIndex = 2;
@@ -119,9 +126,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(70, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 20);
+            this.label1.Size = new System.Drawing.Size(15, 20);
             this.label1.TabIndex = 3;
-            this.label1.Text = "label1";
+            this.label1.Text = "-";
             // 
             // label2
             // 
@@ -134,7 +141,7 @@
             // 
             // ExitBtn
             // 
-            this.ExitBtn.Location = new System.Drawing.Point(417, 5);
+            this.ExitBtn.Location = new System.Drawing.Point(452, 5);
             this.ExitBtn.Name = "ExitBtn";
             this.ExitBtn.Size = new System.Drawing.Size(94, 29);
             this.ExitBtn.TabIndex = 5;
@@ -159,7 +166,7 @@
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "TreatmentPage";
+            this.Text = "זיקית - מסך ראשי";
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TreatmentPage_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.TreatmentPage_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.TreatmentPage_MouseUp);

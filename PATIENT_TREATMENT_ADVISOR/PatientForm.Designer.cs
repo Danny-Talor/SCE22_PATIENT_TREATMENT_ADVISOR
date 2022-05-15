@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(" לתאם פגישה עם תזונאי, כדור 5 מ\"ג של סימוביל ביום למשך שבוע");
-            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem(" שני כדורי 10 מ\"ג של B12 ביום למשך חודש ");
             this.GenderLabel = new System.Windows.Forms.Label();
             this.WBCLabel = new System.Windows.Forms.Label();
             this.IDLabel = new System.Windows.Forms.Label();
@@ -64,6 +62,8 @@
             this.UreaData = new System.Windows.Forms.Label();
             this.DandRbtn = new System.Windows.Forms.Button();
             this.DndRListView = new System.Windows.Forms.ListView();
+            this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
             this.FeverLabel = new System.Windows.Forms.Label();
             this.PregLabel = new System.Windows.Forms.Label();
             this.SmokerLabel = new System.Windows.Forms.Label();
@@ -78,6 +78,7 @@
             this.EthnLabel = new System.Windows.Forms.Label();
             this.VegData = new System.Windows.Forms.Label();
             this.EthnData = new System.Windows.Forms.Label();
+            this.CloseBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // GenderLabel
@@ -370,7 +371,7 @@
             // 
             // DandRbtn
             // 
-            this.DandRbtn.Location = new System.Drawing.Point(142, 441);
+            this.DandRbtn.Location = new System.Drawing.Point(169, 415);
             this.DandRbtn.Name = "DandRbtn";
             this.DandRbtn.Size = new System.Drawing.Size(203, 32);
             this.DandRbtn.TabIndex = 69;
@@ -380,17 +381,25 @@
             // 
             // DndRListView
             // 
-            this.DndRListView.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem3,
-            listViewItem4});
-            this.DndRListView.Location = new System.Drawing.Point(12, 479);
+            this.DndRListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2});
+            this.DndRListView.Location = new System.Drawing.Point(31, 453);
             this.DndRListView.Name = "DndRListView";
             this.DndRListView.RightToLeftLayout = true;
             this.DndRListView.ShowGroups = false;
             this.DndRListView.Size = new System.Drawing.Size(521, 234);
             this.DndRListView.TabIndex = 70;
             this.DndRListView.UseCompatibleStateImageBehavior = false;
-            this.DndRListView.View = System.Windows.Forms.View.List;
+            this.DndRListView.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Width = 300;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Width = 300;
             // 
             // FeverLabel
             // 
@@ -518,11 +527,22 @@
             this.EthnData.TabIndex = 57;
             this.EthnData.Text = "---";
             // 
+            // CloseBtn
+            // 
+            this.CloseBtn.Location = new System.Drawing.Point(235, 693);
+            this.CloseBtn.Name = "CloseBtn";
+            this.CloseBtn.Size = new System.Drawing.Size(94, 29);
+            this.CloseBtn.TabIndex = 71;
+            this.CloseBtn.Text = "סגירה";
+            this.CloseBtn.UseVisualStyleBackColor = true;
+            this.CloseBtn.Click += new System.EventHandler(this.CloseBtn_Click);
+            // 
             // PatientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(564, 725);
+            this.Controls.Add(this.CloseBtn);
             this.Controls.Add(this.DndRListView);
             this.Controls.Add(this.DandRbtn);
             this.Controls.Add(this.IronData);
@@ -571,6 +591,7 @@
             this.Controls.Add(this.FeverLabel);
             this.Controls.Add(this.AgeLabel);
             this.Controls.Add(this.FirstNameLabel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "PatientForm";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
@@ -630,5 +651,8 @@
         private Label EthnLabel;
         private Label VegData;
         private Label EthnData;
+        private ColumnHeader columnHeader1;
+        private ColumnHeader columnHeader2;
+        private Button CloseBtn;
     }
 }

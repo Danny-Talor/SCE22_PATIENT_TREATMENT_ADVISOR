@@ -63,14 +63,9 @@
             this.GenderBox = new System.Windows.Forms.ComboBox();
             this.ImportButton = new System.Windows.Forms.Button();
             this.FileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.QSmokerCB = new System.Windows.Forms.CheckBox();
-            this.QFeverCB = new System.Windows.Forms.CheckBox();
-            this.QLungCB = new System.Windows.Forms.CheckBox();
             this.QPregCB = new System.Windows.Forms.CheckBox();
             this.EthnicityLabel = new System.Windows.Forms.Label();
             this.EthnicityBox = new System.Windows.Forms.ComboBox();
-            this.QDiaVomCV = new System.Windows.Forms.CheckBox();
-            this.QVegCB = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // APBox
@@ -398,39 +393,6 @@
             this.FileDialog.Title = "ייבוא פרטי מטופל";
             this.FileDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.FileDialog_FileOk);
             // 
-            // QSmokerCB
-            // 
-            this.QSmokerCB.AutoSize = true;
-            this.QSmokerCB.Location = new System.Drawing.Point(1201, 336);
-            this.QSmokerCB.Name = "QSmokerCB";
-            this.QSmokerCB.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.QSmokerCB.Size = new System.Drawing.Size(66, 24);
-            this.QSmokerCB.TabIndex = 40;
-            this.QSmokerCB.Text = "מעשן";
-            this.QSmokerCB.UseVisualStyleBackColor = true;
-            // 
-            // QFeverCB
-            // 
-            this.QFeverCB.AutoSize = true;
-            this.QFeverCB.Location = new System.Drawing.Point(1167, 366);
-            this.QFeverCB.Name = "QFeverCB";
-            this.QFeverCB.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.QFeverCB.Size = new System.Drawing.Size(100, 24);
-            this.QFeverCB.TabIndex = 41;
-            this.QFeverCB.Text = "סובל מחום";
-            this.QFeverCB.UseVisualStyleBackColor = true;
-            // 
-            // QLungCB
-            // 
-            this.QLungCB.AutoSize = true;
-            this.QLungCB.Location = new System.Drawing.Point(1156, 396);
-            this.QLungCB.Name = "QLungCB";
-            this.QLungCB.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.QLungCB.Size = new System.Drawing.Size(111, 24);
-            this.QLungCB.TabIndex = 42;
-            this.QLungCB.Text = "מחלת ריאות";
-            this.QLungCB.UseVisualStyleBackColor = true;
-            // 
             // QPregCB
             // 
             this.QPregCB.AutoSize = true;
@@ -465,41 +427,14 @@
             this.EthnicityBox.Size = new System.Drawing.Size(93, 28);
             this.EthnicityBox.TabIndex = 45;
             // 
-            // QDiaVomCV
-            // 
-            this.QDiaVomCV.AutoSize = true;
-            this.QDiaVomCV.Location = new System.Drawing.Point(1097, 426);
-            this.QDiaVomCV.Name = "QDiaVomCV";
-            this.QDiaVomCV.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.QDiaVomCV.Size = new System.Drawing.Size(170, 24);
-            this.QDiaVomCV.TabIndex = 46;
-            this.QDiaVomCV.Text = "שילשולים ו/או הקאות";
-            this.QDiaVomCV.UseVisualStyleBackColor = true;
-            // 
-            // QVegCB
-            // 
-            this.QVegCB.AutoSize = true;
-            this.QVegCB.Location = new System.Drawing.Point(1129, 456);
-            this.QVegCB.Name = "QVegCB";
-            this.QVegCB.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.QVegCB.Size = new System.Drawing.Size(138, 24);
-            this.QVegCB.TabIndex = 47;
-            this.QVegCB.Text = "צמחוני או טבעוני";
-            this.QVegCB.UseVisualStyleBackColor = true;
-            // 
             // NewPatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1375, 552);
-            this.Controls.Add(this.QVegCB);
-            this.Controls.Add(this.QDiaVomCV);
             this.Controls.Add(this.EthnicityBox);
             this.Controls.Add(this.EthnicityLabel);
             this.Controls.Add(this.QPregCB);
-            this.Controls.Add(this.QLungCB);
-            this.Controls.Add(this.QFeverCB);
-            this.Controls.Add(this.QSmokerCB);
             this.Controls.Add(this.ImportButton);
             this.Controls.Add(this.GenderBox);
             this.Controls.Add(this.GenderLabel);
@@ -537,6 +472,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "NewPatient";
             this.Text = "NewPatient";
+            this.Load += new System.EventHandler(this.NewPatient_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -578,13 +514,8 @@
         private ComboBox GenderBox;
         private Button ImportButton;
         private OpenFileDialog FileDialog;
-        private CheckBox QSmokerCB;
-        private CheckBox QFeverCB;
-        private CheckBox QLungCB;
         private CheckBox QPregCB;
         private Label EthnicityLabel;
         private ComboBox EthnicityBox;
-        private CheckBox QDiaVomCV;
-        private CheckBox QVegCB;
     }
 }

@@ -34,6 +34,7 @@
             this.UserNameLabel = new System.Windows.Forms.Label();
             this.PasswordLabel = new System.Windows.Forms.Label();
             this.RegisterLabel = new System.Windows.Forms.LinkLabel();
+            this.ExitBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // UsernameBox
@@ -94,24 +95,38 @@
             this.RegisterLabel.Text = "אינך רשום ? לחץ כאן להרשמה";
             this.RegisterLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.RegisterLabel_LinkClicked);
             // 
+            // ExitBtn
+            // 
+            this.ExitBtn.Location = new System.Drawing.Point(233, 1);
+            this.ExitBtn.Name = "ExitBtn";
+            this.ExitBtn.Size = new System.Drawing.Size(94, 29);
+            this.ExitBtn.TabIndex = 6;
+            this.ExitBtn.Text = "יציאה";
+            this.ExitBtn.UseVisualStyleBackColor = true;
+            this.ExitBtn.Click += new System.EventHandler(this.ExitBtn_Click);
+            // 
             // UserSignInPage
             // 
             this.AcceptButton = this.LoginUserButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(348, 277);
+            this.AutoSize = true;
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackgroundImage = global::PATIENT_TREATMENT_ADVISOR.Properties.Resources.background1;
+            this.ClientSize = new System.Drawing.Size(329, 305);
+            this.Controls.Add(this.ExitBtn);
             this.Controls.Add(this.RegisterLabel);
             this.Controls.Add(this.PasswordLabel);
             this.Controls.Add(this.UserNameLabel);
             this.Controls.Add(this.LoginUserButton);
             this.Controls.Add(this.PasswordBox);
             this.Controls.Add(this.UsernameBox);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "UserSignInPage";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "איגואנה";
+            this.Text = "זיקית - התחברות";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UserSignInPage_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -126,5 +141,6 @@
         private Label UserNameLabel;
         public Label PasswordLabel;
         private LinkLabel RegisterLabel;
+        private Button ExitBtn;
     }
 }

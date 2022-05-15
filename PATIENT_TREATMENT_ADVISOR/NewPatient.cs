@@ -337,9 +337,6 @@ namespace PATIENT_TREATMENT_ADVISOR
                     excel_Worksheet.Cells[i, 4] = AgeBox.Text;
                     excel_Worksheet.Cells[i, 5] = GenderBox.Text;
                     excel_Worksheet.Cells[i, 6] = EthnicityBox.Text;
-                    excel_Worksheet.Cells[i, 7] = QFeverCB.Checked ?  "כן" : "לא";
-                    excel_Worksheet.Cells[i, 8] = QSmokerCB.Checked ? "כן" : "לא";
-                    excel_Worksheet.Cells[i, 9] = QLungCB.Checked ? "כן" : "לא";
                     if (GenderBox.Text == "גבר")
                     {
                         excel_Worksheet.Cells[i, 10] = "לא";
@@ -348,8 +345,7 @@ namespace PATIENT_TREATMENT_ADVISOR
                     {
                         excel_Worksheet.Cells[i, 10] = QPregCB.Checked ? "כן" : "לא";
                     }
-                    excel_Worksheet.Cells[i, 11] = QDiaVomCV.Checked ? "כן" : "לא";
-                    excel_Worksheet.Cells[i, 12] = QVegCB.Checked ? "כן" : "לא";
+
                     excel_Worksheet.Cells[i, 13] = WBCBox.Text;
                     excel_Worksheet.Cells[i, 14] = NeutBox.Text + "%";
                     excel_Worksheet.Cells[i, 15] = LymphBox.Text + "%";
@@ -388,6 +384,11 @@ namespace PATIENT_TREATMENT_ADVISOR
             {
                 QPregCB.Visible = false;
             }
+        }
+
+        private void NewPatient_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

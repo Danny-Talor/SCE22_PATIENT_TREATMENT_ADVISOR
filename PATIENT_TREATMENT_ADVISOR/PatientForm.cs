@@ -6,14 +6,13 @@ namespace PATIENT_TREATMENT_ADVISOR
     {
         readonly int patientIndex;
 
-        string FirstName = "";
-        string LastName = "";
-        string ID = "";
         int Age;
         string Gender = "";
 
         double WBC;
         double Neut;
+        const  double Neut_HIGH = 54;
+        const double Neut_LOW = 28;
         double Lymph;
         double RBC;
         double HCT;
@@ -32,7 +31,12 @@ namespace PATIENT_TREATMENT_ADVISOR
         string isVeg = "";
         string ethnicity = "";
 
-        HashSet<string> Diagnosis = new HashSet<string>();
+        Dictionary<string,int> diagnosis = new() { ["אנמיה"] = 0, ["דיאטה"] = 0, ["דימום"] = 0,
+            ["היפרליפידמיה"] = 0,["הפרעה ביצירת תאי דם"] = 0, ["הפרעה המטולוגית"] = 0, ["הרעלת ברזל"] = 0,
+            ["התייבשות"] = 0, ["זיהום"] = 0, ["חוסר בויטמינים"] = 0, ["מחלה ויראלית"] = 0, ["מחלות בדרכי המרה"] = 0,
+            ["מחלת לב"] = 0, ["מחלת דם"] = 0, ["מחלת כבד"] = 0, ["מחלת כליה"] = 0, ["מחלת שריר"] = 0, ["מחלת ריאות"] = 0,
+            ["מחסור בברזל"] = 0,["מעשן"] = 0, ["פעילות יתר של בלוטת התריס"] = 0, ["סוכרת מבוגרים"] = 0, ["סרטן"] = 0,
+            ["צריכה מוגברת של בשר"] = 0, ["שימוש בתרופות שונות"] = 0, ["תת תזונה"] = 0};
 
         public PatientForm(int index)
         {
@@ -46,50 +50,77 @@ namespace PATIENT_TREATMENT_ADVISOR
             if (Program.excel_Workbook != null)
             {
                 Excel.Worksheet excel_Worksheet = (Excel.Worksheet)Program.excel_Workbook.Sheets[2]; // Select patients sheet
-                FirstName = FirstNameData.Text = excel_Worksheet.Cells[patientIndex, 1].Value2.ToString();
-                LastName = LastNameData.Text = excel_Worksheet.Cells[patientIndex, 2].Value2.ToString();
-                ID = IDData.Text = excel_Worksheet.Cells[patientIndex, 3].Value2.ToString();
+                FirstNameData.Text = excel_Worksheet.Cells[patientIndex, 1].Value2.ToString();
+                LastNameData.Text = excel_Worksheet.Cells[patientIndex, 2].Value2.ToString();
+                IDData.Text = excel_Worksheet.Cells[patientIndex, 3].Value2.ToString();
                 Age = (int)excel_Worksheet.Cells[patientIndex, 4].Value2;
                 AgeData.Text = excel_Worksheet.Cells[patientIndex, 4].Value2.ToString();
                 Gender = GenderData.Text = excel_Worksheet.Cells[patientIndex, 5].Value2.ToString();
                 ethnicity = EthnData.Text = excel_Worksheet.Cells[patientIndex, 6].Value2.ToString();
-                hasFever = FeverData.Text = excel_Worksheet.Cells[patientIndex, 7].Value2.ToString();
-                isSmoker = SmokerData.Text = excel_Worksheet.Cells[patientIndex, 8].Value2.ToString();
-                hasLungDisease = LungData.Text = excel_Worksheet.Cells[patientIndex, 9].Value2.ToString();
+
+                if(excel_Worksheet.Cells[patientIndex, 7].Value != null)
+                {
+                    QuestionDataInit(excel_Worksheet);
+                    DandRbtn.Visible = false;
+                }
+
                 isPregnant = PregData.Text = excel_Worksheet.Cells[patientIndex, 10].Value2.ToString();
-                hasDiaVom = DiaVomData.Text = excel_Worksheet.Cells[patientIndex, 11].Value2.ToString();
-                isVeg = VegData.Text = excel_Worksheet.Cells[patientIndex, 12].Value2.ToString();
                 WBC = excel_Worksheet.Cells[patientIndex, 13].Value2;
-                WBCData.Text = excel_Worksheet.Cells[patientIndex, 13].Value2.ToString();
+                WBCData.Text = WBC.ToString();
                 Neut = excel_Worksheet.Cells[patientIndex, 14].Value2;
-                NeutData.Text = excel_Worksheet.Cells[patientIndex, 14].Value2.ToString();
+                NeutData.Text = Neut.ToString();
                 Lymph = excel_Worksheet.Cells[patientIndex, 15].Value2;
-                LymphData.Text = excel_Worksheet.Cells[patientIndex, 15].Value2.ToString();
+                LymphData.Text = Lymph.ToString();
                 RBC = excel_Worksheet.Cells[patientIndex, 16].Value2;
-                RBCData.Text = excel_Worksheet.Cells[patientIndex, 16].Value2.ToString();
+                RBCData.Text = RBC.ToString();
                 HCT = excel_Worksheet.Cells[patientIndex, 17].Value2;
-                HCTData.Text = excel_Worksheet.Cells[patientIndex, 17].Value2.ToString();
+                HCTData.Text = HCT.ToString();
                 Urea = excel_Worksheet.Cells[patientIndex, 18].Value2;
-                UreaData.Text = excel_Worksheet.Cells[patientIndex, 18].Value2.ToString();
+                UreaData.Text = Urea.ToString();
                 Hb = excel_Worksheet.Cells[patientIndex, 19].Value2;
-                HbData.Text = excel_Worksheet.Cells[patientIndex, 19].Value2.ToString();
+                HbData.Text = Hb.ToString();
                 Crtn = excel_Worksheet.Cells[patientIndex, 20].Value2;
-                CrtnData.Text = excel_Worksheet.Cells[patientIndex, 20].Value2.ToString();
+                CrtnData.Text = Crtn.ToString();
                 Iron = excel_Worksheet.Cells[patientIndex, 21].Value2;
-                IronData.Text = excel_Worksheet.Cells[patientIndex, 21].Value2.ToString();
+                IronData.Text = Iron.ToString();
                 HDL = excel_Worksheet.Cells[patientIndex, 22].Value2;
-                HDLData.Text = excel_Worksheet.Cells[patientIndex, 22].Value2.ToString();
+                HDLData.Text = HDL.ToString();
                 AP = excel_Worksheet.Cells[patientIndex, 23].Value2;
-                APData.Text = excel_Worksheet.Cells[patientIndex, 23].Value2.ToString();
+                APData.Text = AP.ToString();
                 System.Runtime.InteropServices.Marshal.FinalReleaseComObject(excel_Worksheet);
             }
         }
 
         private void DandRbtn_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(WBC.ToString());
+            if (Program.excel_Workbook != null)
+            {
+                Excel.Worksheet excel_Worksheet = (Excel.Worksheet)Program.excel_Workbook.Sheets[2]; // Select patients sheet
+                if(excel_Worksheet.Cells[patientIndex, 7].Value == null)
+                {
+                    QuestionForm qform = new(patientIndex);
+                    qform.ShowDialog();
+                    QuestionDataInit(excel_Worksheet);
+                }
+                else
+                {
+                    QuestionDataInit(excel_Worksheet);
+                }
+                DandRbtn.Visible = false;
+                //TODO:diagnosis function
+                System.Runtime.InteropServices.Marshal.FinalReleaseComObject(excel_Worksheet);
+            }
+
         }
 
+        private void QuestionDataInit(Excel.Worksheet excel_Worksheet)
+        {
+            hasFever = FeverData.Text = excel_Worksheet.Cells[patientIndex, 7].Value2.ToString();
+            isSmoker = SmokerData.Text = excel_Worksheet.Cells[patientIndex, 8].Value2.ToString();
+            hasLungDisease = LungData.Text = excel_Worksheet.Cells[patientIndex, 9].Value2.ToString();
+            hasDiaVom = DiaVomData.Text = excel_Worksheet.Cells[patientIndex, 11].Value2.ToString();
+            isVeg = VegData.Text = excel_Worksheet.Cells[patientIndex, 12].Value2.ToString();
+        }
         private void PatientDiagnosis()
         {
 
@@ -101,11 +132,21 @@ namespace PATIENT_TREATMENT_ADVISOR
             {
                 if (WBC < 4500)
                 {
-                    //viral infection or cancer
+                    diagnosis["מחלה ויראלית"]++;
+                    diagnosis["סרטן"]++;
+                
                 }
                 else if (WBC > 11000) // Check if has fever
                 {
-                    //infection or blood disease or cancer
+                    if (hasFever == "כן")
+                    {
+                        diagnosis["זיהום"]++;
+                    }
+                    else
+                    {
+                        diagnosis["סרטן"]++;
+                        diagnosis["מחלת דם"]++;
+                    }
                 }
                 else
                 {
@@ -116,11 +157,21 @@ namespace PATIENT_TREATMENT_ADVISOR
             {
                 if (WBC < 5500)
                 {
-                    //viral infection or cancer
+                    diagnosis["מחלה ויראלית"]++;
+                    diagnosis["סרטן"]++;
                 }
                 else if (WBC > 15500)
                 {
-                    //infection or blood disease or cancer
+                    if (hasFever == "כן")
+                    {
+                        diagnosis["זיהום"]++;
+                    }
+                    else
+                    {
+                        diagnosis["סרטן"]++;
+                        diagnosis["מחלת דם"]++;
+
+                    }
                 }
                 else
                 {
@@ -131,11 +182,13 @@ namespace PATIENT_TREATMENT_ADVISOR
             {
                 if (WBC < 6000)
                 {
-                    //viral infection or cancer
+                    diagnosis["מחלה ויראלית"]++;
+                    diagnosis["סרטן"]++;
                 }
                 else if (WBC > 17500)
                 {
-                    //infection or blood disease or cancer
+                    diagnosis["סרטן"]++;
+                    diagnosis["מחלת דם"]++;
                 }
                 else
                 {
@@ -147,13 +200,14 @@ namespace PATIENT_TREATMENT_ADVISOR
         {
             if (Neut < 28)
             {
-                // blood creation
-                // infection
-                // cancer
+                diagnosis["הפרעה ביצירת תאי דם"]++;
+                diagnosis["זיהום"]++;
+                diagnosis["סרטן"]++;
+
             }
             else if (Neut > 54)
             {
-                // infection
+                diagnosis["זיהום"]++;
             }
             else
             {
@@ -164,12 +218,13 @@ namespace PATIENT_TREATMENT_ADVISOR
         {
             if (Lymph < 36)
             {
-                //blood creation
+                diagnosis["הפרעה ביצירת תאי דם"]++;
             }
             else if (Lymph > 52)
             {
-                //infection
-                //lymphoma cancer
+                diagnosis["זיהום"]++; 
+                diagnosis["סרטן"]++;
+
             }
             else
             {
@@ -180,12 +235,19 @@ namespace PATIENT_TREATMENT_ADVISOR
         {
             if (RBC < 4.5)
             {
-                //anemia
-                //bloodloss
+                diagnosis["זיהום"]++;
+                diagnosis["אנמיה"]++;
+                diagnosis["דימום"]++;
+
             }
-            else if (RBC > 6) // smoking? lung shit?
+            else if (RBC > 6)
             {
-                //blood creation
+                if(isSmoker == "לא" || hasLungDisease == "לא")
+                {
+                    diagnosis["הפרעה ביצירת הדם"]++;
+                }
+                diagnosis["מעשן"]++;
+                diagnosis["מחלת ריאות"]++;
             }
             else
             {
@@ -198,12 +260,16 @@ namespace PATIENT_TREATMENT_ADVISOR
             {
                 if (HCT < 37)
                 {
-                    //bloodloss
-                    //anemia
+                    diagnosis["אנמיה"]++;
+                    diagnosis["דימום"]++;
+
                 }
                 else if (HCT > 54)
                 {
-                    //because is a smoker
+                    if (isSmoker == "כן")
+                    {
+                        diagnosis["מעשן"]++;
+                    }
                 }
                 else
                 {
@@ -214,12 +280,15 @@ namespace PATIENT_TREATMENT_ADVISOR
             {
                 if (HCT < 33)
                 {
-                    //bloodloss
-                    //anemia
+                    diagnosis["אנמיה"]++;
+                    diagnosis["דימום"]++;
                 }
                 else if (HCT > 47)
                 {
-                    //because is a smoker
+                    if (isSmoker == "כן")
+                    {
+                        diagnosis["מעשן"]++;
+                    }
                 }
                 else
                 {
@@ -233,11 +302,18 @@ namespace PATIENT_TREATMENT_ADVISOR
             {
                 if (Urea < 18.7)
                 {
-
+                    if(isPregnant == "לא")
+                    {
+                        diagnosis["תת תזונה"]++;
+                        diagnosis["דיאטה"]++;
+                        diagnosis["מחלת כבד"]++;
+                    }  
                 }
                 else if (RBC > 47.3)
                 {
-
+                    diagnosis["מחלת כליה"]++;
+                    diagnosis["דיאטה"]++;
+                    diagnosis["התייבשות"]++;
                 }
                 else
                 {
@@ -248,11 +324,18 @@ namespace PATIENT_TREATMENT_ADVISOR
             {
                 if (Urea < 17)
                 {
-
+                    if (isPregnant == "לא")
+                    {
+                        diagnosis["תת תזונה"]++;
+                        diagnosis["דיאטה"]++;
+                        diagnosis["מחלת כבד"]++;
+                    }
                 }
                 else if (RBC > 43)
                 {
-
+                    diagnosis["מחלת כליה"]++;
+                    diagnosis["דיאטה"]++;
+                    diagnosis["התייבשות"]++;
                 }
                 else
                 {
@@ -263,7 +346,13 @@ namespace PATIENT_TREATMENT_ADVISOR
 
         private void HbCheck()
         {
-
+            if ( Age < 18 && Hb < 11.5 || Age >= 18 && Hb < 12)
+            {
+                diagnosis["אנמיה"]++;
+                diagnosis["הפרעה המטולוגית"]++;
+                diagnosis["דימום"]++;
+                diagnosis["מחסור בברזל"]++;
+            }
         }
 
         private void CrtnCheck() // low -> vegan? high -> diavom, muscle disease, high meat consumption
@@ -272,6 +361,14 @@ namespace PATIENT_TREATMENT_ADVISOR
             {
                 if (Crtn < 0.6)
                 {
+                    if(isVeg == "כן")
+                    {
+                        diagnosis["תת תזונה"]++;
+                    }
+                    else
+                    {
+                        diagnosis["מחלת שריר"]++;
+                    }
 
                 }
                 else if (Crtn > 1.2)
@@ -336,13 +433,17 @@ namespace PATIENT_TREATMENT_ADVISOR
             {
                 if (Iron < 60)
                 {
+                    diagnosis["תת תזונה"]++;
+                    diagnosis["דימום"]++;
+                    diagnosis["מחסור בברזל"]++;
+
                     // eat not good
                     // iron deficiency
                     // blood coming out
                 }
                 else if (Iron > 160)
                 {
-                    // iron poisoning
+                    diagnosis["הרעלת ברזל"]++;
                 }
                 else
                 {
@@ -458,6 +559,11 @@ namespace PATIENT_TREATMENT_ADVISOR
                 {
                 }
             }
+        }
+
+        private void CloseBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 

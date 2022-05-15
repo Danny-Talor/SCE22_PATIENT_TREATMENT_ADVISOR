@@ -83,5 +83,15 @@ namespace PATIENT_TREATMENT_ADVISOR
                 e.Cancel = true;
             }
         }
+
+        private void ExitBtn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void ReturnBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
