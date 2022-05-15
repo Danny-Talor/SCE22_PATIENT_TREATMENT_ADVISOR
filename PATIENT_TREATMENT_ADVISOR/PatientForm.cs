@@ -37,7 +37,7 @@ namespace PATIENT_TREATMENT_ADVISOR
             ["מחלת לב"] = 0, ["מחלת דם"] = 0, ["מחלת כבד"] = 0, ["מחלת כליה"] = 0, ["מחלת שריר"] = 0, ["מחלת ריאות"] = 0,
             ["מחסור בברזל"] = 0,["מעשן"] = 0, ["פעילות יתר של בלוטת התריס"] = 0, ["סוכרת מבוגרים"] = 0, ["סרטן"] = 0,
             ["צריכה מוגברת של בשר"] = 0, ["שימוש בתרופות שונות"] = 0, ["תת תזונה"] = 0};
-
+        
         public PatientForm(int index)
         {
             this.patientIndex = index + 2;
@@ -96,7 +96,7 @@ namespace PATIENT_TREATMENT_ADVISOR
             if (Program.excel_Workbook != null)
             {
                 Excel.Worksheet excel_Worksheet = (Excel.Worksheet)Program.excel_Workbook.Sheets[2]; // Select patients sheet
-                if(excel_Worksheet.Cells[patientIndex, 7].Value == null)
+                if (excel_Worksheet.Cells[patientIndex, 7].Value == null)
                 {
                     QuestionForm qform = new(patientIndex);
                     qform.ShowDialog();
@@ -123,7 +123,25 @@ namespace PATIENT_TREATMENT_ADVISOR
         }
         private void PatientDiagnosis()
         {
+            WBCCheck();
+            NeutCheck();
+            LymphCheck();
+            RBCCheck();
+            HCTCheck();
+            UreaCheck();
+            HbCheck();
+            IronCheck();
+            HDLCheck(); 
+            APCheck();  
+            CrtnCheck();
+        }
 
+        private void PatientRecommendation()
+        {
+            foreach (KeyValuePair<string,int> KVP in diagnosis)
+            {
+
+            }
         }
 
         private void WBCCheck()
@@ -314,6 +332,7 @@ namespace PATIENT_TREATMENT_ADVISOR
                     diagnosis["מחלת כליה"]++;
                     diagnosis["דיאטה"]++;
                     diagnosis["התייבשות"]++;
+                    diagnosis["צריכה מוגברת של בשר"]++;
                 }
                 else
                 {
@@ -336,6 +355,7 @@ namespace PATIENT_TREATMENT_ADVISOR
                     diagnosis["מחלת כליה"]++;
                     diagnosis["דיאטה"]++;
                     diagnosis["התייבשות"]++;
+                    diagnosis["צריכה מוגברת של בשר"]++;
                 }
                 else
                 {
@@ -361,7 +381,7 @@ namespace PATIENT_TREATMENT_ADVISOR
             {
                 if (Crtn < 0.6)
                 {
-                    if(isVeg == "כן")
+                    if (diagnosis["תת תזונה"] >= 1 && diagnosis["צריכה מוגברת של בשר"] < 1)
                     {
                         diagnosis["תת תזונה"]++;
                     }
@@ -373,7 +393,16 @@ namespace PATIENT_TREATMENT_ADVISOR
                 }
                 else if (Crtn > 1.2)
                 {
-
+                    if (diagnosis["צריכה מוגברת של בשר"] >= 1)
+                    {
+                        diagnosis["צריכה מוגברת של בשר"]++;
+                    }
+                    else if (hasDiaVom == "לא" || diagnosis["מחלת שריר"]<1||diagnosis["צריכה מוגברת של בשר"]<1) 
+                    {
+                        diagnosis["מחלת כליה"]++;
+                        diagnosis["מחלת שריר"]++;
+                    }
+                    
                 }
                 else
                 {
@@ -384,11 +413,26 @@ namespace PATIENT_TREATMENT_ADVISOR
             {
                 if (Crtn < 0.6)
                 {
-
+                    if (diagnosis["תת תזונה"] >= 1 && diagnosis["צריכה מוגברת של בשר"] < 1)
+                    {
+                        diagnosis["תת תזונה"]++;
+                    }
+                    else
+                    {
+                        diagnosis["מחלת שריר"]++;
+                    }
                 }
                 else if (Crtn > 1)
                 {
-
+                    if (diagnosis["צריכה מוגברת של בשר"] >= 1)
+                    {
+                        diagnosis["צריכה מוגברת של בשר"]++;
+                    }
+                    else if (hasDiaVom == "לא" || diagnosis["מחלת שריר"] < 1 || diagnosis["צריכה מוגברת של בשר"] < 1)
+                    {
+                        diagnosis["מחלת כליה"]++;
+                        diagnosis["מחלת שריר"]++;
+                    }
                 }
                 else
                 {
@@ -399,10 +443,26 @@ namespace PATIENT_TREATMENT_ADVISOR
             {
                 if (Crtn < 0.5)
                 {
-
+                    if (diagnosis["תת תזונה"] >= 1 && diagnosis["צריכה מוגברת של בשר"] < 1)
+                    {
+                        diagnosis["תת תזונה"]++;
+                    }
+                    else
+                    {
+                        diagnosis["מחלת שריר"]++;
+                    }
                 }
                 else if (Crtn > 1)
                 {
+                    if (diagnosis["צריכה מוגברת של בשר"] >= 1)
+                    {
+                        diagnosis["צריכה מוגברת של בשר"]++;
+                    }
+                    else if (hasDiaVom == "לא" || diagnosis["מחלת שריר"] < 1 || diagnosis["צריכה מוגברת של בשר"] < 1)
+                    {
+                        diagnosis["מחלת כליה"]++;
+                        diagnosis["מחלת שריר"]++;
+                    }
 
                 }
                 else
@@ -414,10 +474,26 @@ namespace PATIENT_TREATMENT_ADVISOR
             {
                 if (Crtn < 0.2)
                 {
-
+                    if (diagnosis["תת תזונה"] >= 1 && diagnosis["צריכה מוגברת של בשר"] < 1)
+                    {
+                        diagnosis["תת תזונה"]++;
+                    }
+                    else
+                    {
+                        diagnosis["מחלת שריר"]++;
+                    }
                 }
                 else if (Crtn > 0.5)
                 {
+                    if (diagnosis["צריכה מוגברת של בשר"] >= 1)
+                    {
+                        diagnosis["צריכה מוגברת של בשר"]++;
+                    }
+                    else if (hasDiaVom == "לא" || diagnosis["מחלת שריר"] < 1 || diagnosis["צריכה מוגברת של בשר"] < 1)
+                    {
+                        diagnosis["מחלת כליה"]++;
+                        diagnosis["מחלת שריר"]++;
+                    }
 
                 }
                 else
@@ -454,11 +530,17 @@ namespace PATIENT_TREATMENT_ADVISOR
             {
                 if (Iron < 48)
                 {
-
+                    if (isPregnant == "לא")
+                    {
+                        diagnosis["תת תזונה"]++;
+                        diagnosis["דימום"]++;
+                        
+                    }
+                    diagnosis["מחסור בברזל"]++;
                 }
                 else if (Iron > 128)
                 {
-
+                    diagnosis["הרעלת ברזל"]++;
                 }
                 else
                 {
@@ -475,30 +557,18 @@ namespace PATIENT_TREATMENT_ADVISOR
                 {
                     if (HDL < 34.8)
                     {
-
-                    }
-                    else if (HDL > 74.44)
-                    {
-
-                    }
-                    else
-                    {
-                        //Ok
+                        diagnosis["מחלת לב"]++;
+                        diagnosis["היפר ליפידמיה"]++;
+                        diagnosis["סכרת מבוגרים"]++;
                     }
                 }
                 else
                 {
                     if (HDL < 29)
                     {
-
-                    }
-                    else if (HDL > 62)
-                    {
-
-                    }
-                    else
-                    {
-                        //Ok
+                        diagnosis["מחלת לב"]++;
+                        diagnosis["היפר ליפידמיה"]++;
+                        diagnosis["סכרת מבוגרים"]++;
                     }
                 }
 
@@ -509,30 +579,21 @@ namespace PATIENT_TREATMENT_ADVISOR
                 {
                     if (HDL < 40.8)
                     {
-
+                        diagnosis["מחלת לב"]++;
+                        diagnosis["היפר ליפידמיה"]++;
+                        diagnosis["סכרת מבוגרים"]++;
                     }
-                    else if (HDL > 98.4)
-                    {
-
-                    }
-                    else
-                    {
-                        //Ok
-                    }
+                   
                 }
                 else
                 {
                     if (HDL < 34)
                     {
-
+                        diagnosis["מחלת לב"]++;
+                        diagnosis["היפר ליפידמיה"]++;
+                        diagnosis["סכרת מבוגרים"]++;
                     }
-                    else if (HDL > 82)
-                    {
-                    }
-                    else
-                    {
-                        //Ok
-                    }
+                   
                 }
             }
         }
@@ -543,20 +604,30 @@ namespace PATIENT_TREATMENT_ADVISOR
             {
                 if (AP < 60)
                 {
-
+                    diagnosis["דיאטה"]++;
+                    diagnosis["חוסר בוויטמינים"]++;
                 }
                 else if (AP > 120)
                 {
+                    diagnosis["מחלת כבד"]++;
+                    diagnosis["מחלות בדרכי המרה"]++;
+                    diagnosis["פעילות יתר של בלוטת התריס"]++;
+                    diagnosis["שימוש בתרופות שונות"]++;
                 }
             }
             else
             {
                 if (AP < 30)
                 {
-
+                    diagnosis["דיאטה"]++;
+                    diagnosis["חוסר בוויטמינים"]++;
                 }
                 else if (AP > 90)
                 {
+                    diagnosis["מחלת כבד"]++;
+                    diagnosis["מחלות בדרכי המרה"]++;
+                    diagnosis["פעילות יתר של בלוטת התריס"]++;
+                    diagnosis["שימוש בתרופות שונות"]++;
                 }
             }
         }

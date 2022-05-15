@@ -112,7 +112,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.BackgroundImage = global::PATIENT_TREATMENT_ADVISOR.Properties.Resources.background1;
             this.ClientSize = new System.Drawing.Size(329, 305);
             this.Controls.Add(this.ExitBtn);
             this.Controls.Add(this.RegisterLabel);
