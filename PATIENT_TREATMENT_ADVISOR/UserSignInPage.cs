@@ -35,7 +35,7 @@ namespace PATIENT_TREATMENT_ADVISOR
                 {
                     if (excel_Worksheet.Cells[i, 1].Value == username) // Username found
                     {
-                        if (excel_Worksheet.Cells[i, 2].Value == password) // Password match
+                        if (excel_Worksheet.Cells[i, 2].Value == Encryptonator.MD5Hash(password)) // Password match
                         {
                             login_success = true;
                             doctor_UserName = excel_Worksheet.Cells[i, 1].Value.ToString();

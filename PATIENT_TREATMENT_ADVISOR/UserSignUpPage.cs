@@ -188,8 +188,9 @@ namespace PATIENT_TREATMENT_ADVISOR
                 if (excel_Worksheet.Cells[i, 1].Value == null) // Found empty row
                 {
                     excel_Worksheet.Cells[i, 1] = username;
-                    excel_Worksheet.Cells[i, 2] = password;
+                    excel_Worksheet.Cells[i, 2] = Encryptonator.MD5Hash(password);
                     excel_Worksheet.Cells[i, 3] = id;
+                    Program.excel_Workbook.Save();
                     MessageBox.Show("ההרשמה התבצעה בהצלחה");
                     this.Close();
                 }
