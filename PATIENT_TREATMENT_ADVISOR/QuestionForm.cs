@@ -22,7 +22,7 @@ namespace PATIENT_TREATMENT_ADVISOR
 
         private void InitializeQuestions()
         {
-
+            //TODO: show only relevant questions
         }
 
         private void button1_Click(object sender, EventArgs e)

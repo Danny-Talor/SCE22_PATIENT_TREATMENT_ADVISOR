@@ -395,10 +395,12 @@
             // 
             // columnHeader1
             // 
+            this.columnHeader1.Text = "מחלה";
             this.columnHeader1.Width = 300;
             // 
             // columnHeader2
             // 
+            this.columnHeader2.Text = "טיפול מומלץ";
             this.columnHeader2.Width = 300;
             // 
             // FeverLabel

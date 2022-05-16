@@ -11,7 +11,7 @@ namespace PATIENT_TREATMENT_ADVISOR
 
         double WBC;
         double Neut;
-        const  double Neut_HIGH = 54;
+        const double Neut_HIGH = 54;
         const double Neut_LOW = 28;
         double Lymph;
         double RBC;
@@ -31,13 +31,36 @@ namespace PATIENT_TREATMENT_ADVISOR
         string isVeg = "";
         string ethnicity = "";
 
-        Dictionary<string,int> diagnosis = new() { ["אנמיה"] = 0, ["דיאטה"] = 0, ["דימום"] = 0,
-            ["היפרליפידמיה"] = 0,["הפרעה ביצירת תאי דם"] = 0, ["הפרעה המטולוגית"] = 0, ["הרעלת ברזל"] = 0,
-            ["התייבשות"] = 0, ["זיהום"] = 0, ["חוסר בויטמינים"] = 0, ["מחלה ויראלית"] = 0, ["מחלות בדרכי המרה"] = 0,
-            ["מחלת לב"] = 0, ["מחלת דם"] = 0, ["מחלת כבד"] = 0, ["מחלת כליה"] = 0, ["מחלת שריר"] = 0, ["מחלת ריאות"] = 0,
-            ["מחסור בברזל"] = 0,["מעשן"] = 0, ["פעילות יתר של בלוטת התריס"] = 0, ["סוכרת מבוגרים"] = 0, ["סרטן"] = 0,
-            ["צריכה מוגברת של בשר"] = 0, ["שימוש בתרופות שונות"] = 0, ["תת תזונה"] = 0};
-        
+        readonly Dictionary<string, int> diagnosis = new()
+        {
+            ["אנמיה"] = 0,
+            ["דיאטה"] = 0,
+            ["דימום"] = 0,
+            ["היפרליפידמיה"] = 0,
+            ["הפרעה ביצירת תאי דם"] = 0,
+            ["הפרעה המטולוגית"] = 0,
+            ["הרעלת ברזל"] = 0,
+            ["התייבשות"] = 0,
+            ["זיהום"] = 0,
+            ["חוסר בוויטמינים"] = 0,
+            ["מחלה ויראלית"] = 0,
+            ["מחלות בדרכי המרה"] = 0,
+            ["מחלת לב"] = 0,
+            ["מחלת דם"] = 0,
+            ["מחלת כבד"] = 0,
+            ["מחלת כליה"] = 0,
+            ["מחסור בברזל"] = 0,
+            ["מחלת שריר"] = 0,
+            ["מעשן"] = 0,
+            ["מחלת ריאות"] = 0,
+            ["פעילות יתר של בלוטת התריס"] = 0,
+            ["סוכרת מבוגרים"] = 0,
+            ["סרטן"] = 0,
+            ["צריכה מוגברת של בשר"] = 0,
+            ["שימוש בתרופות שונות"] = 0,
+            ["תת תזונה"] = 0
+        };
+        private readonly string[] knownRecommendations = global::PATIENT_TREATMENT_ADVISOR.Properties.Resources.recommendation.Split("\r");
         public PatientForm(int index)
         {
             this.patientIndex = index + 2;
@@ -58,23 +81,30 @@ namespace PATIENT_TREATMENT_ADVISOR
                 Gender = GenderData.Text = excel_Worksheet.Cells[patientIndex, 5].Value2.ToString();
                 ethnicity = EthnData.Text = excel_Worksheet.Cells[patientIndex, 6].Value2.ToString();
 
-                if(excel_Worksheet.Cells[patientIndex, 7].Value != null)
+                if (excel_Worksheet.Cells[patientIndex, 7].Value != null)
                 {
+                    DndRListViewInit(excel_Worksheet);
                     QuestionDataInit(excel_Worksheet);
                     DandRbtn.Visible = false;
                 }
 
                 isPregnant = PregData.Text = excel_Worksheet.Cells[patientIndex, 10].Value2.ToString();
+
                 WBC = excel_Worksheet.Cells[patientIndex, 13].Value2;
                 WBCData.Text = WBC.ToString();
                 Neut = excel_Worksheet.Cells[patientIndex, 14].Value2;
-                NeutData.Text = Neut.ToString();
+                if (Neut < Neut_LOW || Neut > Neut_HIGH)
+                {
+                    NeutData.BackColor = Color.Red;
+                    NeutData.ForeColor = Color.White;
+                }
+                NeutData.Text = Neut.ToString() + "%";
                 Lymph = excel_Worksheet.Cells[patientIndex, 15].Value2;
-                LymphData.Text = Lymph.ToString();
+                LymphData.Text = Lymph.ToString() + "%";
                 RBC = excel_Worksheet.Cells[patientIndex, 16].Value2;
                 RBCData.Text = RBC.ToString();
                 HCT = excel_Worksheet.Cells[patientIndex, 17].Value2;
-                HCTData.Text = HCT.ToString();
+                HCTData.Text = HCT.ToString() + "%";
                 Urea = excel_Worksheet.Cells[patientIndex, 18].Value2;
                 UreaData.Text = Urea.ToString();
                 Hb = excel_Worksheet.Cells[patientIndex, 19].Value2;
@@ -87,6 +117,7 @@ namespace PATIENT_TREATMENT_ADVISOR
                 HDLData.Text = HDL.ToString();
                 AP = excel_Worksheet.Cells[patientIndex, 23].Value2;
                 APData.Text = AP.ToString();
+
                 System.Runtime.InteropServices.Marshal.FinalReleaseComObject(excel_Worksheet);
             }
         }
@@ -107,7 +138,9 @@ namespace PATIENT_TREATMENT_ADVISOR
                     QuestionDataInit(excel_Worksheet);
                 }
                 DandRbtn.Visible = false;
-                //TODO:diagnosis function
+                PatientDiagnosis();
+                PatientRecommendation(excel_Worksheet);
+                DndRListViewInit(excel_Worksheet);
                 System.Runtime.InteropServices.Marshal.FinalReleaseComObject(excel_Worksheet);
             }
         }
@@ -116,10 +149,19 @@ namespace PATIENT_TREATMENT_ADVISOR
         {
             hasFever = FeverData.Text = excel_Worksheet.Cells[patientIndex, 7].Value2.ToString();
             isSmoker = SmokerData.Text = excel_Worksheet.Cells[patientIndex, 8].Value2.ToString();
+            if (isSmoker == "כן")
+            {
+                diagnosis["מעשן"]++;
+            }
             hasLungDisease = LungData.Text = excel_Worksheet.Cells[patientIndex, 9].Value2.ToString();
+            if (hasLungDisease == "כן")
+            {
+                diagnosis["מחלת ריאות"]++;
+            }
             hasDiaVom = DiaVomData.Text = excel_Worksheet.Cells[patientIndex, 11].Value2.ToString();
             isVeg = VegData.Text = excel_Worksheet.Cells[patientIndex, 12].Value2.ToString();
         }
+
         private void PatientDiagnosis()
         {
             WBCCheck();
@@ -130,26 +172,131 @@ namespace PATIENT_TREATMENT_ADVISOR
             UreaCheck();
             HbCheck();
             IronCheck();
-            HDLCheck(); 
-            APCheck();  
+            HDLCheck();
+            APCheck();
             CrtnCheck();
         }
 
-        private void PatientRecommendation()
+        private void PatientRecommendation(Excel.Worksheet excel_Worksheet)
         {
-            foreach (KeyValuePair<string,int> disease in diagnosis)
+            string diseases = "";
+            string recommendations = "";
+            foreach (KeyValuePair<string, int> disease in diagnosis)
             {
-                ListViewItem item;
-                switch (disease.Key)
+                if (disease.Value > 0)
                 {
-                    case "אנמיה":
-
-                    default:
-                        break;
+                    diseases += disease.Key+ "\n";
+                    switch (disease.Key)
+                    {
+                        case "אנמיה":
+                            recommendations += knownRecommendations[0];
+                            break;
+                        case "דיאטה":
+                            recommendations += knownRecommendations[1];
+                            break;
+                        case "דימום":
+                            recommendations += knownRecommendations[2];
+                            break;
+                        case "היפרליפידמיה":
+                            recommendations += knownRecommendations[3];
+                            break;
+                        case "הפרעה ביצירת תאי דם":
+                            recommendations += knownRecommendations[4];
+                            break;
+                        case "הפרעה המטולוגית":
+                            recommendations += knownRecommendations[5];
+                            break;
+                        case "הרעלת ברזל":
+                            recommendations += knownRecommendations[6];
+                            break;
+                        case "התייבשות":
+                            recommendations += knownRecommendations[7];
+                            break;
+                        case "זיהום":
+                            recommendations += knownRecommendations[8];
+                            break;
+                        case "חוסר בוויטמינים":
+                            recommendations += knownRecommendations[9];
+                            break;
+                        case "מחלה ויראלית":
+                            recommendations += knownRecommendations[10];
+                            break;
+                        case "מחלות בדרכי המרה":
+                            recommendations += knownRecommendations[11];
+                            break;
+                        case "מחלת לב":
+                            recommendations += knownRecommendations[12];
+                            break;
+                        case "מחלת דם":
+                            recommendations += knownRecommendations[13];
+                            break;
+                        case "מחלת כבד":
+                            recommendations += knownRecommendations[14];
+                            break;
+                        case "מחלת כליה":
+                            recommendations += knownRecommendations[15];
+                            break;
+                        case "מחסור בברזל":
+                            recommendations += knownRecommendations[16];
+                            break;
+                        case "מחלת שריר":
+                            recommendations += knownRecommendations[17];
+                            break;
+                        case "מעשן":
+                            recommendations += knownRecommendations[18];
+                            break;
+                        case "מחלת ריאות":
+                            recommendations += knownRecommendations[19];
+                            break;
+                        case "פעילות יתר של בלוטת התריס":
+                            recommendations += knownRecommendations[20];
+                            break;
+                        case "סוכרת מבוגרים":
+                            recommendations += knownRecommendations[21];
+                            break;
+                        case "סרטן":
+                            recommendations += knownRecommendations[22];
+                            break;
+                        case "צריכה מוגברת של בשר":
+                            recommendations += knownRecommendations[23];
+                            break;
+                        case "שימוש בתרופות שונות":
+                            recommendations += knownRecommendations[24];
+                            break;
+                        case "תת תזונה":
+                            recommendations += knownRecommendations[25];
+                            break;
+                        default:
+                            break;
+                    }
                 }
             }
+            excel_Worksheet.Cells[patientIndex, 24] = diseases;
+            excel_Worksheet.Cells[patientIndex, 25] = recommendations;
+            if(Program.excel_Workbook != null)
+            {
+                Program.excel_Workbook.Save();
+            }
         }
+        private void DndRListViewInit(Excel.Worksheet excel_Worksheet)
+        {
+            if (excel_Worksheet.Cells[patientIndex, 24].Value != null || excel_Worksheet.Cells[patientIndex, 25].Value != null)
+            {
+                ListViewItem item;
+                string diagnosisCell = excel_Worksheet.Cells[patientIndex, 24].Value.ToString();
+                string recommendationsCell = excel_Worksheet.Cells[patientIndex, 25].Value.ToString();
+                string[] savedDiagnosis = diagnosisCell.Split("\n");
+                string[] savedRecommendations = recommendationsCell.Split("\n");
+                for (int i = 1; i < savedDiagnosis.Length; i++)
+                {
+                    item = new();
+                    item.Text = savedDiagnosis[i-1];
+                    item.SubItems.Add(savedRecommendations[i]);
+                    DndRListView.Items.Add(item);
+                }
+            }
 
+        }
         private void WBCCheck()
         {
             if (Age >= 18)
@@ -158,7 +305,7 @@ namespace PATIENT_TREATMENT_ADVISOR
                 {
                     diagnosis["מחלה ויראלית"]++;
                     diagnosis["סרטן"]++;
-                
+
                 }
                 else if (WBC > 11000) // Check if has fever
                 {
@@ -230,7 +377,7 @@ namespace PATIENT_TREATMENT_ADVISOR
             }
             else if (Lymph > 52)
             {
-                diagnosis["זיהום"]++; 
+                diagnosis["זיהום"]++;
                 diagnosis["סרטן"]++;
 
             }
@@ -246,9 +393,9 @@ namespace PATIENT_TREATMENT_ADVISOR
             }
             else if (RBC > 6)
             {
-                if(isSmoker == "לא" || hasLungDisease == "לא")
+                if (isSmoker == "לא" || hasLungDisease == "לא")
                 {
-                    diagnosis["הפרעה ביצירת הדם"]++;
+                    diagnosis["הפרעה ביצירת תאי דם"]++;
                 }
                 diagnosis["מעשן"]++;
                 diagnosis["מחלת ריאות"]++;
@@ -294,12 +441,12 @@ namespace PATIENT_TREATMENT_ADVISOR
             {
                 if (Urea < 18.7)
                 {
-                    if(isPregnant == "לא")
+                    if (isPregnant == "לא")
                     {
                         diagnosis["תת תזונה"]++;
                         diagnosis["דיאטה"]++;
                         diagnosis["מחלת כבד"]++;
-                    }  
+                    }
                 }
                 else if (RBC > 47.3)
                 {
@@ -332,7 +479,7 @@ namespace PATIENT_TREATMENT_ADVISOR
 
         private void HbCheck()
         {
-            if ( Age < 18 && Hb < 11.5 || Age >= 18 && Hb < 12)
+            if (Age < 18 && Hb < 11.5 || Age >= 18 && Hb < 12)
             {
                 diagnosis["אנמיה"]++;
                 diagnosis["הפרעה המטולוגית"]++;
@@ -341,7 +488,7 @@ namespace PATIENT_TREATMENT_ADVISOR
             }
         }
 
-        private void CrtnCheck() 
+        private void CrtnCheck()
         {
             if (Age >= 60)
             {
@@ -363,12 +510,12 @@ namespace PATIENT_TREATMENT_ADVISOR
                     {
                         diagnosis["צריכה מוגברת של בשר"]++;
                     }
-                    else if (hasDiaVom == "לא" || diagnosis["מחלת שריר"]<1||diagnosis["צריכה מוגברת של בשר"]<1) 
+                    else if (hasDiaVom == "לא" || diagnosis["מחלת שריר"] < 1 || diagnosis["צריכה מוגברת של בשר"] < 1)
                     {
                         diagnosis["מחלת כליה"]++;
                         diagnosis["מחלת שריר"]++;
                     }
-                    
+
                 }
             }
             else if (Age >= 18 && Age <= 59)
@@ -476,7 +623,7 @@ namespace PATIENT_TREATMENT_ADVISOR
                     {
                         diagnosis["תת תזונה"]++;
                         diagnosis["דימום"]++;
-                        
+
                     }
                     diagnosis["מחסור בברזל"]++;
                 }
@@ -496,8 +643,8 @@ namespace PATIENT_TREATMENT_ADVISOR
                     if (HDL < 34.8)
                     {
                         diagnosis["מחלת לב"]++;
-                        diagnosis["היפר ליפידמיה"]++;
-                        diagnosis["סכרת מבוגרים"]++;
+                        diagnosis["היפרליפידמיה"]++;
+                        diagnosis["סוכרת מבוגרים"]++;
                     }
                 }
                 else
@@ -505,8 +652,8 @@ namespace PATIENT_TREATMENT_ADVISOR
                     if (HDL < 29)
                     {
                         diagnosis["מחלת לב"]++;
-                        diagnosis["היפר ליפידמיה"]++;
-                        diagnosis["סכרת מבוגרים"]++;
+                        diagnosis["היפרליפידמיה"]++;
+                        diagnosis["סוכרת מבוגרים"]++;
                     }
                 }
 
@@ -518,20 +665,20 @@ namespace PATIENT_TREATMENT_ADVISOR
                     if (HDL < 40.8)
                     {
                         diagnosis["מחלת לב"]++;
-                        diagnosis["היפר ליפידמיה"]++;
-                        diagnosis["סכרת מבוגרים"]++;
+                        diagnosis["היפרליפידמיה"]++;
+                        diagnosis["סוכרת מבוגרים"]++;
                     }
-                   
+
                 }
                 else
                 {
                     if (HDL < 34)
                     {
                         diagnosis["מחלת לב"]++;
-                        diagnosis["היפר ליפידמיה"]++;
-                        diagnosis["סכרת מבוגרים"]++;
+                        diagnosis["היפרליפידמיה"]++;
+                        diagnosis["סוכרת מבוגרים"]++;
                     }
-                   
+
                 }
             }
         }

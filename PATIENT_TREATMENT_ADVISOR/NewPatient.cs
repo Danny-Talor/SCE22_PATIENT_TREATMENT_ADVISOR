@@ -347,10 +347,10 @@ namespace PATIENT_TREATMENT_ADVISOR
                     }
 
                     excel_Worksheet.Cells[i, 13] = WBCBox.Text;
-                    excel_Worksheet.Cells[i, 14] = NeutBox.Text + "%";
-                    excel_Worksheet.Cells[i, 15] = LymphBox.Text + "%";
+                    excel_Worksheet.Cells[i, 14] = NeutBox.Text;
+                    excel_Worksheet.Cells[i, 15] = LymphBox.Text;
                     excel_Worksheet.Cells[i, 16] = RBCBox.Text;
-                    excel_Worksheet.Cells[i, 17] = HCTBox.Text + "%";
+                    excel_Worksheet.Cells[i, 17] = HCTBox.Text;
                     excel_Worksheet.Cells[i, 18] = UreaBox.Text;
                     excel_Worksheet.Cells[i, 19] = HbBox.Text;
                     excel_Worksheet.Cells[i, 20] = CrtnBox.Text;
