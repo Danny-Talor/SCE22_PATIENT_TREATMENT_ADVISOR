@@ -110,7 +110,6 @@ namespace PATIENT_TREATMENT_ADVISOR
                 //TODO:diagnosis function
                 System.Runtime.InteropServices.Marshal.FinalReleaseComObject(excel_Worksheet);
             }
-
         }
 
         private void QuestionDataInit(Excel.Worksheet excel_Worksheet)
@@ -138,9 +137,16 @@ namespace PATIENT_TREATMENT_ADVISOR
 
         private void PatientRecommendation()
         {
-            foreach (KeyValuePair<string,int> KVP in diagnosis)
+            foreach (KeyValuePair<string,int> disease in diagnosis)
             {
+                ListViewItem item;
+                switch (disease.Key)
+                {
+                    case "אנמיה":
 
+                    default:
+                        break;
+                }
             }
         }
 
@@ -166,10 +172,6 @@ namespace PATIENT_TREATMENT_ADVISOR
                         diagnosis["מחלת דם"]++;
                     }
                 }
-                else
-                {
-                    // ok
-                }
             }
             else if (Age >= 4 && Age <= 17)
             {
@@ -191,10 +193,6 @@ namespace PATIENT_TREATMENT_ADVISOR
 
                     }
                 }
-                else
-                {
-                    // ok
-                }
             }
             else // Age 0-3
             {
@@ -207,10 +205,6 @@ namespace PATIENT_TREATMENT_ADVISOR
                 {
                     diagnosis["סרטן"]++;
                     diagnosis["מחלת דם"]++;
-                }
-                else
-                {
-                    // ok
                 }
             }
         }
@@ -227,10 +221,6 @@ namespace PATIENT_TREATMENT_ADVISOR
             {
                 diagnosis["זיהום"]++;
             }
-            else
-            {
-                // ok
-            }
         }
         private void LymphCheck()
         {
@@ -243,10 +233,6 @@ namespace PATIENT_TREATMENT_ADVISOR
                 diagnosis["זיהום"]++; 
                 diagnosis["סרטן"]++;
 
-            }
-            else
-            {
-                //ok
             }
         }
         private void RBCCheck()
@@ -267,10 +253,6 @@ namespace PATIENT_TREATMENT_ADVISOR
                 diagnosis["מעשן"]++;
                 diagnosis["מחלת ריאות"]++;
             }
-            else
-            {
-                //ok
-            }
         }
         private void HCTCheck()
         {
@@ -289,10 +271,6 @@ namespace PATIENT_TREATMENT_ADVISOR
                         diagnosis["מעשן"]++;
                     }
                 }
-                else
-                {
-                    // ok
-                }
             }
             else // female
             {
@@ -307,10 +285,6 @@ namespace PATIENT_TREATMENT_ADVISOR
                     {
                         diagnosis["מעשן"]++;
                     }
-                }
-                else
-                {
-                    // ok
                 }
             }
         }
@@ -334,10 +308,6 @@ namespace PATIENT_TREATMENT_ADVISOR
                     diagnosis["התייבשות"]++;
                     diagnosis["צריכה מוגברת של בשר"]++;
                 }
-                else
-                {
-                    //ok
-                }
             }
             else // other ethnicity
             {
@@ -357,10 +327,6 @@ namespace PATIENT_TREATMENT_ADVISOR
                     diagnosis["התייבשות"]++;
                     diagnosis["צריכה מוגברת של בשר"]++;
                 }
-                else
-                {
-                    //ok
-                }
             }
         }
 
@@ -375,7 +341,7 @@ namespace PATIENT_TREATMENT_ADVISOR
             }
         }
 
-        private void CrtnCheck() // low -> vegan? high -> diavom, muscle disease, high meat consumption
+        private void CrtnCheck() 
         {
             if (Age >= 60)
             {
@@ -404,10 +370,6 @@ namespace PATIENT_TREATMENT_ADVISOR
                     }
                     
                 }
-                else
-                {
-                    // ok
-                }
             }
             else if (Age >= 18 && Age <= 59)
             {
@@ -433,10 +395,6 @@ namespace PATIENT_TREATMENT_ADVISOR
                         diagnosis["מחלת כליה"]++;
                         diagnosis["מחלת שריר"]++;
                     }
-                }
-                else
-                {
-                    // ok
                 }
             }
             else if (Age >= 3 && Age <= 17)
@@ -465,10 +423,6 @@ namespace PATIENT_TREATMENT_ADVISOR
                     }
 
                 }
-                else
-                {
-                    // ok
-                }
             }
             else // Age 0-2
             {
@@ -496,10 +450,6 @@ namespace PATIENT_TREATMENT_ADVISOR
                     }
 
                 }
-                else
-                {
-                    // ok
-                }
             }
         }
 
@@ -512,21 +462,13 @@ namespace PATIENT_TREATMENT_ADVISOR
                     diagnosis["תת תזונה"]++;
                     diagnosis["דימום"]++;
                     diagnosis["מחסור בברזל"]++;
-
-                    // eat not good
-                    // iron deficiency
-                    // blood coming out
                 }
                 else if (Iron > 160)
                 {
                     diagnosis["הרעלת ברזל"]++;
                 }
-                else
-                {
-                    //Ok
-                }
             }
-            else // female -> is pregnant?
+            else // female
             {
                 if (Iron < 48)
                 {
@@ -541,10 +483,6 @@ namespace PATIENT_TREATMENT_ADVISOR
                 else if (Iron > 128)
                 {
                     diagnosis["הרעלת ברזל"]++;
-                }
-                else
-                {
-                    //Ok
                 }
             }
         }
