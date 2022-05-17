@@ -57,6 +57,7 @@
             this.RegisterUserButton.Name = "RegisterUserButton";
             this.RegisterUserButton.Size = new System.Drawing.Size(103, 38);
             this.RegisterUserButton.TabIndex = 0;
+            this.RegisterUserButton.TabStop = false;
             this.RegisterUserButton.Text = "הרשם";
             this.RegisterUserButton.UseVisualStyleBackColor = false;
             this.RegisterUserButton.Click += new System.EventHandler(this.RegisterUserButton_Click);
@@ -67,7 +68,7 @@
             this.UsernameBox.Name = "UsernameBox";
             this.UsernameBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.UsernameBox.Size = new System.Drawing.Size(165, 27);
-            this.UsernameBox.TabIndex = 1;
+            this.UsernameBox.TabIndex = 0;
             this.UsernameBox.Text = "dannyt";
             this.UsernameBox.TextChanged += new System.EventHandler(this.UsernameBox_TextChanged);
             // 
@@ -78,7 +79,7 @@
             this.PasswordBox.PlaceholderText = "אנא הכנס אותיות באנגלית,מספרים וסימנים בלבד";
             this.PasswordBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.PasswordBox.Size = new System.Drawing.Size(165, 27);
-            this.PasswordBox.TabIndex = 2;
+            this.PasswordBox.TabIndex = 1;
             this.PasswordBox.Text = "Aa123456!";
             this.PasswordBox.UseSystemPasswordChar = true;
             this.PasswordBox.TextChanged += new System.EventHandler(this.PasswordBox_TextChanged);
@@ -90,7 +91,7 @@
             this.IDBox.PlaceholderText = "אנא הכנס מספרים בלבד";
             this.IDBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.IDBox.Size = new System.Drawing.Size(165, 27);
-            this.IDBox.TabIndex = 3;
+            this.IDBox.TabIndex = 2;
             this.IDBox.Text = "208378554";
             this.IDBox.TextChanged += new System.EventHandler(this.IDBox_TextChanged);
             // 
@@ -134,7 +135,8 @@
             this.ReturnBtn.Location = new System.Drawing.Point(763, 6);
             this.ReturnBtn.Name = "ReturnBtn";
             this.ReturnBtn.Size = new System.Drawing.Size(169, 39);
-            this.ReturnBtn.TabIndex = 8;
+            this.ReturnBtn.TabIndex = 0;
+            this.ReturnBtn.TabStop = false;
             this.ReturnBtn.Text = "חזרה למסך כניסה";
             this.ReturnBtn.UseVisualStyleBackColor = false;
             this.ReturnBtn.Click += new System.EventHandler(this.ReturnBtn_Click);
@@ -159,7 +161,8 @@
             this.ExitBtn.Location = new System.Drawing.Point(938, 6);
             this.ExitBtn.Name = "ExitBtn";
             this.ExitBtn.Size = new System.Drawing.Size(80, 39);
-            this.ExitBtn.TabIndex = 13;
+            this.ExitBtn.TabIndex = 0;
+            this.ExitBtn.TabStop = false;
             this.ExitBtn.Text = "יציאה";
             this.ExitBtn.UseVisualStyleBackColor = false;
             this.ExitBtn.Click += new System.EventHandler(this.ExitBtn_Click);

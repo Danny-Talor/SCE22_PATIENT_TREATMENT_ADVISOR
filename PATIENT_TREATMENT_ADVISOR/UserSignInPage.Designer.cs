@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.UsernameBox = new System.Windows.Forms.TextBox();
             this.PasswordBox = new System.Windows.Forms.TextBox();
             this.LoginUserButton = new System.Windows.Forms.Button();
@@ -36,8 +35,6 @@
             this.PasswordLabel = new System.Windows.Forms.Label();
             this.ExitBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
             this.PassCheckLabel = new System.Windows.Forms.Label();
             this.UnameCheckLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -71,7 +68,8 @@
             this.LoginUserButton.Location = new System.Drawing.Point(435, 342);
             this.LoginUserButton.Name = "LoginUserButton";
             this.LoginUserButton.Size = new System.Drawing.Size(108, 35);
-            this.LoginUserButton.TabIndex = 2;
+            this.LoginUserButton.TabIndex = 0;
+            this.LoginUserButton.TabStop = false;
             this.LoginUserButton.Text = "כניסה";
             this.LoginUserButton.UseVisualStyleBackColor = false;
             this.LoginUserButton.Click += new System.EventHandler(this.LoginUserButton_Click);
@@ -106,7 +104,8 @@
             this.ExitBtn.Location = new System.Drawing.Point(932, 12);
             this.ExitBtn.Name = "ExitBtn";
             this.ExitBtn.Size = new System.Drawing.Size(80, 39);
-            this.ExitBtn.TabIndex = 6;
+            this.ExitBtn.TabIndex = 0;
+            this.ExitBtn.TabStop = false;
             this.ExitBtn.Text = "יציאה";
             this.ExitBtn.UseVisualStyleBackColor = false;
             this.ExitBtn.Click += new System.EventHandler(this.ExitBtn_Click);
@@ -178,7 +177,8 @@
             this.RegisterButton.Location = new System.Drawing.Point(435, 401);
             this.RegisterButton.Name = "RegisterButton";
             this.RegisterButton.Size = new System.Drawing.Size(108, 35);
-            this.RegisterButton.TabIndex = 12;
+            this.RegisterButton.TabIndex = 0;
+            this.RegisterButton.TabStop = false;
             this.RegisterButton.Text = "הרשמה";
             this.RegisterButton.UseVisualStyleBackColor = false;
             this.RegisterButton.Click += new System.EventHandler(this.RegisterButton_Click);
@@ -225,8 +225,6 @@
         public Label PasswordLabel;
         private Button ExitBtn;
         private Label label1;
-        private ToolTip toolTip1;
-        private ToolTip toolTip2;
         private Label PassCheckLabel;
         private Label UnameCheckLabel;
         private Label label2;
