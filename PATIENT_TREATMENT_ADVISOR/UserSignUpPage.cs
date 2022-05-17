@@ -21,36 +21,42 @@ namespace PATIENT_TREATMENT_ADVISOR
 
         private void RegisterUserButton_Click(object sender, EventArgs e)
         {
+            if (Ulabel1.Visible || Ulabel2.Visible || Ulabel3.Visible || Plabel1.Visible || Plabel2.Visible || Plabel3.Visible || Plabel4.Visible || IDCheckLabel.Visible)
+            {
+                Ulabel1.Visible = false; Ulabel2.Visible = false; Ulabel3.Visible = false;
+                Plabel1.Visible = false; Plabel2.Visible = false; Plabel3.Visible = false; Plabel4.Visible = false;
+                IDCheckLabel.Visible = false;
+            }
             int usernameCheck = CheckUsername(UsernameBox.Text);
             int PasswordCheck = CheckPassword(PasswordBox.Text);
             bool IDCheck = CheckID(IDBox.Text);
             if (usernameCheck == 1)
             {
-                MessageBox.Show("!אנא הכנס שם משתמש באורך בין 6 ל8 תווים");
+                Ulabel2.Visible = true;
             }
             else if (usernameCheck == 2)
             {
-                MessageBox.Show("!שם משתמש יכול להכיל עד 2 ספרות");
+                Ulabel3.Visible = true;
             }
             else if (PasswordCheck == 1)
             {
-                MessageBox.Show("!אנא הכנס סיסמה באורך בין 8 ל10 תווים");
+                Plabel1.Visible = true;
             }
             else if (PasswordCheck == 2)
             {
-                MessageBox.Show("!סיסמה חייבת להכיל לפחות סימן אחד");
+                Plabel2.Visible = true;
             }
             else if (PasswordCheck == 3)
             {
-                MessageBox.Show("!סיסמה חייבת להכיל לפחות אות אחת");
+                Plabel3.Visible = true;
             }
             else if (PasswordCheck == 4)
             {
-                MessageBox.Show("!סיסמה חייבת להכיל לפחות ספרה אחד");
+                Plabel4.Visible = true;
             }
             else if (IDCheck == false)
             {
-                MessageBox.Show("!אנא הכנס מספר תעודת זהות תקין");
+                IDCheckLabel.Visible = true;
             }
 
             else
@@ -66,7 +72,7 @@ namespace PATIENT_TREATMENT_ADVISOR
                 if (System.Text.RegularExpressions.Regex.IsMatch(UsernameBox.Text, "[^a-zA-Z0-9]"))
                 {
                     ToolTip tt = new();
-                    tt.Show("אנא הכנס אותיות באנגלית ומספרים בלבד", (TextBox)sender, -30, 30, 3000);
+                    tt.Show("אנא הכנס אותיות באנגלית ומספרים בלבד", (TextBox)sender, -115, 29, 3000);
                     UsernameBox.Text = UsernameBox.Text.Remove(UsernameBox.Text.Length - 1);
                     UsernameBox.Focus();
                 }
@@ -85,9 +91,8 @@ namespace PATIENT_TREATMENT_ADVISOR
                 if (System.Text.RegularExpressions.Regex.IsMatch(PasswordBox.Text, "[^_$&+,:;=?@#|'<>.-^*()%!a-zA-Z0-9]"))
                 {
                     ToolTip tt = new();
-                    tt.Show("!אנא הכנס אותיות באנגלית,מספרים וסימנים בלבד", (TextBox)sender, -30, 30, 3000);
+                    tt.Show("!אנא הכנס אותיות באנגלית,מספרים וסימנים בלבד", (TextBox)sender, -165, 29, 3000);
                     PasswordBox.Text = PasswordBox.Text.Remove(PasswordBox.Text.Length - 1);
-                    PasswordBox.Focus();
                 }
             }
             catch (ArgumentException)
@@ -103,7 +108,7 @@ namespace PATIENT_TREATMENT_ADVISOR
                 if (System.Text.RegularExpressions.Regex.IsMatch(IDBox.Text, "[^0-9]"))
                 {
                     ToolTip tt = new();
-                    tt.Show("!אנא הכנס מספרים בלבד", (TextBox)sender, -30, 30, 3000);
+                    tt.Show("!אנא הכנס מספרים בלבד", (TextBox)sender, -10, 29, 3000);
                     IDBox.Text = IDBox.Text.Remove(IDBox.Text.Length - 1);
                     IDBox.Focus();
                 }
@@ -118,11 +123,11 @@ namespace PATIENT_TREATMENT_ADVISOR
         {
             if (username.Length < 6 || username.Length > 8)
             {
-                return 1;
+                return 1; //Username length is not between 6-8 characters
             }
             else if (username.Count(char.IsDigit) > 2)
             {
-                return 2;
+                return 2; //Username does not have at most 2 numbers
             }
             return 0;
         }
@@ -130,19 +135,19 @@ namespace PATIENT_TREATMENT_ADVISOR
         {
             if (Password.Length < 8 || Password.Length > 10)
             {
-                return 1;
+                return 1; //Password length is not between 8-10 characters
             }
             else if (System.Text.RegularExpressions.Regex.Matches(Password, "[~!@#$%^&*()_+{}:\"<>?]").Count < 1)
             {
-                return 2;
+                return 2; //Password does not contain at least one symbol
             }
             else if (System.Text.RegularExpressions.Regex.Matches(Password, "[a-zA-Z]").Count < 1)
             {
-                return 3;
+                return 3; //Password does not contain at least one lowercase letter and one uppercase letter
             }
             else if (System.Text.RegularExpressions.Regex.Matches(Password, "[0-9]").Count < 1)
             {
-                return 4;
+                return 4; //Password does not contain at least one number
             }
             return 0;
         }
@@ -172,15 +177,16 @@ namespace PATIENT_TREATMENT_ADVISOR
         //}
         private void RegisterUser(string username, string password, string id)
         {
+
             int i = 2;
-            if(Program.excel_Workbook != null)
+            if (Program.excel_Workbook != null)
             {
                 Excel.Worksheet excel_Worksheet = (Excel.Worksheet)Program.excel_Workbook.Sheets[1]; // Select worksheet number 1 (users)
                 while (excel_Worksheet.Cells[i, 1].Value != null) // Look for empty row
                 {
                     if (excel_Worksheet.Cells[i, 1].Value == username)
                     {
-                        MessageBox.Show("שם משתמש כבר קיים");
+                        Ulabel1.Visible = true;
                         break;
                     }
                     i++;
@@ -192,7 +198,7 @@ namespace PATIENT_TREATMENT_ADVISOR
                     excel_Worksheet.Cells[i, 3] = id;
                     Program.excel_Workbook.Save();
                     MessageBox.Show("ההרשמה התבצעה בהצלחה");
-                    this.Close();
+                    this.Dispose();
                 }
                 System.Runtime.InteropServices.Marshal.FinalReleaseComObject(excel_Worksheet); // Cleanup
             }
@@ -205,7 +211,7 @@ namespace PATIENT_TREATMENT_ADVISOR
 
         private void ReturnBtn_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Dispose();
         }
     }
 }
