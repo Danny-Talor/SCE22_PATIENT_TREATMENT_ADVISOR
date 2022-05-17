@@ -185,7 +185,7 @@ namespace PATIENT_TREATMENT_ADVISOR
             {
                 if (disease.Value > 0)
                 {
-                    diseases += disease.Key+ "\n";
+                    diseases += "\n" + disease.Key;
                     switch (disease.Key)
                     {
                         case "אנמיה":
@@ -290,7 +290,7 @@ namespace PATIENT_TREATMENT_ADVISOR
                 for (int i = 1; i < savedDiagnosis.Length; i++)
                 {
                     item = new();
-                    item.Text = savedDiagnosis[i-1];
+                    item.Text = savedDiagnosis[i];
                     item.SubItems.Add(savedRecommendations[i]);
                     DndRListView.Items.Add(item);
                 }
