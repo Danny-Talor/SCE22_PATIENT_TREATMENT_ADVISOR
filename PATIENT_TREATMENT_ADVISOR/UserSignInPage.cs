@@ -25,6 +25,10 @@ namespace PATIENT_TREATMENT_ADVISOR
         }
         private void LoginUser(string username, string password)
         {
+            if(PassCheckLabel.Visible || UnameCheckLabel.Visible)
+            {
+                PassCheckLabel.Visible = false; UnameCheckLabel.Visible = false;
+            }
             int i = 2;
             if(Program.excel_Workbook != null)
             {
@@ -43,7 +47,7 @@ namespace PATIENT_TREATMENT_ADVISOR
                         }
                         else // Password mismatch
                         {
-                            MessageBox.Show("סיסמה לא נכונה");
+                            PassCheckLabel.Visible = true;
                             break;
                         }
                     }
@@ -51,7 +55,10 @@ namespace PATIENT_TREATMENT_ADVISOR
                 }
                 if (excel_Worksheet.Cells[i, 1].Value == null) // If empty row
                 {
-                    MessageBox.Show("המשתמש אינו קיים");
+                    if(UsernameBox.Text != "")
+                    {
+                        UnameCheckLabel.Visible = true; // User does not exist - show label
+                    }
                 }
                 System.Runtime.InteropServices.Marshal.FinalReleaseComObject(excel_Worksheet); // Cleanup
                 if (login_success)
@@ -65,14 +72,6 @@ namespace PATIENT_TREATMENT_ADVISOR
                     }
                 }
             }
-        }
-
-        private void RegisterLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            this.Hide();
-            UserSignUpPage register = new();
-            register.ShowDialog();
-            this.Show();
         }
 
         private void UserSignInPage_FormClosing(object sender, FormClosingEventArgs e)
@@ -89,9 +88,52 @@ namespace PATIENT_TREATMENT_ADVISOR
             Application.Exit();
         }
 
-        private void ReturnBtn_Click(object sender, EventArgs e)
+        private void RegisterButton_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            UserSignUpPage register = new();
+            register.ShowDialog();
+            if (register.IsDisposed && !this.IsDisposed)
+            {
+                this.Show();
+            }
+        }
 
+        private void UsernameBox_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (System.Text.RegularExpressions.Regex.IsMatch(UsernameBox.Text, "[^a-zA-Z0-9]"))
+                {
+                    ToolTip tt = new();
+                    tt.Show("אנא הכנס אותיות באנגלית ומספרים בלבד", (TextBox)sender, -115, 29, 3000);
+                    UsernameBox.Text = UsernameBox.Text.Remove(UsernameBox.Text.Length - 1);
+                    UsernameBox.Focus();
+                }
+            }
+            catch (ArgumentException)
+            {
+                UsernameBox.Text = "";
+                UsernameBox.Focus();
+            }
+        }
+
+        private void PasswordBox_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (System.Text.RegularExpressions.Regex.IsMatch(PasswordBox.Text, "[^_$&+,:;=?@#|'<>.-^*()%!a-zA-Z0-9]"))
+                {
+                    ToolTip tt = new();
+                    tt.Show("!אנא הכנס אותיות באנגלית,מספרים וסימנים בלבד", (TextBox)sender, -165, 29, 3000);
+                    PasswordBox.Text = PasswordBox.Text.Remove(PasswordBox.Text.Length - 1);
+                }
+            }
+            catch (ArgumentException)
+            {
+                PasswordBox.Text = "";
+                PasswordBox.Focus();
+            }
         }
     }
 }
