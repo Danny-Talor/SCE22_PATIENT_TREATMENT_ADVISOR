@@ -70,143 +70,143 @@
             // 
             // APBox
             // 
-            this.APBox.Location = new System.Drawing.Point(50, 255);
+            this.APBox.Location = new System.Drawing.Point(233, 303);
             this.APBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.APBox.Name = "APBox";
-            this.APBox.Size = new System.Drawing.Size(114, 27);
-            this.APBox.TabIndex = 32;
+            this.APBox.Size = new System.Drawing.Size(72, 27);
+            this.APBox.TabIndex = 15;
             this.APBox.TextChanged += new System.EventHandler(this.APBox_TextChanged);
             // 
             // LymphBox
             // 
-            this.LymphBox.Location = new System.Drawing.Point(243, 101);
+            this.LymphBox.Location = new System.Drawing.Point(72, 226);
             this.LymphBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.LymphBox.Name = "LymphBox";
-            this.LymphBox.Size = new System.Drawing.Size(114, 27);
-            this.LymphBox.TabIndex = 31;
+            this.LymphBox.Size = new System.Drawing.Size(72, 27);
+            this.LymphBox.TabIndex = 10;
             this.LymphBox.TextChanged += new System.EventHandler(this.LymphBox_TextChanged);
             // 
             // IronBox
             // 
-            this.IronBox.Location = new System.Drawing.Point(50, 174);
+            this.IronBox.Location = new System.Drawing.Point(233, 222);
             this.IronBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.IronBox.Name = "IronBox";
-            this.IronBox.Size = new System.Drawing.Size(114, 27);
-            this.IronBox.TabIndex = 30;
+            this.IronBox.Size = new System.Drawing.Size(72, 27);
+            this.IronBox.TabIndex = 11;
             this.IronBox.TextChanged += new System.EventHandler(this.IronBox_TextChanged);
             // 
             // WBCBox
             // 
-            this.WBCBox.Location = new System.Drawing.Point(243, 20);
+            this.WBCBox.Location = new System.Drawing.Point(72, 145);
             this.WBCBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.WBCBox.Name = "WBCBox";
-            this.WBCBox.Size = new System.Drawing.Size(114, 27);
-            this.WBCBox.TabIndex = 29;
+            this.WBCBox.Size = new System.Drawing.Size(72, 27);
+            this.WBCBox.TabIndex = 6;
             this.WBCBox.TextChanged += new System.EventHandler(this.WBCBox_TextChanged);
             // 
             // HbBox
             // 
-            this.HbBox.Location = new System.Drawing.Point(50, 98);
+            this.HbBox.Location = new System.Drawing.Point(233, 146);
             this.HbBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.HbBox.Name = "HbBox";
-            this.HbBox.Size = new System.Drawing.Size(114, 27);
-            this.HbBox.TabIndex = 28;
+            this.HbBox.Size = new System.Drawing.Size(72, 27);
+            this.HbBox.TabIndex = 7;
             this.HbBox.TextChanged += new System.EventHandler(this.HbBox_TextChanged);
             // 
             // LastNameBox
             // 
-            this.LastNameBox.Location = new System.Drawing.Point(937, 14);
+            this.LastNameBox.Location = new System.Drawing.Point(11, 16);
             this.LastNameBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.LastNameBox.Name = "LastNameBox";
             this.LastNameBox.Size = new System.Drawing.Size(129, 27);
-            this.LastNameBox.TabIndex = 27;
+            this.LastNameBox.TabIndex = 1;
             this.LastNameBox.TextChanged += new System.EventHandler(this.LastNameBox_TextChanged);
             // 
             // RBCBox
             // 
-            this.RBCBox.Location = new System.Drawing.Point(243, 140);
+            this.RBCBox.Location = new System.Drawing.Point(72, 265);
             this.RBCBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.RBCBox.Name = "RBCBox";
-            this.RBCBox.Size = new System.Drawing.Size(114, 27);
-            this.RBCBox.TabIndex = 26;
+            this.RBCBox.Size = new System.Drawing.Size(72, 27);
+            this.RBCBox.TabIndex = 12;
             this.RBCBox.TextChanged += new System.EventHandler(this.RBCBox_TextChanged);
             // 
             // HDLBox
             // 
-            this.HDLBox.Location = new System.Drawing.Point(50, 212);
+            this.HDLBox.Location = new System.Drawing.Point(233, 260);
             this.HDLBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.HDLBox.Name = "HDLBox";
-            this.HDLBox.Size = new System.Drawing.Size(114, 27);
-            this.HDLBox.TabIndex = 25;
+            this.HDLBox.Size = new System.Drawing.Size(72, 27);
+            this.HDLBox.TabIndex = 13;
             this.HDLBox.TextChanged += new System.EventHandler(this.HDLBox_TextChanged);
             // 
             // NeutBox
             // 
-            this.NeutBox.Location = new System.Drawing.Point(243, 58);
+            this.NeutBox.Location = new System.Drawing.Point(72, 183);
             this.NeutBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.NeutBox.Name = "NeutBox";
-            this.NeutBox.Size = new System.Drawing.Size(114, 27);
-            this.NeutBox.TabIndex = 24;
+            this.NeutBox.Size = new System.Drawing.Size(72, 27);
+            this.NeutBox.TabIndex = 8;
             this.NeutBox.TextChanged += new System.EventHandler(this.NeutBox_TextChanged);
             // 
             // CrtnBox
             // 
-            this.CrtnBox.Location = new System.Drawing.Point(50, 136);
+            this.CrtnBox.Location = new System.Drawing.Point(233, 184);
             this.CrtnBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.CrtnBox.Name = "CrtnBox";
-            this.CrtnBox.Size = new System.Drawing.Size(114, 27);
-            this.CrtnBox.TabIndex = 23;
+            this.CrtnBox.Size = new System.Drawing.Size(72, 27);
+            this.CrtnBox.TabIndex = 9;
             this.CrtnBox.TextChanged += new System.EventHandler(this.CrtnBox_TextChanged);
             // 
             // AgeBox
             // 
-            this.AgeBox.Location = new System.Drawing.Point(1104, 73);
+            this.AgeBox.Location = new System.Drawing.Point(333, 83);
             this.AgeBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.AgeBox.Name = "AgeBox";
-            this.AgeBox.Size = new System.Drawing.Size(114, 27);
-            this.AgeBox.TabIndex = 22;
+            this.AgeBox.Size = new System.Drawing.Size(47, 27);
+            this.AgeBox.TabIndex = 4;
             this.AgeBox.TextChanged += new System.EventHandler(this.AgeBox_TextChanged);
             // 
             // UreaBox
             // 
-            this.UreaBox.Location = new System.Drawing.Point(50, 59);
+            this.UreaBox.Location = new System.Drawing.Point(72, 349);
             this.UreaBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.UreaBox.Name = "UreaBox";
-            this.UreaBox.Size = new System.Drawing.Size(114, 27);
-            this.UreaBox.TabIndex = 21;
+            this.UreaBox.Size = new System.Drawing.Size(72, 27);
+            this.UreaBox.TabIndex = 16;
             this.UreaBox.TextChanged += new System.EventHandler(this.UreaBox_TextChanged);
             // 
             // FirstNameBox
             // 
-            this.FirstNameBox.Location = new System.Drawing.Point(1171, 14);
+            this.FirstNameBox.Location = new System.Drawing.Point(251, 13);
             this.FirstNameBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.FirstNameBox.Name = "FirstNameBox";
-            this.FirstNameBox.Size = new System.Drawing.Size(126, 27);
-            this.FirstNameBox.TabIndex = 20;
+            this.FirstNameBox.Size = new System.Drawing.Size(129, 27);
+            this.FirstNameBox.TabIndex = 0;
             this.FirstNameBox.TextChanged += new System.EventHandler(this.FirstNameBox_TextChanged);
             // 
             // HCTBox
             // 
-            this.HCTBox.Location = new System.Drawing.Point(50, 20);
+            this.HCTBox.Location = new System.Drawing.Point(72, 305);
             this.HCTBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.HCTBox.Name = "HCTBox";
-            this.HCTBox.Size = new System.Drawing.Size(114, 27);
-            this.HCTBox.TabIndex = 33;
+            this.HCTBox.Size = new System.Drawing.Size(72, 27);
+            this.HCTBox.TabIndex = 14;
             this.HCTBox.TextChanged += new System.EventHandler(this.HCTBox_TextChanged);
             // 
             // IDBox
             // 
-            this.IDBox.Location = new System.Drawing.Point(736, 10);
+            this.IDBox.Location = new System.Drawing.Point(251, 48);
             this.IDBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.IDBox.Name = "IDBox";
-            this.IDBox.Size = new System.Drawing.Size(134, 27);
-            this.IDBox.TabIndex = 19;
+            this.IDBox.Size = new System.Drawing.Size(129, 27);
+            this.IDBox.TabIndex = 2;
             this.IDBox.TextChanged += new System.EventHandler(this.IDBox_TextChanged);
             // 
             // IronLabel
             // 
             this.IronLabel.AutoSize = true;
-            this.IronLabel.Location = new System.Drawing.Point(191, 180);
+            this.IronLabel.Location = new System.Drawing.Point(311, 222);
             this.IronLabel.Name = "IronLabel";
             this.IronLabel.Size = new System.Drawing.Size(35, 20);
             this.IronLabel.TabIndex = 17;
@@ -215,16 +215,16 @@
             // HCTLabel
             // 
             this.HCTLabel.AutoSize = true;
-            this.HCTLabel.Location = new System.Drawing.Point(189, 20);
+            this.HCTLabel.Location = new System.Drawing.Point(150, 312);
             this.HCTLabel.Name = "HCTLabel";
-            this.HCTLabel.Size = new System.Drawing.Size(37, 20);
+            this.HCTLabel.Size = new System.Drawing.Size(49, 20);
             this.HCTLabel.TabIndex = 16;
-            this.HCTLabel.Text = "HCT";
+            this.HCTLabel.Text = "%HCT";
             // 
             // WBCLabel
             // 
             this.WBCLabel.AutoSize = true;
-            this.WBCLabel.Location = new System.Drawing.Point(406, 26);
+            this.WBCLabel.Location = new System.Drawing.Point(150, 148);
             this.WBCLabel.Name = "WBCLabel";
             this.WBCLabel.Size = new System.Drawing.Size(41, 20);
             this.WBCLabel.TabIndex = 15;
@@ -233,7 +233,7 @@
             // APLabel
             // 
             this.APLabel.AutoSize = true;
-            this.APLabel.Location = new System.Drawing.Point(198, 263);
+            this.APLabel.Location = new System.Drawing.Point(311, 306);
             this.APLabel.Name = "APLabel";
             this.APLabel.Size = new System.Drawing.Size(27, 20);
             this.APLabel.TabIndex = 14;
@@ -242,7 +242,7 @@
             // IDLabel
             // 
             this.IDLabel.AutoSize = true;
-            this.IDLabel.Location = new System.Drawing.Point(888, 10);
+            this.IDLabel.Location = new System.Drawing.Point(387, 55);
             this.IDLabel.Name = "IDLabel";
             this.IDLabel.Size = new System.Drawing.Size(25, 20);
             this.IDLabel.TabIndex = 13;
@@ -251,7 +251,7 @@
             // HbLabel
             // 
             this.HbLabel.AutoSize = true;
-            this.HbLabel.Location = new System.Drawing.Point(197, 103);
+            this.HbLabel.Location = new System.Drawing.Point(311, 146);
             this.HbLabel.Name = "HbLabel";
             this.HbLabel.Size = new System.Drawing.Size(29, 20);
             this.HbLabel.TabIndex = 12;
@@ -260,16 +260,16 @@
             // LymphLabel
             // 
             this.LymphLabel.AutoSize = true;
-            this.LymphLabel.Location = new System.Drawing.Point(395, 109);
+            this.LymphLabel.Location = new System.Drawing.Point(150, 233);
             this.LymphLabel.Name = "LymphLabel";
-            this.LymphLabel.Size = new System.Drawing.Size(52, 20);
+            this.LymphLabel.Size = new System.Drawing.Size(64, 20);
             this.LymphLabel.TabIndex = 11;
-            this.LymphLabel.Text = "Lymph";
+            this.LymphLabel.Text = "%Lymph";
             // 
             // LastNameLabel
             // 
             this.LastNameLabel.AutoSize = true;
-            this.LastNameLabel.Location = new System.Drawing.Point(1072, 17);
+            this.LastNameLabel.Location = new System.Drawing.Point(146, 19);
             this.LastNameLabel.Name = "LastNameLabel";
             this.LastNameLabel.Size = new System.Drawing.Size(86, 20);
             this.LastNameLabel.TabIndex = 9;
@@ -278,7 +278,7 @@
             // HDLLabel
             // 
             this.HDLLabel.AutoSize = true;
-            this.HDLLabel.Location = new System.Drawing.Point(189, 223);
+            this.HDLLabel.Location = new System.Drawing.Point(311, 267);
             this.HDLLabel.Name = "HDLLabel";
             this.HDLLabel.Size = new System.Drawing.Size(38, 20);
             this.HDLLabel.TabIndex = 8;
@@ -287,7 +287,7 @@
             // RBCLabel
             // 
             this.RBCLabel.AutoSize = true;
-            this.RBCLabel.Location = new System.Drawing.Point(411, 150);
+            this.RBCLabel.Location = new System.Drawing.Point(150, 272);
             this.RBCLabel.Name = "RBCLabel";
             this.RBCLabel.Size = new System.Drawing.Size(36, 20);
             this.RBCLabel.TabIndex = 7;
@@ -296,7 +296,7 @@
             // CrtnLabel
             // 
             this.CrtnLabel.AutoSize = true;
-            this.CrtnLabel.Location = new System.Drawing.Point(189, 143);
+            this.CrtnLabel.Location = new System.Drawing.Point(311, 182);
             this.CrtnLabel.Name = "CrtnLabel";
             this.CrtnLabel.Size = new System.Drawing.Size(36, 20);
             this.CrtnLabel.TabIndex = 6;
@@ -305,16 +305,16 @@
             // NeutLabel
             // 
             this.NeutLabel.AutoSize = true;
-            this.NeutLabel.Location = new System.Drawing.Point(406, 69);
+            this.NeutLabel.Location = new System.Drawing.Point(150, 188);
             this.NeutLabel.Name = "NeutLabel";
-            this.NeutLabel.Size = new System.Drawing.Size(41, 20);
+            this.NeutLabel.Size = new System.Drawing.Size(53, 20);
             this.NeutLabel.TabIndex = 5;
-            this.NeutLabel.Text = "Neut";
+            this.NeutLabel.Text = "%Neut";
             // 
             // UreaLabel
             // 
             this.UreaLabel.AutoSize = true;
-            this.UreaLabel.Location = new System.Drawing.Point(188, 63);
+            this.UreaLabel.Location = new System.Drawing.Point(150, 352);
             this.UreaLabel.Name = "UreaLabel";
             this.UreaLabel.Size = new System.Drawing.Size(40, 20);
             this.UreaLabel.TabIndex = 4;
@@ -323,7 +323,7 @@
             // AgeLabel
             // 
             this.AgeLabel.AutoSize = true;
-            this.AgeLabel.Location = new System.Drawing.Point(1280, 80);
+            this.AgeLabel.Location = new System.Drawing.Point(387, 86);
             this.AgeLabel.Name = "AgeLabel";
             this.AgeLabel.Size = new System.Drawing.Size(28, 20);
             this.AgeLabel.TabIndex = 18;
@@ -332,7 +332,7 @@
             // FirstNameLabel
             // 
             this.FirstNameLabel.AutoSize = true;
-            this.FirstNameLabel.Location = new System.Drawing.Point(1303, 17);
+            this.FirstNameLabel.Location = new System.Drawing.Point(386, 16);
             this.FirstNameLabel.Name = "FirstNameLabel";
             this.FirstNameLabel.Size = new System.Drawing.Size(66, 20);
             this.FirstNameLabel.TabIndex = 3;
@@ -340,11 +340,12 @@
             // 
             // AddPatientButton
             // 
-            this.AddPatientButton.Location = new System.Drawing.Point(34, 432);
+            this.AddPatientButton.Location = new System.Drawing.Point(160, 480);
             this.AddPatientButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.AddPatientButton.Name = "AddPatientButton";
             this.AddPatientButton.Size = new System.Drawing.Size(86, 31);
-            this.AddPatientButton.TabIndex = 35;
+            this.AddPatientButton.TabIndex = 0;
+            this.AddPatientButton.TabStop = false;
             this.AddPatientButton.Text = "הוסף מטופל";
             this.AddPatientButton.UseVisualStyleBackColor = true;
             this.AddPatientButton.Click += new System.EventHandler(this.AddPatientButton_Click);
@@ -352,7 +353,7 @@
             // GenderLabel
             // 
             this.GenderLabel.AutoSize = true;
-            this.GenderLabel.Location = new System.Drawing.Point(1254, 177);
+            this.GenderLabel.Location = new System.Drawing.Point(219, 50);
             this.GenderLabel.Name = "GenderLabel";
             this.GenderLabel.Size = new System.Drawing.Size(27, 20);
             this.GenderLabel.TabIndex = 36;
@@ -365,19 +366,20 @@
             this.GenderBox.Items.AddRange(new object[] {
             "זכר",
             "נקבה"});
-            this.GenderBox.Location = new System.Drawing.Point(1155, 174);
+            this.GenderBox.Location = new System.Drawing.Point(146, 47);
             this.GenderBox.Name = "GenderBox";
-            this.GenderBox.Size = new System.Drawing.Size(93, 28);
-            this.GenderBox.TabIndex = 37;
+            this.GenderBox.Size = new System.Drawing.Size(67, 28);
+            this.GenderBox.TabIndex = 3;
             this.GenderBox.SelectedIndexChanged += new System.EventHandler(this.GenderBox_SelectedIndexChanged);
             // 
             // ImportButton
             // 
-            this.ImportButton.Location = new System.Drawing.Point(230, 432);
+            this.ImportButton.Location = new System.Drawing.Point(138, 394);
             this.ImportButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ImportButton.Name = "ImportButton";
-            this.ImportButton.Size = new System.Drawing.Size(158, 31);
-            this.ImportButton.TabIndex = 38;
+            this.ImportButton.Size = new System.Drawing.Size(138, 31);
+            this.ImportButton.TabIndex = 0;
+            this.ImportButton.TabStop = false;
             this.ImportButton.Text = "ייבא ערכי מטופל";
             this.ImportButton.UseVisualStyleBackColor = true;
             this.ImportButton.Click += new System.EventHandler(this.ImportButton_Click);
@@ -396,11 +398,12 @@
             // QPregCB
             // 
             this.QPregCB.AutoSize = true;
-            this.QPregCB.Location = new System.Drawing.Point(1072, 176);
+            this.QPregCB.Location = new System.Drawing.Point(59, 49);
             this.QPregCB.Name = "QPregCB";
             this.QPregCB.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.QPregCB.Size = new System.Drawing.Size(70, 24);
-            this.QPregCB.TabIndex = 43;
+            this.QPregCB.TabIndex = 0;
+            this.QPregCB.TabStop = false;
             this.QPregCB.Text = "בהריון";
             this.QPregCB.UseVisualStyleBackColor = true;
             this.QPregCB.Visible = false;
@@ -408,7 +411,7 @@
             // EthnicityLabel
             // 
             this.EthnicityLabel.AutoSize = true;
-            this.EthnicityLabel.Location = new System.Drawing.Point(1225, 302);
+            this.EthnicityLabel.Location = new System.Drawing.Point(273, 86);
             this.EthnicityLabel.Name = "EthnicityLabel";
             this.EthnicityLabel.Size = new System.Drawing.Size(42, 20);
             this.EthnicityLabel.TabIndex = 44;
@@ -422,16 +425,17 @@
             "אחר",
             "מזרחי",
             "אתיופי"});
-            this.EthnicityBox.Location = new System.Drawing.Point(1126, 299);
+            this.EthnicityBox.Location = new System.Drawing.Point(184, 83);
             this.EthnicityBox.Name = "EthnicityBox";
-            this.EthnicityBox.Size = new System.Drawing.Size(93, 28);
-            this.EthnicityBox.TabIndex = 45;
+            this.EthnicityBox.Size = new System.Drawing.Size(83, 28);
+            this.EthnicityBox.TabIndex = 5;
             // 
             // NewPatient
             // 
+            this.AcceptButton = this.AddPatientButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1375, 552);
+            this.ClientSize = new System.Drawing.Size(465, 552);
             this.Controls.Add(this.EthnicityBox);
             this.Controls.Add(this.EthnicityLabel);
             this.Controls.Add(this.QPregCB);
