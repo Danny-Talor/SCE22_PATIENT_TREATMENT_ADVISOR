@@ -185,6 +185,7 @@ namespace PATIENT_TREATMENT_ADVISOR
             {
                 if (disease.Value > 0)
                 {
+
                     diseases += "\n" + disease.Key;
                     switch (disease.Key)
                     {
@@ -254,7 +255,7 @@ namespace PATIENT_TREATMENT_ADVISOR
                         case "סוכרת מבוגרים":
                             recommendations += knownRecommendations[21];
                             break;
-                        case "סרטן":
+                        case "סרטן":    
                             recommendations += knownRecommendations[22];
                             break;
                         case "צריכה מוגברת של בשר":
@@ -270,6 +271,7 @@ namespace PATIENT_TREATMENT_ADVISOR
                             break;
                     }
                 }
+                
             }
             excel_Worksheet.Cells[patientIndex, 24] = diseases;
             excel_Worksheet.Cells[patientIndex, 25] = recommendations;
@@ -350,6 +352,10 @@ namespace PATIENT_TREATMENT_ADVISOR
                 }
                 else if (WBC > 17500)
                 {
+                    if (hasFever == "כן")
+                    {
+                        diagnosis["זיהום"]++;
+                    }
                     diagnosis["סרטן"]++;
                     diagnosis["מחלת דם"]++;
                 }
@@ -448,7 +454,7 @@ namespace PATIENT_TREATMENT_ADVISOR
                         diagnosis["מחלת כבד"]++;
                     }
                 }
-                else if (RBC > 47.3)
+                else if (Urea > 47.3)
                 {
                     diagnosis["מחלת כליה"]++;
                     diagnosis["דיאטה"]++;
@@ -467,7 +473,7 @@ namespace PATIENT_TREATMENT_ADVISOR
                         diagnosis["מחלת כבד"]++;
                     }
                 }
-                else if (RBC > 43)
+                else if (Urea > 43)
                 {
                     diagnosis["מחלת כליה"]++;
                     diagnosis["דיאטה"]++;
