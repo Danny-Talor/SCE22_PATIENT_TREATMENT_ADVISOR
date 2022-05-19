@@ -371,7 +371,7 @@ namespace PATIENT_TREATMENT_ADVISOR
                 NeutBox.Text == "" || LymphBox.Text == "" || RBCBox.Text == "" || 
                 HCTBox.Text == "" || UreaBox.Text == "" || HbBox.Text == "" || 
                 CrtnBox.Text == "" || IronBox.Text == "" || HDLBox.Text == "" || 
-                APBox.Text == "";
+                APBox.Text == "" || EthnicityBox.Text == "";
         }
 
         private void GenderBox_SelectedIndexChanged(object sender, EventArgs e)

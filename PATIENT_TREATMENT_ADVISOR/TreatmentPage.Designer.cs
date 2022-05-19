@@ -28,9 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("");
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.AddPatientButton = new System.Windows.Forms.Button();
             this.PatientListView = new System.Windows.Forms.ListView();
             this.FirstNameColumn = new System.Windows.Forms.ColumnHeader();
@@ -39,15 +37,14 @@
             this.AgeColumn = new System.Windows.Forms.ColumnHeader();
             this.GenderColumn = new System.Windows.Forms.ColumnHeader();
             this.LogoutBtn = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.CLabel = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.ExitBtn = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // AddPatientButton
             // 
-            this.AddPatientButton.Location = new System.Drawing.Point(11, 411);
+            this.AddPatientButton.Location = new System.Drawing.Point(332, 587);
             this.AddPatientButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.AddPatientButton.Name = "AddPatientButton";
             this.AddPatientButton.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -60,7 +57,7 @@
             // PatientListView
             // 
             this.PatientListView.Activation = System.Windows.Forms.ItemActivation.OneClick;
-            this.PatientListView.BackColor = System.Drawing.SystemColors.Info;
+            this.PatientListView.BackColor = System.Drawing.SystemColors.ControlLight;
             this.PatientListView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PatientListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.FirstNameColumn,
@@ -68,20 +65,21 @@
             this.IDColumn,
             this.AgeColumn,
             this.GenderColumn});
+            this.PatientListView.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.PatientListView.FullRowSelect = true;
             this.PatientListView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.PatientListView.HoverSelection = true;
             listViewItem1.StateImageIndex = 0;
             this.PatientListView.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
             listViewItem1});
-            this.PatientListView.Location = new System.Drawing.Point(12, 41);
+            this.PatientListView.Location = new System.Drawing.Point(352, 97);
             this.PatientListView.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.PatientListView.MultiSelect = false;
             this.PatientListView.Name = "PatientListView";
             this.PatientListView.RightToLeftLayout = true;
             this.PatientListView.ShowGroups = false;
             this.PatientListView.ShowItemToolTips = true;
-            this.PatientListView.Size = new System.Drawing.Size(534, 362);
+            this.PatientListView.Size = new System.Drawing.Size(793, 439);
             this.PatientListView.TabIndex = 1;
             this.PatientListView.TabStop = false;
             this.PatientListView.UseCompatibleStateImageBehavior = false;
@@ -91,29 +89,31 @@
             // FirstNameColumn
             // 
             this.FirstNameColumn.Text = "שם פרטי";
-            this.FirstNameColumn.Width = 80;
+            this.FirstNameColumn.Width = 130;
             // 
             // LastNameColumn
             // 
             this.LastNameColumn.Text = "שם משפחה";
-            this.LastNameColumn.Width = 90;
+            this.LastNameColumn.Width = 180;
             // 
             // IDColumn
             // 
             this.IDColumn.Text = "תז";
-            this.IDColumn.Width = 120;
+            this.IDColumn.Width = 180;
             // 
             // AgeColumn
             // 
             this.AgeColumn.Text = "גיל";
+            this.AgeColumn.Width = 100;
             // 
             // GenderColumn
             // 
             this.GenderColumn.Text = "מין";
+            this.GenderColumn.Width = 100;
             // 
             // LogoutBtn
             // 
-            this.LogoutBtn.Location = new System.Drawing.Point(352, 5);
+            this.LogoutBtn.Location = new System.Drawing.Point(1147, 50);
             this.LogoutBtn.Name = "LogoutBtn";
             this.LogoutBtn.Size = new System.Drawing.Size(94, 29);
             this.LogoutBtn.TabIndex = 2;
@@ -121,42 +121,53 @@
             this.LogoutBtn.UseVisualStyleBackColor = true;
             this.LogoutBtn.Click += new System.EventHandler(this.LogoutBtn_Click);
             // 
-            // label1
+            // CLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(70, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(15, 20);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "-";
+            this.CLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CLabel.BackColor = System.Drawing.Color.Transparent;
+            this.CLabel.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CLabel.Location = new System.Drawing.Point(868, 9);
+            this.CLabel.Name = "CLabel";
+            this.CLabel.Size = new System.Drawing.Size(382, 38);
+            this.CLabel.TabIndex = 4;
+            this.CLabel.Text = "מחובר כ ";
             // 
-            // label2
+            // label3
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(11, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 20);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "מחובר כ";
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Book Antiqua", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.Color.ForestGreen;
+            this.label3.Location = new System.Drawing.Point(11, 653);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(83, 35);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "Zikit";
             // 
             // ExitBtn
             // 
-            this.ExitBtn.Location = new System.Drawing.Point(452, 5);
+            this.ExitBtn.BackColor = System.Drawing.Color.OrangeRed;
+            this.ExitBtn.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.ExitBtn.ForeColor = System.Drawing.Color.GhostWhite;
+            this.ExitBtn.Location = new System.Drawing.Point(11, 12);
             this.ExitBtn.Name = "ExitBtn";
-            this.ExitBtn.Size = new System.Drawing.Size(94, 29);
-            this.ExitBtn.TabIndex = 5;
+            this.ExitBtn.Size = new System.Drawing.Size(80, 39);
+            this.ExitBtn.TabIndex = 13;
+            this.ExitBtn.TabStop = false;
             this.ExitBtn.Text = "יציאה";
-            this.ExitBtn.UseVisualStyleBackColor = true;
+            this.ExitBtn.UseVisualStyleBackColor = false;
             this.ExitBtn.Click += new System.EventHandler(this.ExitBtn_Click);
             // 
             // TreatmentPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(558, 484);
+            this.BackgroundImage = global::PATIENT_TREATMENT_ADVISOR.Properties.Resources.background2;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1262, 697);
             this.Controls.Add(this.ExitBtn);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.CLabel);
             this.Controls.Add(this.LogoutBtn);
             this.Controls.Add(this.PatientListView);
             this.Controls.Add(this.AddPatientButton);
@@ -164,30 +175,27 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "TreatmentPage";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "זיקית - מסך ראשי";
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TreatmentPage_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.TreatmentPage_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.TreatmentPage_MouseUp);
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private BindingSource bindingSource1;
         private Button AddPatientButton;
         private ListView PatientListView;
         private ColumnHeader FirstNameColumn;
         private Button LogoutBtn;
-        private Label label1;
-        private Label label2;
+        private Label CLabel;
         private ColumnHeader LastNameColumn;
         private ColumnHeader IDColumn;
         private ColumnHeader GenderColumn;
-        private Button ExitBtn;
         private ColumnHeader AgeColumn;
+        private Label label3;
+        private Button ExitBtn;
     }
 }

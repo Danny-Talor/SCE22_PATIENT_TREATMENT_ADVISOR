@@ -132,7 +132,7 @@
             // 
             this.ReturnBtn.BackColor = System.Drawing.Color.MediumTurquoise;
             this.ReturnBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.ReturnBtn.Location = new System.Drawing.Point(763, 6);
+            this.ReturnBtn.Location = new System.Drawing.Point(843, 6);
             this.ReturnBtn.Name = "ReturnBtn";
             this.ReturnBtn.Size = new System.Drawing.Size(169, 39);
             this.ReturnBtn.TabIndex = 0;
@@ -158,7 +158,7 @@
             this.ExitBtn.BackColor = System.Drawing.Color.OrangeRed;
             this.ExitBtn.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.ExitBtn.ForeColor = System.Drawing.Color.GhostWhite;
-            this.ExitBtn.Location = new System.Drawing.Point(938, 6);
+            this.ExitBtn.Location = new System.Drawing.Point(5, 6);
             this.ExitBtn.Name = "ExitBtn";
             this.ExitBtn.Size = new System.Drawing.Size(80, 39);
             this.ExitBtn.TabIndex = 0;

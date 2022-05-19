@@ -24,7 +24,7 @@ namespace PATIENT_TREATMENT_ADVISOR
         {
             this.current_doctor_username = username;
             InitializeComponent();
-            label1.Text = current_doctor_username;
+            CLabel.Text += current_doctor_username;
             InitializeTable();
         }
 

@@ -71,11 +71,41 @@ namespace PATIENT_TREATMENT_ADVISOR.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap background2 {
+            get {
+                object obj = ResourceManager.GetObject("background2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap infoicon {
+            get {
+                object obj = ResourceManager.GetObject("infoicon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap infoicon1 {
+            get {
+                object obj = ResourceManager.GetObject("infoicon1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to שני כדורי 10 מ&quot;ג של בי-12 ביום למשך חודש 
         ///לתאם פגישה עם תזונאי
         ///להתפנות בדחיפות לבית החולים
-        ///לתאם פגישה עם תזונאי\nכדור 5 מ&quot;ג של סימוביל ביום למשך שבוע
-        ///כדור 10 מ&quot;ג של בי-12 ביום למשך חודש\nכדור 5 מ&quot;ג של חומצה פולית ביום למשך חודש
+        ///לתאם פגישה עם תזונאי, כדור 5 מ&quot;ג של סימוביל ביום למשך שבוע
+        ///כדור 10 מ&quot;ג של בי-12 ביום למשך חודש, כדור 5 מ&quot;ג של חומצה פולית ביום למשך חודש
         ///זריקה של הורמון לעידוד ייצור תאי הדם האדומים
         ///להתפנות לבית החולים
         ///מנוחה מוחלטת בשכיבה, החזרת נוזלים בשתייה

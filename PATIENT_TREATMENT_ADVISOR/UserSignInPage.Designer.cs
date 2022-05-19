@@ -40,6 +40,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.RegisterButton = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // UsernameBox
@@ -101,7 +102,7 @@
             this.ExitBtn.BackColor = System.Drawing.Color.OrangeRed;
             this.ExitBtn.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.ExitBtn.ForeColor = System.Drawing.Color.GhostWhite;
-            this.ExitBtn.Location = new System.Drawing.Point(932, 12);
+            this.ExitBtn.Location = new System.Drawing.Point(12, 12);
             this.ExitBtn.Name = "ExitBtn";
             this.ExitBtn.Size = new System.Drawing.Size(80, 39);
             this.ExitBtn.TabIndex = 0;
@@ -183,6 +184,19 @@
             this.RegisterButton.UseVisualStyleBackColor = false;
             this.RegisterButton.Click += new System.EventHandler(this.RegisterButton_Click);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.BackgroundImage = global::PATIENT_TREATMENT_ADVISOR.Properties.Resources.infoicon1;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.ForeColor = System.Drawing.Color.Transparent;
+            this.button1.Location = new System.Drawing.Point(957, 533);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(64, 64);
+            this.button1.TabIndex = 0;
+            this.button1.TabStop = false;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // UserSignInPage
             // 
             this.AcceptButton = this.LoginUserButton;
@@ -193,6 +207,7 @@
             this.BackgroundImage = global::PATIENT_TREATMENT_ADVISOR.Properties.Resources.background1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1024, 600);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.RegisterButton);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -230,5 +245,6 @@
         private Label label2;
         private Label label3;
         private Button RegisterButton;
+        private Button button1;
     }
 }
