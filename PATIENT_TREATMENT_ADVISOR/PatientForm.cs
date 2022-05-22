@@ -307,9 +307,8 @@ namespace PATIENT_TREATMENT_ADVISOR
                 {
                     diagnosis["מחלה ויראלית"]++;
                     diagnosis["סרטן"]++;
-
                 }
-                else if (WBC > 11000) // Check if has fever
+                else if (WBC > 11000)
                 {
                     if (hasFever == "כן")
                     {
@@ -339,7 +338,6 @@ namespace PATIENT_TREATMENT_ADVISOR
                     {
                         diagnosis["סרטן"]++;
                         diagnosis["מחלת דם"]++;
-
                     }
                 }
             }

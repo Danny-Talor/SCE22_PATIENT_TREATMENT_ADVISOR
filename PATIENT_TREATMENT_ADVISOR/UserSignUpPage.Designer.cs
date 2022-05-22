@@ -69,18 +69,15 @@
             this.UsernameBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.UsernameBox.Size = new System.Drawing.Size(165, 27);
             this.UsernameBox.TabIndex = 0;
-            this.UsernameBox.Text = "dannyt";
             this.UsernameBox.TextChanged += new System.EventHandler(this.UsernameBox_TextChanged);
             // 
             // PasswordBox
             // 
             this.PasswordBox.Location = new System.Drawing.Point(421, 243);
             this.PasswordBox.Name = "PasswordBox";
-            this.PasswordBox.PlaceholderText = "אנא הכנס אותיות באנגלית,מספרים וסימנים בלבד";
             this.PasswordBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.PasswordBox.Size = new System.Drawing.Size(165, 27);
             this.PasswordBox.TabIndex = 1;
-            this.PasswordBox.Text = "Aa123456!";
             this.PasswordBox.UseSystemPasswordChar = true;
             this.PasswordBox.TextChanged += new System.EventHandler(this.PasswordBox_TextChanged);
             // 
@@ -88,11 +85,9 @@
             // 
             this.IDBox.Location = new System.Drawing.Point(421, 304);
             this.IDBox.Name = "IDBox";
-            this.IDBox.PlaceholderText = "אנא הכנס מספרים בלבד";
             this.IDBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.IDBox.Size = new System.Drawing.Size(165, 27);
             this.IDBox.TabIndex = 2;
-            this.IDBox.Text = "208378554";
             this.IDBox.TextChanged += new System.EventHandler(this.IDBox_TextChanged);
             // 
             // UserNameLabel
@@ -273,9 +268,9 @@
             this.Plabel4.Location = new System.Drawing.Point(320, 273);
             this.Plabel4.Name = "Plabel4";
             this.Plabel4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.Plabel4.Size = new System.Drawing.Size(375, 28);
+            this.Plabel4.Size = new System.Drawing.Size(379, 28);
             this.Plabel4.TabIndex = 20;
-            this.Plabel4.Text = "!סיסמה חייבת להכיל לפחות ספרה אחד";
+            this.Plabel4.Text = "!סיסמה חייבת להכיל לפחות ספרה אחת";
             this.Plabel4.Visible = false;
             // 
             // UserSignUpPage
