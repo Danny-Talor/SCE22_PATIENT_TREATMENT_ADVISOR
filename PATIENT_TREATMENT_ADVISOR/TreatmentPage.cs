@@ -12,7 +12,7 @@ using Excel = Microsoft.Office.Interop.Excel;
 
 namespace PATIENT_TREATMENT_ADVISOR
 {
-    
+
     public partial class TreatmentPage : Form
     {
         private readonly string current_doctor_username;
@@ -96,11 +96,11 @@ namespace PATIENT_TREATMENT_ADVISOR
                         item.SubItems.Add(excel_Worksheet.Cells[i, 5].Value2.ToString());
                         PatientListView.Items.Add(item);
                         i++;
-                    } 
+                    }
                     System.Runtime.InteropServices.Marshal.FinalReleaseComObject(excel_Worksheet);
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -111,6 +111,35 @@ namespace PATIENT_TREATMENT_ADVISOR
             ListViewItem item = PatientListView.SelectedItems[0];
             PatientForm form = new(item.Index);
             form.Show();
+        }
+
+        private void ExportPatientsBtn_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog.ShowDialog();
+        }
+
+        private void SaveFileDialog_FileOk(object sender, CancelEventArgs e)
+        {
+            if(Program.excel_Application != null && Program.excel_Workbook != null)
+            {
+                Excel.Worksheet excel_Worksheet = (Excel.Worksheet)Program.excel_Workbook.Sheets[2]; // Select patients sheet
+                Excel.Workbook new_Excel_Workbook = Program.excel_Application.Workbooks.Add(System.Reflection.Missing.Value); // Create new Excel workbook
+                Excel.Worksheet new_excel_Worksheet = (Excel.Worksheet)new_Excel_Workbook.Sheets[1]; // Select worksheet number 1 of new workbook
+                new_excel_Worksheet.Copy(excel_Worksheet); //Copy patients to new excel workbook
+                int i = 2;
+                while(new_excel_Worksheet.Cells[i,1].Value != null)
+                {
+                    new_excel_Worksheet.Cells[i, 14] = excel_Worksheet.Cells[i, 14].Value2.ToString() + "%";
+                    new_excel_Worksheet.Cells[i, 15] = excel_Worksheet.Cells[i, 15].Value2.ToString() + "%";
+                    new_excel_Worksheet.Cells[i, 15] = excel_Worksheet.Cells[i, 17].Value2.ToString() + "%";
+                }
+                System.Runtime.InteropServices.Marshal.FinalReleaseComObject(excel_Worksheet); // Cleanup
+                System.Runtime.InteropServices.Marshal.FinalReleaseComObject(new_excel_Worksheet); // Cleanup
+                // Save new workbook, close, and release ComObject
+                new_Excel_Workbook.SaveAs2(SaveFileDialog.FileName, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlNoChange, Type.Missing, Type.Missing, Type.Missing);
+                new_Excel_Workbook.Close(false);
+                System.Runtime.InteropServices.Marshal.FinalReleaseComObject(new_Excel_Workbook);
+            }
         }
     }
 }

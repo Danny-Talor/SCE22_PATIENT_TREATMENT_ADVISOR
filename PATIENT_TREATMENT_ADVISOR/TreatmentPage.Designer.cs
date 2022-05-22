@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("");
             this.AddPatientButton = new System.Windows.Forms.Button();
             this.PatientListView = new System.Windows.Forms.ListView();
             this.FirstNameColumn = new System.Windows.Forms.ColumnHeader();
@@ -40,15 +40,17 @@
             this.CLabel = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.ExitBtn = new System.Windows.Forms.Button();
+            this.ExportPatientsBtn = new System.Windows.Forms.Button();
+            this.SaveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.SuspendLayout();
             // 
             // AddPatientButton
             // 
-            this.AddPatientButton.Location = new System.Drawing.Point(332, 587);
+            this.AddPatientButton.Location = new System.Drawing.Point(606, 587);
             this.AddPatientButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.AddPatientButton.Name = "AddPatientButton";
             this.AddPatientButton.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.AddPatientButton.Size = new System.Drawing.Size(535, 39);
+            this.AddPatientButton.Size = new System.Drawing.Size(261, 39);
             this.AddPatientButton.TabIndex = 0;
             this.AddPatientButton.Text = "הוסף מטופל";
             this.AddPatientButton.UseVisualStyleBackColor = true;
@@ -69,9 +71,9 @@
             this.PatientListView.FullRowSelect = true;
             this.PatientListView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.PatientListView.HoverSelection = true;
-            listViewItem1.StateImageIndex = 0;
+            listViewItem3.StateImageIndex = 0;
             this.PatientListView.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1});
+            listViewItem3});
             this.PatientListView.Location = new System.Drawing.Point(352, 97);
             this.PatientListView.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.PatientListView.MultiSelect = false;
@@ -158,6 +160,23 @@
             this.ExitBtn.UseVisualStyleBackColor = false;
             this.ExitBtn.Click += new System.EventHandler(this.ExitBtn_Click);
             // 
+            // ExportPatientsBtn
+            // 
+            this.ExportPatientsBtn.Location = new System.Drawing.Point(352, 597);
+            this.ExportPatientsBtn.Name = "ExportPatientsBtn";
+            this.ExportPatientsBtn.Size = new System.Drawing.Size(170, 29);
+            this.ExportPatientsBtn.TabIndex = 14;
+            this.ExportPatientsBtn.Text = "ייצא קובץ מטופלים";
+            this.ExportPatientsBtn.UseVisualStyleBackColor = true;
+            this.ExportPatientsBtn.Click += new System.EventHandler(this.ExportPatientsBtn_Click);
+            // 
+            // SaveFileDialog
+            // 
+            this.SaveFileDialog.Filter = "excel files (*.xlsx)|*.xlsx";
+            this.SaveFileDialog.InitialDirectory = "C:\\";
+            this.SaveFileDialog.RestoreDirectory = true;
+            this.SaveFileDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.SaveFileDialog_FileOk);
+            // 
             // TreatmentPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -165,6 +184,7 @@
             this.BackgroundImage = global::PATIENT_TREATMENT_ADVISOR.Properties.Resources.background2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1262, 697);
+            this.Controls.Add(this.ExportPatientsBtn);
             this.Controls.Add(this.ExitBtn);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.CLabel);
@@ -197,5 +217,7 @@
         private ColumnHeader AgeColumn;
         private Label label3;
         private Button ExitBtn;
+        private Button ExportPatientsBtn;
+        private SaveFileDialog SaveFileDialog;
     }
 }
