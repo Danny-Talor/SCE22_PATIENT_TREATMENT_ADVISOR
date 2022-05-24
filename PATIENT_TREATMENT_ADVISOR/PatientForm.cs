@@ -604,7 +604,7 @@ namespace PATIENT_TREATMENT_ADVISOR
             }
         }
 
-        private void IronCheck() // vegan?
+        private void IronCheck()
         {
             if (Gender == "זכר")
             {

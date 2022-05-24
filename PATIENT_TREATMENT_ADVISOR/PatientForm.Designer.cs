@@ -93,7 +93,7 @@
             // WBCLabel
             // 
             this.WBCLabel.AutoSize = true;
-            this.WBCLabel.Location = new System.Drawing.Point(492, 9);
+            this.WBCLabel.Location = new System.Drawing.Point(994, 19);
             this.WBCLabel.Name = "WBCLabel";
             this.WBCLabel.Size = new System.Drawing.Size(41, 20);
             this.WBCLabel.TabIndex = 43;
@@ -111,7 +111,7 @@
             // LymphLabel
             // 
             this.LymphLabel.AutoSize = true;
-            this.LymphLabel.Location = new System.Drawing.Point(481, 170);
+            this.LymphLabel.Location = new System.Drawing.Point(983, 180);
             this.LymphLabel.Name = "LymphLabel";
             this.LymphLabel.Size = new System.Drawing.Size(52, 20);
             this.LymphLabel.TabIndex = 41;
@@ -129,7 +129,7 @@
             // RBCLabel
             // 
             this.RBCLabel.AutoSize = true;
-            this.RBCLabel.Location = new System.Drawing.Point(497, 75);
+            this.RBCLabel.Location = new System.Drawing.Point(999, 85);
             this.RBCLabel.Name = "RBCLabel";
             this.RBCLabel.Size = new System.Drawing.Size(36, 20);
             this.RBCLabel.TabIndex = 39;
@@ -138,7 +138,7 @@
             // NeutLabel
             // 
             this.NeutLabel.AutoSize = true;
-            this.NeutLabel.Location = new System.Drawing.Point(492, 41);
+            this.NeutLabel.Location = new System.Drawing.Point(994, 51);
             this.NeutLabel.Name = "NeutLabel";
             this.NeutLabel.Size = new System.Drawing.Size(41, 20);
             this.NeutLabel.TabIndex = 38;
@@ -165,7 +165,7 @@
             // IronLabel
             // 
             this.IronLabel.AutoSize = true;
-            this.IronLabel.Location = new System.Drawing.Point(498, 298);
+            this.IronLabel.Location = new System.Drawing.Point(1000, 308);
             this.IronLabel.Name = "IronLabel";
             this.IronLabel.Size = new System.Drawing.Size(35, 20);
             this.IronLabel.TabIndex = 52;
@@ -174,7 +174,7 @@
             // HCTLabel
             // 
             this.HCTLabel.AutoSize = true;
-            this.HCTLabel.Location = new System.Drawing.Point(496, 107);
+            this.HCTLabel.Location = new System.Drawing.Point(998, 117);
             this.HCTLabel.Name = "HCTLabel";
             this.HCTLabel.Size = new System.Drawing.Size(37, 20);
             this.HCTLabel.TabIndex = 51;
@@ -183,7 +183,7 @@
             // APLabel
             // 
             this.APLabel.AutoSize = true;
-            this.APLabel.Location = new System.Drawing.Point(506, 329);
+            this.APLabel.Location = new System.Drawing.Point(1008, 339);
             this.APLabel.Name = "APLabel";
             this.APLabel.Size = new System.Drawing.Size(27, 20);
             this.APLabel.TabIndex = 50;
@@ -192,7 +192,7 @@
             // HbLabel
             // 
             this.HbLabel.AutoSize = true;
-            this.HbLabel.Location = new System.Drawing.Point(504, 232);
+            this.HbLabel.Location = new System.Drawing.Point(1006, 242);
             this.HbLabel.Name = "HbLabel";
             this.HbLabel.Size = new System.Drawing.Size(29, 20);
             this.HbLabel.TabIndex = 49;
@@ -201,7 +201,7 @@
             // HDLLabel
             // 
             this.HDLLabel.AutoSize = true;
-            this.HDLLabel.Location = new System.Drawing.Point(495, 141);
+            this.HDLLabel.Location = new System.Drawing.Point(997, 151);
             this.HDLLabel.Name = "HDLLabel";
             this.HDLLabel.Size = new System.Drawing.Size(38, 20);
             this.HDLLabel.TabIndex = 48;
@@ -210,7 +210,7 @@
             // CrtnLabel
             // 
             this.CrtnLabel.AutoSize = true;
-            this.CrtnLabel.Location = new System.Drawing.Point(497, 266);
+            this.CrtnLabel.Location = new System.Drawing.Point(999, 276);
             this.CrtnLabel.Name = "CrtnLabel";
             this.CrtnLabel.Size = new System.Drawing.Size(36, 20);
             this.CrtnLabel.TabIndex = 47;
@@ -219,7 +219,7 @@
             // UreaLabel
             // 
             this.UreaLabel.AutoSize = true;
-            this.UreaLabel.Location = new System.Drawing.Point(493, 200);
+            this.UreaLabel.Location = new System.Drawing.Point(995, 210);
             this.UreaLabel.Name = "UreaLabel";
             this.UreaLabel.Size = new System.Drawing.Size(40, 20);
             this.UreaLabel.TabIndex = 46;
@@ -273,7 +273,7 @@
             // HCTData
             // 
             this.HCTData.AutoSize = true;
-            this.HCTData.Location = new System.Drawing.Point(433, 107);
+            this.HCTData.Location = new System.Drawing.Point(935, 117);
             this.HCTData.Name = "HCTData";
             this.HCTData.Size = new System.Drawing.Size(27, 20);
             this.HCTData.TabIndex = 63;
@@ -282,7 +282,7 @@
             // HDLData
             // 
             this.HDLData.AutoSize = true;
-            this.HDLData.Location = new System.Drawing.Point(432, 141);
+            this.HDLData.Location = new System.Drawing.Point(934, 151);
             this.HDLData.Name = "HDLData";
             this.HDLData.Size = new System.Drawing.Size(27, 20);
             this.HDLData.TabIndex = 62;
@@ -291,7 +291,7 @@
             // WBCData
             // 
             this.WBCData.AutoSize = true;
-            this.WBCData.Location = new System.Drawing.Point(429, 9);
+            this.WBCData.Location = new System.Drawing.Point(931, 19);
             this.WBCData.Name = "WBCData";
             this.WBCData.Size = new System.Drawing.Size(27, 20);
             this.WBCData.TabIndex = 61;
@@ -300,7 +300,7 @@
             // LymphData
             // 
             this.LymphData.AutoSize = true;
-            this.LymphData.Location = new System.Drawing.Point(418, 170);
+            this.LymphData.Location = new System.Drawing.Point(920, 180);
             this.LymphData.Name = "LymphData";
             this.LymphData.Size = new System.Drawing.Size(27, 20);
             this.LymphData.TabIndex = 60;
@@ -309,7 +309,7 @@
             // RBCData
             // 
             this.RBCData.AutoSize = true;
-            this.RBCData.Location = new System.Drawing.Point(434, 75);
+            this.RBCData.Location = new System.Drawing.Point(936, 85);
             this.RBCData.Name = "RBCData";
             this.RBCData.Size = new System.Drawing.Size(27, 20);
             this.RBCData.TabIndex = 59;
@@ -318,7 +318,7 @@
             // NeutData
             // 
             this.NeutData.AutoSize = true;
-            this.NeutData.Location = new System.Drawing.Point(429, 41);
+            this.NeutData.Location = new System.Drawing.Point(931, 51);
             this.NeutData.Name = "NeutData";
             this.NeutData.Size = new System.Drawing.Size(27, 20);
             this.NeutData.TabIndex = 58;
@@ -327,7 +327,7 @@
             // IronData
             // 
             this.IronData.AutoSize = true;
-            this.IronData.Location = new System.Drawing.Point(452, 298);
+            this.IronData.Location = new System.Drawing.Point(954, 308);
             this.IronData.Name = "IronData";
             this.IronData.Size = new System.Drawing.Size(27, 20);
             this.IronData.TabIndex = 68;
@@ -336,7 +336,7 @@
             // APData
             // 
             this.APData.AutoSize = true;
-            this.APData.Location = new System.Drawing.Point(460, 329);
+            this.APData.Location = new System.Drawing.Point(962, 339);
             this.APData.Name = "APData";
             this.APData.Size = new System.Drawing.Size(27, 20);
             this.APData.TabIndex = 67;
@@ -345,7 +345,7 @@
             // HbData
             // 
             this.HbData.AutoSize = true;
-            this.HbData.Location = new System.Drawing.Point(458, 232);
+            this.HbData.Location = new System.Drawing.Point(960, 242);
             this.HbData.Name = "HbData";
             this.HbData.Size = new System.Drawing.Size(27, 20);
             this.HbData.TabIndex = 66;
@@ -354,7 +354,7 @@
             // CrtnData
             // 
             this.CrtnData.AutoSize = true;
-            this.CrtnData.Location = new System.Drawing.Point(451, 266);
+            this.CrtnData.Location = new System.Drawing.Point(953, 276);
             this.CrtnData.Name = "CrtnData";
             this.CrtnData.Size = new System.Drawing.Size(27, 20);
             this.CrtnData.TabIndex = 65;
@@ -363,7 +363,7 @@
             // UreaData
             // 
             this.UreaData.AutoSize = true;
-            this.UreaData.Location = new System.Drawing.Point(447, 200);
+            this.UreaData.Location = new System.Drawing.Point(949, 210);
             this.UreaData.Name = "UreaData";
             this.UreaData.Size = new System.Drawing.Size(27, 20);
             this.UreaData.TabIndex = 64;
@@ -371,12 +371,14 @@
             // 
             // DandRbtn
             // 
-            this.DandRbtn.Location = new System.Drawing.Point(169, 415);
+            this.DandRbtn.BackColor = System.Drawing.Color.LightCoral;
+            this.DandRbtn.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.DandRbtn.Location = new System.Drawing.Point(422, 528);
             this.DandRbtn.Name = "DandRbtn";
-            this.DandRbtn.Size = new System.Drawing.Size(203, 32);
+            this.DandRbtn.Size = new System.Drawing.Size(297, 63);
             this.DandRbtn.TabIndex = 69;
-            this.DandRbtn.Text = "אבחון המטופל והמלצות";
-            this.DandRbtn.UseVisualStyleBackColor = true;
+            this.DandRbtn.Text = "לחץ לאבחון המטופל והמלצות";
+            this.DandRbtn.UseVisualStyleBackColor = false;
             this.DandRbtn.Click += new System.EventHandler(this.DandRbtn_Click);
             // 
             // DndRListView
@@ -384,11 +386,11 @@
             this.DndRListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2});
-            this.DndRListView.Location = new System.Drawing.Point(31, 453);
+            this.DndRListView.Location = new System.Drawing.Point(180, 432);
             this.DndRListView.Name = "DndRListView";
             this.DndRListView.RightToLeftLayout = true;
             this.DndRListView.ShowGroups = false;
-            this.DndRListView.Size = new System.Drawing.Size(521, 234);
+            this.DndRListView.Size = new System.Drawing.Size(767, 234);
             this.DndRListView.TabIndex = 70;
             this.DndRListView.UseCompatibleStateImageBehavior = false;
             this.DndRListView.View = System.Windows.Forms.View.Details;
@@ -543,10 +545,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(564, 725);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(1047, 725);
+            this.Controls.Add(this.DandRbtn);
             this.Controls.Add(this.CloseBtn);
             this.Controls.Add(this.DndRListView);
-            this.Controls.Add(this.DandRbtn);
             this.Controls.Add(this.IronData);
             this.Controls.Add(this.APData);
             this.Controls.Add(this.HbData);

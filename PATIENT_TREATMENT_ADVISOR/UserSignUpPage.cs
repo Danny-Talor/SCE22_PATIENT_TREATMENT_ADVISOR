@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Text.RegularExpressions;
 using Excel = Microsoft.Office.Interop.Excel;
 
 
@@ -69,7 +61,7 @@ namespace PATIENT_TREATMENT_ADVISOR
         {
             try
             {
-                if (System.Text.RegularExpressions.Regex.IsMatch(UsernameBox.Text, "[^a-zA-Z0-9]"))
+                if (Regex.IsMatch(UsernameBox.Text, "[^a-zA-Z0-9]"))
                 {
                     ToolTip tt = new();
                     tt.Show("אנא הכנס אותיות באנגלית ומספרים בלבד", (TextBox)sender, -115, 29, 3000);
@@ -88,7 +80,7 @@ namespace PATIENT_TREATMENT_ADVISOR
         {
             try
             {
-                if (System.Text.RegularExpressions.Regex.IsMatch(PasswordBox.Text, "[^_$&+,:;=?@#|'<>.-^*()%!a-zA-Z0-9]"))
+                if (Regex.IsMatch(PasswordBox.Text, "[^_$&+,:;=?@#|'<>.-^*()%!a-zA-Z0-9]"))
                 {
                     ToolTip tt = new();
                     tt.Show("!אנא הכנס אותיות באנגלית,מספרים וסימנים בלבד", (TextBox)sender, -165, 29, 3000);
@@ -105,7 +97,7 @@ namespace PATIENT_TREATMENT_ADVISOR
         {
             try
             {
-                if (System.Text.RegularExpressions.Regex.IsMatch(IDBox.Text, "[^0-9]"))
+                if (Regex.IsMatch(IDBox.Text, "[^0-9]"))
                 {
                     ToolTip tt = new();
                     tt.Show("!אנא הכנס מספרים בלבד", (TextBox)sender, -10, 29, 3000);
@@ -137,15 +129,15 @@ namespace PATIENT_TREATMENT_ADVISOR
             {
                 return 1; //Password length is not between 8-10 characters
             }
-            else if (System.Text.RegularExpressions.Regex.Matches(Password, "[~!@#$%^&*()_+{}:\"<>?]").Count < 1)
+            else if (Regex.Matches(Password, "[~!@#$%^&*()_+{}:\"<>?]").Count < 1)
             {
                 return 2; //Password does not contain at least one symbol
             }
-            else if (System.Text.RegularExpressions.Regex.Matches(Password, "[a-zA-Z]").Count < 1)
+            else if (Regex.Matches(Password, "[a-zA-Z]").Count < 1)
             {
                 return 3; //Password does not contain at least one lowercase letter and one uppercase letter
             }
-            else if (System.Text.RegularExpressions.Regex.Matches(Password, "[0-9]").Count < 1)
+            else if (Regex.Matches(Password, "[0-9]").Count < 1)
             {
                 return 4; //Password does not contain at least one number
             }
@@ -165,6 +157,7 @@ namespace PATIENT_TREATMENT_ADVISOR
             return (counter % 10 == 0);
         }
 
+        /*better id check function in javascript, need to translate to cs*/
         //function is_israeli_id_number(id)
         //{
         //    id = String(id).trim();
@@ -175,9 +168,9 @@ namespace PATIENT_TREATMENT_ADVISOR
         //        return counter + (step > 9 ? step - 9 : step);
         //    }) % 10 === 0;
         //}
+
         private void RegisterUser(string username, string password, string id)
         {
-
             int i = 2;
             if (Program.excel_Workbook != null)
             {

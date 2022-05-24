@@ -135,5 +135,10 @@ namespace PATIENT_TREATMENT_ADVISOR
                 PasswordBox.Focus();
             }
         }
+
+        private void InfoBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

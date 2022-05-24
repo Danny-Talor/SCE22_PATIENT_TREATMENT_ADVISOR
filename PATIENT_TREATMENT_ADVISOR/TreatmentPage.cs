@@ -99,6 +99,10 @@ namespace PATIENT_TREATMENT_ADVISOR
                     }
                     System.Runtime.InteropServices.Marshal.FinalReleaseComObject(excel_Worksheet);
                 }
+                if(PatientListView.Items.Count > 0)
+                {
+                    InstructionsLabel.Visible = true;
+                }
             }
             catch (Exception ex)
             {

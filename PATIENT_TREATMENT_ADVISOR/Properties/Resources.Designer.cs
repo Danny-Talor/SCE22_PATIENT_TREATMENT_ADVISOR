@@ -83,9 +83,9 @@ namespace PATIENT_TREATMENT_ADVISOR.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap infoicon {
+        internal static System.Drawing.Bitmap Button_Add_icon {
             get {
-                object obj = ResourceManager.GetObject("infoicon", resourceCulture);
+                object obj = ResourceManager.GetObject("Button-Add-icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -120,6 +120,16 @@ namespace PATIENT_TREATMENT_ADVISOR.Properties {
         internal static string recommendation {
             get {
                 return ResourceManager.GetString("recommendation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap xl_icon {
+            get {
+                object obj = ResourceManager.GetObject("xl-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }
