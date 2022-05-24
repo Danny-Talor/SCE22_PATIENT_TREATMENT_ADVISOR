@@ -157,13 +157,14 @@ namespace PATIENT_TREATMENT_ADVISOR
             return (counter % 10 == 0);
         }
 
-        /*better id check function in javascript, need to translate to cs*/
+        ///*better id check function in javascript, need to translate to cs*/
         //function is_israeli_id_number(id)
         //{
         //    id = String(id).trim();
         //    if (id.length > 9 || isNaN(id)) return false;
         //    id = id.length < 9 ? ("00000000" + id).slice(-9) : id;
-        //    return Array.from(id, Number).reduce((counter, digit, i) => {
+        //    return Array.from(id, Number).reduce((counter, digit, i) =>
+        //    {
         //        const step = digit * ((i % 2) + 1);
         //        return counter + (step > 9 ? step - 9 : step);
         //    }) % 10 === 0;
@@ -177,7 +178,7 @@ namespace PATIENT_TREATMENT_ADVISOR
                 Excel.Worksheet excel_Worksheet = (Excel.Worksheet)Program.excel_Workbook.Sheets[1]; // Select worksheet number 1 (users)
                 while (excel_Worksheet.Cells[i, 1].Value != null) // Look for empty row
                 {
-                    if (excel_Worksheet.Cells[i, 1].Value == username)
+                    if (excel_Worksheet.Cells[i, 1].Value == username) // Found username that already exists
                     {
                         Ulabel1.Visible = true;
                         break;

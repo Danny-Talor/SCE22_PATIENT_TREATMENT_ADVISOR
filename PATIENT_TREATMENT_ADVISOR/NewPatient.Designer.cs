@@ -67,11 +67,14 @@
             this.EthnicityLabel = new System.Windows.Forms.Label();
             this.EthnicityBox = new System.Windows.Forms.ComboBox();
             this.CancelBtn = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // APBox
             // 
-            this.APBox.Location = new System.Drawing.Point(249, 299);
+            this.APBox.Location = new System.Drawing.Point(30, 347);
             this.APBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.APBox.Name = "APBox";
             this.APBox.Size = new System.Drawing.Size(72, 27);
@@ -80,7 +83,7 @@
             // 
             // LymphBox
             // 
-            this.LymphBox.Location = new System.Drawing.Point(88, 222);
+            this.LymphBox.Location = new System.Drawing.Point(169, 250);
             this.LymphBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.LymphBox.Name = "LymphBox";
             this.LymphBox.Size = new System.Drawing.Size(72, 27);
@@ -89,7 +92,7 @@
             // 
             // IronBox
             // 
-            this.IronBox.Location = new System.Drawing.Point(249, 218);
+            this.IronBox.Location = new System.Drawing.Point(328, 249);
             this.IronBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.IronBox.Name = "IronBox";
             this.IronBox.Size = new System.Drawing.Size(72, 27);
@@ -98,7 +101,7 @@
             // 
             // WBCBox
             // 
-            this.WBCBox.Location = new System.Drawing.Point(88, 141);
+            this.WBCBox.Location = new System.Drawing.Point(30, 203);
             this.WBCBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.WBCBox.Name = "WBCBox";
             this.WBCBox.Size = new System.Drawing.Size(72, 27);
@@ -107,7 +110,7 @@
             // 
             // HbBox
             // 
-            this.HbBox.Location = new System.Drawing.Point(249, 142);
+            this.HbBox.Location = new System.Drawing.Point(169, 204);
             this.HbBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.HbBox.Name = "HbBox";
             this.HbBox.Size = new System.Drawing.Size(72, 27);
@@ -116,7 +119,7 @@
             // 
             // LastNameBox
             // 
-            this.LastNameBox.Location = new System.Drawing.Point(11, 16);
+            this.LastNameBox.Location = new System.Drawing.Point(10, 51);
             this.LastNameBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.LastNameBox.Name = "LastNameBox";
             this.LastNameBox.Size = new System.Drawing.Size(129, 27);
@@ -125,7 +128,7 @@
             // 
             // RBCBox
             // 
-            this.RBCBox.Location = new System.Drawing.Point(88, 261);
+            this.RBCBox.Location = new System.Drawing.Point(29, 293);
             this.RBCBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.RBCBox.Name = "RBCBox";
             this.RBCBox.Size = new System.Drawing.Size(72, 27);
@@ -134,7 +137,7 @@
             // 
             // HDLBox
             // 
-            this.HDLBox.Location = new System.Drawing.Point(249, 256);
+            this.HDLBox.Location = new System.Drawing.Point(169, 296);
             this.HDLBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.HDLBox.Name = "HDLBox";
             this.HDLBox.Size = new System.Drawing.Size(72, 27);
@@ -143,7 +146,7 @@
             // 
             // NeutBox
             // 
-            this.NeutBox.Location = new System.Drawing.Point(88, 179);
+            this.NeutBox.Location = new System.Drawing.Point(328, 204);
             this.NeutBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.NeutBox.Name = "NeutBox";
             this.NeutBox.Size = new System.Drawing.Size(72, 27);
@@ -152,7 +155,7 @@
             // 
             // CrtnBox
             // 
-            this.CrtnBox.Location = new System.Drawing.Point(249, 180);
+            this.CrtnBox.Location = new System.Drawing.Point(29, 249);
             this.CrtnBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.CrtnBox.Name = "CrtnBox";
             this.CrtnBox.Size = new System.Drawing.Size(72, 27);
@@ -161,7 +164,7 @@
             // 
             // AgeBox
             // 
-            this.AgeBox.Location = new System.Drawing.Point(333, 83);
+            this.AgeBox.Location = new System.Drawing.Point(332, 118);
             this.AgeBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.AgeBox.Name = "AgeBox";
             this.AgeBox.Size = new System.Drawing.Size(47, 27);
@@ -170,7 +173,7 @@
             // 
             // UreaBox
             // 
-            this.UreaBox.Location = new System.Drawing.Point(88, 345);
+            this.UreaBox.Location = new System.Drawing.Point(169, 346);
             this.UreaBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.UreaBox.Name = "UreaBox";
             this.UreaBox.Size = new System.Drawing.Size(72, 27);
@@ -179,7 +182,7 @@
             // 
             // FirstNameBox
             // 
-            this.FirstNameBox.Location = new System.Drawing.Point(251, 13);
+            this.FirstNameBox.Location = new System.Drawing.Point(250, 48);
             this.FirstNameBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.FirstNameBox.Name = "FirstNameBox";
             this.FirstNameBox.Size = new System.Drawing.Size(129, 27);
@@ -188,7 +191,7 @@
             // 
             // HCTBox
             // 
-            this.HCTBox.Location = new System.Drawing.Point(88, 301);
+            this.HCTBox.Location = new System.Drawing.Point(328, 298);
             this.HCTBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.HCTBox.Name = "HCTBox";
             this.HCTBox.Size = new System.Drawing.Size(72, 27);
@@ -197,7 +200,7 @@
             // 
             // IDBox
             // 
-            this.IDBox.Location = new System.Drawing.Point(251, 48);
+            this.IDBox.Location = new System.Drawing.Point(250, 83);
             this.IDBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.IDBox.Name = "IDBox";
             this.IDBox.Size = new System.Drawing.Size(129, 27);
@@ -208,7 +211,7 @@
             // 
             this.IronLabel.AutoSize = true;
             this.IronLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.IronLabel.Location = new System.Drawing.Point(327, 218);
+            this.IronLabel.Location = new System.Drawing.Point(406, 252);
             this.IronLabel.Name = "IronLabel";
             this.IronLabel.Size = new System.Drawing.Size(41, 23);
             this.IronLabel.TabIndex = 17;
@@ -218,7 +221,7 @@
             // 
             this.HCTLabel.AutoSize = true;
             this.HCTLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.HCTLabel.Location = new System.Drawing.Point(166, 308);
+            this.HCTLabel.Location = new System.Drawing.Point(397, 303);
             this.HCTLabel.Name = "HCTLabel";
             this.HCTLabel.Size = new System.Drawing.Size(57, 23);
             this.HCTLabel.TabIndex = 16;
@@ -228,7 +231,7 @@
             // 
             this.WBCLabel.AutoSize = true;
             this.WBCLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.WBCLabel.Location = new System.Drawing.Point(166, 144);
+            this.WBCLabel.Location = new System.Drawing.Point(108, 206);
             this.WBCLabel.Name = "WBCLabel";
             this.WBCLabel.Size = new System.Drawing.Size(47, 23);
             this.WBCLabel.TabIndex = 15;
@@ -238,7 +241,7 @@
             // 
             this.APLabel.AutoSize = true;
             this.APLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.APLabel.Location = new System.Drawing.Point(327, 302);
+            this.APLabel.Location = new System.Drawing.Point(108, 350);
             this.APLabel.Name = "APLabel";
             this.APLabel.Size = new System.Drawing.Size(31, 23);
             this.APLabel.TabIndex = 14;
@@ -248,7 +251,7 @@
             // 
             this.IDLabel.AutoSize = true;
             this.IDLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.IDLabel.Location = new System.Drawing.Point(387, 55);
+            this.IDLabel.Location = new System.Drawing.Point(386, 90);
             this.IDLabel.Name = "IDLabel";
             this.IDLabel.Size = new System.Drawing.Size(28, 23);
             this.IDLabel.TabIndex = 13;
@@ -258,7 +261,7 @@
             // 
             this.HbLabel.AutoSize = true;
             this.HbLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.HbLabel.Location = new System.Drawing.Point(327, 142);
+            this.HbLabel.Location = new System.Drawing.Point(247, 204);
             this.HbLabel.Name = "HbLabel";
             this.HbLabel.Size = new System.Drawing.Size(33, 23);
             this.HbLabel.TabIndex = 12;
@@ -268,7 +271,7 @@
             // 
             this.LymphLabel.AutoSize = true;
             this.LymphLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LymphLabel.Location = new System.Drawing.Point(166, 229);
+            this.LymphLabel.Location = new System.Drawing.Point(247, 253);
             this.LymphLabel.Name = "LymphLabel";
             this.LymphLabel.Size = new System.Drawing.Size(75, 23);
             this.LymphLabel.TabIndex = 11;
@@ -278,7 +281,7 @@
             // 
             this.LastNameLabel.AutoSize = true;
             this.LastNameLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LastNameLabel.Location = new System.Drawing.Point(146, 19);
+            this.LastNameLabel.Location = new System.Drawing.Point(145, 54);
             this.LastNameLabel.Name = "LastNameLabel";
             this.LastNameLabel.Size = new System.Drawing.Size(99, 23);
             this.LastNameLabel.TabIndex = 9;
@@ -288,7 +291,7 @@
             // 
             this.HDLLabel.AutoSize = true;
             this.HDLLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.HDLLabel.Location = new System.Drawing.Point(327, 263);
+            this.HDLLabel.Location = new System.Drawing.Point(247, 297);
             this.HDLLabel.Name = "HDLLabel";
             this.HDLLabel.Size = new System.Drawing.Size(43, 23);
             this.HDLLabel.TabIndex = 8;
@@ -298,7 +301,7 @@
             // 
             this.RBCLabel.AutoSize = true;
             this.RBCLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.RBCLabel.Location = new System.Drawing.Point(166, 268);
+            this.RBCLabel.Location = new System.Drawing.Point(108, 300);
             this.RBCLabel.Name = "RBCLabel";
             this.RBCLabel.Size = new System.Drawing.Size(42, 23);
             this.RBCLabel.TabIndex = 7;
@@ -308,7 +311,7 @@
             // 
             this.CrtnLabel.AutoSize = true;
             this.CrtnLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.CrtnLabel.Location = new System.Drawing.Point(327, 178);
+            this.CrtnLabel.Location = new System.Drawing.Point(107, 247);
             this.CrtnLabel.Name = "CrtnLabel";
             this.CrtnLabel.Size = new System.Drawing.Size(43, 23);
             this.CrtnLabel.TabIndex = 6;
@@ -318,7 +321,7 @@
             // 
             this.NeutLabel.AutoSize = true;
             this.NeutLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.NeutLabel.Location = new System.Drawing.Point(166, 184);
+            this.NeutLabel.Location = new System.Drawing.Point(397, 207);
             this.NeutLabel.Name = "NeutLabel";
             this.NeutLabel.Size = new System.Drawing.Size(62, 23);
             this.NeutLabel.TabIndex = 5;
@@ -328,7 +331,7 @@
             // 
             this.UreaLabel.AutoSize = true;
             this.UreaLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.UreaLabel.Location = new System.Drawing.Point(166, 348);
+            this.UreaLabel.Location = new System.Drawing.Point(247, 349);
             this.UreaLabel.Name = "UreaLabel";
             this.UreaLabel.Size = new System.Drawing.Size(46, 23);
             this.UreaLabel.TabIndex = 4;
@@ -338,7 +341,7 @@
             // 
             this.AgeLabel.AutoSize = true;
             this.AgeLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.AgeLabel.Location = new System.Drawing.Point(387, 86);
+            this.AgeLabel.Location = new System.Drawing.Point(386, 121);
             this.AgeLabel.Name = "AgeLabel";
             this.AgeLabel.Size = new System.Drawing.Size(33, 23);
             this.AgeLabel.TabIndex = 18;
@@ -348,7 +351,7 @@
             // 
             this.FirstNameLabel.AutoSize = true;
             this.FirstNameLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.FirstNameLabel.Location = new System.Drawing.Point(386, 16);
+            this.FirstNameLabel.Location = new System.Drawing.Point(385, 51);
             this.FirstNameLabel.Name = "FirstNameLabel";
             this.FirstNameLabel.Size = new System.Drawing.Size(77, 23);
             this.FirstNameLabel.TabIndex = 3;
@@ -356,22 +359,23 @@
             // 
             // AddPatientButton
             // 
+            this.AddPatientButton.BackColor = System.Drawing.Color.GreenYellow;
             this.AddPatientButton.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.AddPatientButton.Location = new System.Drawing.Point(247, 452);
+            this.AddPatientButton.Location = new System.Drawing.Point(230, 451);
             this.AddPatientButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.AddPatientButton.Name = "AddPatientButton";
-            this.AddPatientButton.Size = new System.Drawing.Size(86, 31);
+            this.AddPatientButton.Size = new System.Drawing.Size(149, 54);
             this.AddPatientButton.TabIndex = 0;
             this.AddPatientButton.TabStop = false;
             this.AddPatientButton.Text = "הוסף מטופל";
-            this.AddPatientButton.UseVisualStyleBackColor = true;
+            this.AddPatientButton.UseVisualStyleBackColor = false;
             this.AddPatientButton.Click += new System.EventHandler(this.AddPatientButton_Click);
             // 
             // GenderLabel
             // 
             this.GenderLabel.AutoSize = true;
             this.GenderLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.GenderLabel.Location = new System.Drawing.Point(219, 50);
+            this.GenderLabel.Location = new System.Drawing.Point(218, 85);
             this.GenderLabel.Name = "GenderLabel";
             this.GenderLabel.Size = new System.Drawing.Size(32, 23);
             this.GenderLabel.TabIndex = 36;
@@ -384,7 +388,7 @@
             this.GenderBox.Items.AddRange(new object[] {
             "זכר",
             "נקבה"});
-            this.GenderBox.Location = new System.Drawing.Point(146, 47);
+            this.GenderBox.Location = new System.Drawing.Point(145, 82);
             this.GenderBox.Name = "GenderBox";
             this.GenderBox.Size = new System.Drawing.Size(67, 28);
             this.GenderBox.TabIndex = 3;
@@ -392,15 +396,16 @@
             // 
             // ImportButton
             // 
+            this.ImportButton.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ImportButton.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.ImportButton.Location = new System.Drawing.Point(138, 390);
+            this.ImportButton.Location = new System.Drawing.Point(139, 392);
             this.ImportButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ImportButton.Name = "ImportButton";
             this.ImportButton.Size = new System.Drawing.Size(183, 31);
             this.ImportButton.TabIndex = 0;
             this.ImportButton.TabStop = false;
             this.ImportButton.Text = "ייבא ערכי מטופל";
-            this.ImportButton.UseVisualStyleBackColor = true;
+            this.ImportButton.UseVisualStyleBackColor = false;
             this.ImportButton.Click += new System.EventHandler(this.ImportButton_Click);
             // 
             // FileDialog
@@ -418,7 +423,7 @@
             // 
             this.QPregCB.AutoSize = true;
             this.QPregCB.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.QPregCB.Location = new System.Drawing.Point(59, 49);
+            this.QPregCB.Location = new System.Drawing.Point(58, 84);
             this.QPregCB.Name = "QPregCB";
             this.QPregCB.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.QPregCB.Size = new System.Drawing.Size(77, 27);
@@ -432,7 +437,7 @@
             // 
             this.EthnicityLabel.AutoSize = true;
             this.EthnicityLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.EthnicityLabel.Location = new System.Drawing.Point(273, 86);
+            this.EthnicityLabel.Location = new System.Drawing.Point(272, 121);
             this.EthnicityLabel.Name = "EthnicityLabel";
             this.EthnicityLabel.Size = new System.Drawing.Size(48, 23);
             this.EthnicityLabel.TabIndex = 44;
@@ -446,30 +451,67 @@
             "אחר",
             "מזרחי",
             "אתיופי"});
-            this.EthnicityBox.Location = new System.Drawing.Point(184, 83);
+            this.EthnicityBox.Location = new System.Drawing.Point(183, 118);
             this.EthnicityBox.Name = "EthnicityBox";
             this.EthnicityBox.Size = new System.Drawing.Size(83, 28);
             this.EthnicityBox.TabIndex = 5;
             // 
             // CancelBtn
             // 
+            this.CancelBtn.BackColor = System.Drawing.Color.Tomato;
             this.CancelBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.CancelBtn.Location = new System.Drawing.Point(129, 452);
+            this.CancelBtn.Location = new System.Drawing.Point(88, 452);
             this.CancelBtn.Name = "CancelBtn";
-            this.CancelBtn.Size = new System.Drawing.Size(94, 29);
+            this.CancelBtn.Size = new System.Drawing.Size(98, 52);
             this.CancelBtn.TabIndex = 45;
             this.CancelBtn.Text = "ביטול";
-            this.CancelBtn.UseVisualStyleBackColor = true;
+            this.CancelBtn.UseVisualStyleBackColor = false;
             this.CancelBtn.Click += new System.EventHandler(this.CancelButton_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(12, 159);
+            this.label2.Name = "label2";
+            this.label2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label2.Size = new System.Drawing.Size(447, 28);
+            this.label2.TabIndex = 47;
+            this.label2.Text = "ערכי בדיקות דם                                              ";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(12, 9);
+            this.label3.Name = "label3";
+            this.label3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label3.Size = new System.Drawing.Size(446, 28);
+            this.label3.TabIndex = 48;
+            this.label3.Text = "פרטי המטופל                                                  ";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(21, 427);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(441, 20);
+            this.label4.TabIndex = 50;
+            this.label4.Text = "________________________________________________________________________";
             // 
             // NewPatient
             // 
             this.AcceptButton = this.AddPatientButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.BackColor = System.Drawing.Color.DarkGray;
             this.CancelButton = this.CancelBtn;
-            this.ClientSize = new System.Drawing.Size(465, 514);
+            this.ClientSize = new System.Drawing.Size(465, 533);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.CancelBtn);
             this.Controls.Add(this.EthnicityBox);
             this.Controls.Add(this.EthnicityLabel);
@@ -511,6 +553,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "NewPatient";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NewPatient";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -557,5 +600,8 @@
         private Label EthnicityLabel;
         private ComboBox EthnicityBox;
         private Button CancelBtn;
+        private Label label2;
+        private Label label3;
+        private Label label4;
     }
 }

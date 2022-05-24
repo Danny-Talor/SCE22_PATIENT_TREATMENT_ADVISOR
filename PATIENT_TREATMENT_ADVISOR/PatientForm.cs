@@ -81,7 +81,7 @@ namespace PATIENT_TREATMENT_ADVISOR
                 Gender = GenderData.Text = excel_Worksheet.Cells[patientIndex, 5].Value2.ToString();
                 ethnicity = EthnData.Text = excel_Worksheet.Cells[patientIndex, 6].Value2.ToString();
 
-                if (excel_Worksheet.Cells[patientIndex, 7].Value != null)
+                if (excel_Worksheet.Cells[patientIndex, 7].Value != "-")
                 {
                     DndRListViewInit(excel_Worksheet);
                     QuestionDataInit(excel_Worksheet);
@@ -127,7 +127,7 @@ namespace PATIENT_TREATMENT_ADVISOR
             if (Program.excel_Workbook != null)
             {
                 Excel.Worksheet excel_Worksheet = (Excel.Worksheet)Program.excel_Workbook.Sheets[2]; // Select patients sheet
-                if (excel_Worksheet.Cells[patientIndex, 7].Value == null)
+                if (excel_Worksheet.Cells[patientIndex, 7].Value == "-")
                 {
                     QuestionForm qform = new(patientIndex);
                     qform.ShowDialog();
@@ -185,7 +185,6 @@ namespace PATIENT_TREATMENT_ADVISOR
             {
                 if (disease.Value > 0)
                 {
-
                     diseases += "\n" + disease.Key;
                     switch (disease.Key)
                     {
@@ -273,9 +272,12 @@ namespace PATIENT_TREATMENT_ADVISOR
                 }
                 
             }
-            excel_Worksheet.Cells[patientIndex, 24] = diseases;
-            excel_Worksheet.Cells[patientIndex, 25] = recommendations;
-            if(Program.excel_Workbook != null)
+            if(diseases != "" && recommendations != "")
+            {
+                excel_Worksheet.Cells[patientIndex, 24] = diseases.Remove(0,1);
+                excel_Worksheet.Cells[patientIndex, 25] = recommendations.Remove(0,1);
+            }
+            if (Program.excel_Workbook != null)
             {
                 Program.excel_Workbook.Save();
             }
@@ -289,7 +291,7 @@ namespace PATIENT_TREATMENT_ADVISOR
                 string recommendationsCell = excel_Worksheet.Cells[patientIndex, 25].Value.ToString();
                 string[] savedDiagnosis = diagnosisCell.Split("\n");
                 string[] savedRecommendations = recommendationsCell.Split("\n");
-                for (int i = 1; i < savedDiagnosis.Length; i++)
+                for (int i = 0; i < savedDiagnosis.Length; i++)
                 {
                     item = new();
                     item.Text = savedDiagnosis[i];

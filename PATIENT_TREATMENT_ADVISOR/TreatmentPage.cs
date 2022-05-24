@@ -99,7 +99,7 @@ namespace PATIENT_TREATMENT_ADVISOR
                     }
                     System.Runtime.InteropServices.Marshal.FinalReleaseComObject(excel_Worksheet);
                 }
-                if(PatientListView.Items.Count > 0)
+                if (PatientListView.Items.Count > 0)
                 {
                     InstructionsLabel.Visible = true;
                 }
@@ -124,25 +124,31 @@ namespace PATIENT_TREATMENT_ADVISOR
 
         private void SaveFileDialog_FileOk(object sender, CancelEventArgs e)
         {
-            if(Program.excel_Application != null && Program.excel_Workbook != null)
+            if (Program.excel_Application != null && Program.excel_Workbook != null)
             {
-                Excel.Worksheet excel_Worksheet = (Excel.Worksheet)Program.excel_Workbook.Sheets[2]; // Select patients sheet
-                Excel.Workbook new_Excel_Workbook = Program.excel_Application.Workbooks.Add(System.Reflection.Missing.Value); // Create new Excel workbook
-                Excel.Worksheet new_excel_Worksheet = (Excel.Worksheet)new_Excel_Workbook.Sheets[1]; // Select worksheet number 1 of new workbook
-                new_excel_Worksheet.Copy(excel_Worksheet); //Copy patients to new excel workbook
+                Program.excel_Workbook.SaveCopyAs(SaveFileDialog.FileName); // Save copy of workbook
+                Program.excel_Workbook = Program.excel_Application.Workbooks.Open(SaveFileDialog.FileName); // Open copy
+                Excel.Worksheet excel_Worksheet = (Excel.Worksheet)Program.excel_Workbook.Sheets[1]; // Select users sheet
+                Program.excel_Application.DisplayAlerts = false;
+                excel_Worksheet.Delete(); // Delete user sheet
+                Program.excel_Application.DisplayAlerts = true;
+                Program.excel_Workbook.Save(); // save workbook
+                excel_Worksheet = (Excel.Worksheet)Program.excel_Workbook.Sheets[1]; // Select now patients sheet
+
+                //append % to values that require percentages in patients sheet
                 int i = 2;
-                while(new_excel_Worksheet.Cells[i,1].Value != null)
+                while (excel_Worksheet.Cells[i, 1].Value != null)
                 {
-                    new_excel_Worksheet.Cells[i, 14] = excel_Worksheet.Cells[i, 14].Value2.ToString() + "%";
-                    new_excel_Worksheet.Cells[i, 15] = excel_Worksheet.Cells[i, 15].Value2.ToString() + "%";
-                    new_excel_Worksheet.Cells[i, 15] = excel_Worksheet.Cells[i, 17].Value2.ToString() + "%";
+                    excel_Worksheet.Cells[i, 14] = excel_Worksheet.Cells[i, 14].Value2.ToString() + "%";
+                    excel_Worksheet.Cells[i, 15] = excel_Worksheet.Cells[i, 15].Value2.ToString() + "%";
+                    excel_Worksheet.Cells[i, 17] = excel_Worksheet.Cells[i, 17].Value2.ToString() + "%";
+                    i++;
                 }
+
                 System.Runtime.InteropServices.Marshal.FinalReleaseComObject(excel_Worksheet); // Cleanup
-                System.Runtime.InteropServices.Marshal.FinalReleaseComObject(new_excel_Worksheet); // Cleanup
-                // Save new workbook, close, and release ComObject
-                new_Excel_Workbook.SaveAs2(SaveFileDialog.FileName, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlNoChange, Type.Missing, Type.Missing, Type.Missing);
-                new_Excel_Workbook.Close(false);
-                System.Runtime.InteropServices.Marshal.FinalReleaseComObject(new_Excel_Workbook);
+                Program.excel_Workbook.Close(true); // Close workbook with saving
+                Program.excel_Workbook = Program.excel_Application.Workbooks.Open(Program.db_path); // Reopen database
+
             }
         }
     }

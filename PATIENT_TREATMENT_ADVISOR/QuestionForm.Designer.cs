@@ -140,6 +140,7 @@
             this.Controls.Add(this.QSmokerCB);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "QuestionForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "QuestionForm";
             this.ResumeLayout(false);
             this.PerformLayout();
