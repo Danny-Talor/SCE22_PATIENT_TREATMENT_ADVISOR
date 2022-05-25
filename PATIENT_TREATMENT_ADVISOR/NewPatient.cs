@@ -18,7 +18,7 @@ namespace PATIENT_TREATMENT_ADVISOR
                 if (Regex.IsMatch(IDBox.Text, "[^0-9]"))
                 {
                     ToolTip tt = new();
-                    tt.Show("!אנא הכנס אותיות מספרים בלבד", (TextBox)sender, 0, 20, 3000);
+                    tt.Show("!אנא הכנס מספרים בלבד", (TextBox)sender, 0, 20, 3000);
                     IDBox.Text = IDBox.Text.Remove(IDBox.Text.Length - 1);
                 }
             }
@@ -329,6 +329,22 @@ namespace PATIENT_TREATMENT_ADVISOR
             if (CheckInputIsEmpty())
             {
                 MessageBox.Show("אנא מלא את כל התאים");
+            }
+            else if (!Utility.IsIsraeliID(IDBox.Text))
+            {
+                MessageBox.Show("מספר זהות אינו תקין");
+            }
+            else if(Int32.Parse(AgeBox.Text) < 0 || Int32.Parse(AgeBox.Text) > 125)
+            {
+                MessageBox.Show("גיל אינו תקין");
+            }
+            else if(FirstNameBox.Text.Length < 2 || FirstNameBox.Text.Length > 64)
+            {
+                MessageBox.Show("שם אינו תקין");
+            }
+            else if (LastNameBox.Text.Length < 2 || LastNameBox.Text.Length > 64)
+            {
+                MessageBox.Show("שם משפחה אינו תקין");
             }
             else
             {

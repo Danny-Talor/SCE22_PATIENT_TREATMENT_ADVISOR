@@ -197,6 +197,8 @@
             this.InfoBtn.TabIndex = 12;
             this.InfoBtn.TabStop = false;
             this.InfoBtn.Click += new System.EventHandler(this.InfoBtn_Click);
+            this.InfoBtn.MouseLeave += new System.EventHandler(this.InfoBtn_MouseLeave);
+            this.InfoBtn.MouseHover += new System.EventHandler(this.InfoBtn_MouseHover);
             // 
             // UserSignInPage
             // 

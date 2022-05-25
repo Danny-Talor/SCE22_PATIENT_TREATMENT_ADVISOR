@@ -64,320 +64,343 @@
             this.DndRListView = new System.Windows.Forms.ListView();
             this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
-            this.FeverLabel = new System.Windows.Forms.Label();
-            this.PregLabel = new System.Windows.Forms.Label();
-            this.SmokerLabel = new System.Windows.Forms.Label();
-            this.LungLabel = new System.Windows.Forms.Label();
-            this.DiaVomLabel = new System.Windows.Forms.Label();
-            this.FeverData = new System.Windows.Forms.Label();
-            this.PregData = new System.Windows.Forms.Label();
-            this.SmokerData = new System.Windows.Forms.Label();
-            this.LungData = new System.Windows.Forms.Label();
-            this.DiaVomData = new System.Windows.Forms.Label();
-            this.VegLabel = new System.Windows.Forms.Label();
             this.EthnLabel = new System.Windows.Forms.Label();
-            this.VegData = new System.Windows.Forms.Label();
             this.EthnData = new System.Windows.Forms.Label();
             this.CloseBtn = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // GenderLabel
             // 
             this.GenderLabel.AutoSize = true;
-            this.GenderLabel.Location = new System.Drawing.Point(13, 151);
+            this.GenderLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.GenderLabel.Location = new System.Drawing.Point(36, 183);
             this.GenderLabel.Name = "GenderLabel";
-            this.GenderLabel.Size = new System.Drawing.Size(27, 20);
+            this.GenderLabel.Size = new System.Drawing.Size(38, 28);
             this.GenderLabel.TabIndex = 45;
             this.GenderLabel.Text = "מין";
             // 
             // WBCLabel
             // 
             this.WBCLabel.AutoSize = true;
-            this.WBCLabel.Location = new System.Drawing.Point(994, 19);
+            this.WBCLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.WBCLabel.Location = new System.Drawing.Point(787, 51);
             this.WBCLabel.Name = "WBCLabel";
-            this.WBCLabel.Size = new System.Drawing.Size(41, 20);
+            this.WBCLabel.Size = new System.Drawing.Size(55, 28);
             this.WBCLabel.TabIndex = 43;
             this.WBCLabel.Text = "WBC";
             // 
             // IDLabel
             // 
             this.IDLabel.AutoSize = true;
-            this.IDLabel.Location = new System.Drawing.Point(12, 84);
+            this.IDLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.IDLabel.Location = new System.Drawing.Point(36, 116);
             this.IDLabel.Name = "IDLabel";
-            this.IDLabel.Size = new System.Drawing.Size(25, 20);
+            this.IDLabel.Size = new System.Drawing.Size(34, 28);
             this.IDLabel.TabIndex = 42;
             this.IDLabel.Text = "תז";
             // 
             // LymphLabel
             // 
             this.LymphLabel.AutoSize = true;
-            this.LymphLabel.Location = new System.Drawing.Point(983, 180);
+            this.LymphLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.LymphLabel.Location = new System.Drawing.Point(752, 191);
             this.LymphLabel.Name = "LymphLabel";
-            this.LymphLabel.Size = new System.Drawing.Size(52, 20);
+            this.LymphLabel.Size = new System.Drawing.Size(90, 28);
             this.LymphLabel.TabIndex = 41;
-            this.LymphLabel.Text = "Lymph";
+            this.LymphLabel.Text = "%Lymph";
             // 
             // LastNameLabel
             // 
             this.LastNameLabel.AutoSize = true;
-            this.LastNameLabel.Location = new System.Drawing.Point(12, 53);
+            this.LastNameLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.LastNameLabel.Location = new System.Drawing.Point(36, 83);
             this.LastNameLabel.Name = "LastNameLabel";
-            this.LastNameLabel.Size = new System.Drawing.Size(86, 20);
+            this.LastNameLabel.Size = new System.Drawing.Size(118, 28);
             this.LastNameLabel.TabIndex = 40;
             this.LastNameLabel.Text = "שם משפחה";
             // 
             // RBCLabel
             // 
             this.RBCLabel.AutoSize = true;
-            this.RBCLabel.Location = new System.Drawing.Point(999, 85);
+            this.RBCLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.RBCLabel.Location = new System.Drawing.Point(794, 107);
             this.RBCLabel.Name = "RBCLabel";
-            this.RBCLabel.Size = new System.Drawing.Size(36, 20);
+            this.RBCLabel.Size = new System.Drawing.Size(48, 28);
             this.RBCLabel.TabIndex = 39;
             this.RBCLabel.Text = "RBC";
             // 
             // NeutLabel
             // 
             this.NeutLabel.AutoSize = true;
-            this.NeutLabel.Location = new System.Drawing.Point(994, 51);
+            this.NeutLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.NeutLabel.Location = new System.Drawing.Point(768, 79);
             this.NeutLabel.Name = "NeutLabel";
-            this.NeutLabel.Size = new System.Drawing.Size(41, 20);
+            this.NeutLabel.Size = new System.Drawing.Size(74, 28);
             this.NeutLabel.TabIndex = 38;
-            this.NeutLabel.Text = "Neut";
+            this.NeutLabel.Text = "%Neut";
             // 
             // AgeLabel
             // 
             this.AgeLabel.AutoSize = true;
-            this.AgeLabel.Location = new System.Drawing.Point(12, 116);
+            this.AgeLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.AgeLabel.Location = new System.Drawing.Point(36, 148);
             this.AgeLabel.Name = "AgeLabel";
-            this.AgeLabel.Size = new System.Drawing.Size(28, 20);
+            this.AgeLabel.Size = new System.Drawing.Size(38, 28);
             this.AgeLabel.TabIndex = 44;
             this.AgeLabel.Text = "גיל";
             // 
             // FirstNameLabel
             // 
             this.FirstNameLabel.AutoSize = true;
-            this.FirstNameLabel.Location = new System.Drawing.Point(12, 19);
+            this.FirstNameLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.FirstNameLabel.Location = new System.Drawing.Point(36, 51);
             this.FirstNameLabel.Name = "FirstNameLabel";
-            this.FirstNameLabel.Size = new System.Drawing.Size(66, 20);
+            this.FirstNameLabel.Size = new System.Drawing.Size(92, 28);
             this.FirstNameLabel.TabIndex = 37;
             this.FirstNameLabel.Text = "שם פרטי";
             // 
             // IronLabel
             // 
             this.IronLabel.AutoSize = true;
-            this.IronLabel.Location = new System.Drawing.Point(1000, 308);
+            this.IronLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.IronLabel.Location = new System.Drawing.Point(793, 303);
             this.IronLabel.Name = "IronLabel";
-            this.IronLabel.Size = new System.Drawing.Size(35, 20);
+            this.IronLabel.Size = new System.Drawing.Size(49, 28);
             this.IronLabel.TabIndex = 52;
             this.IronLabel.Text = "Iron";
             // 
             // HCTLabel
             // 
             this.HCTLabel.AutoSize = true;
-            this.HCTLabel.Location = new System.Drawing.Point(998, 117);
+            this.HCTLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.HCTLabel.Location = new System.Drawing.Point(775, 135);
             this.HCTLabel.Name = "HCTLabel";
-            this.HCTLabel.Size = new System.Drawing.Size(37, 20);
+            this.HCTLabel.Size = new System.Drawing.Size(67, 28);
             this.HCTLabel.TabIndex = 51;
-            this.HCTLabel.Text = "HCT";
+            this.HCTLabel.Text = "%HCT";
             // 
             // APLabel
             // 
             this.APLabel.AutoSize = true;
-            this.APLabel.Location = new System.Drawing.Point(1008, 339);
+            this.APLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.APLabel.Location = new System.Drawing.Point(805, 331);
             this.APLabel.Name = "APLabel";
-            this.APLabel.Size = new System.Drawing.Size(27, 20);
+            this.APLabel.Size = new System.Drawing.Size(37, 28);
             this.APLabel.TabIndex = 50;
             this.APLabel.Text = "AP";
             // 
             // HbLabel
             // 
             this.HbLabel.AutoSize = true;
-            this.HbLabel.Location = new System.Drawing.Point(1006, 242);
+            this.HbLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.HbLabel.Location = new System.Drawing.Point(803, 247);
             this.HbLabel.Name = "HbLabel";
-            this.HbLabel.Size = new System.Drawing.Size(29, 20);
+            this.HbLabel.Size = new System.Drawing.Size(39, 28);
             this.HbLabel.TabIndex = 49;
             this.HbLabel.Text = "Hb";
             // 
             // HDLLabel
             // 
             this.HDLLabel.AutoSize = true;
-            this.HDLLabel.Location = new System.Drawing.Point(997, 151);
+            this.HDLLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.HDLLabel.Location = new System.Drawing.Point(791, 163);
             this.HDLLabel.Name = "HDLLabel";
-            this.HDLLabel.Size = new System.Drawing.Size(38, 20);
+            this.HDLLabel.Size = new System.Drawing.Size(51, 28);
             this.HDLLabel.TabIndex = 48;
             this.HDLLabel.Text = "HDL";
             // 
             // CrtnLabel
             // 
             this.CrtnLabel.AutoSize = true;
-            this.CrtnLabel.Location = new System.Drawing.Point(999, 276);
+            this.CrtnLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.CrtnLabel.Location = new System.Drawing.Point(791, 275);
             this.CrtnLabel.Name = "CrtnLabel";
-            this.CrtnLabel.Size = new System.Drawing.Size(36, 20);
+            this.CrtnLabel.Size = new System.Drawing.Size(51, 28);
             this.CrtnLabel.TabIndex = 47;
             this.CrtnLabel.Text = "Crtn";
             // 
             // UreaLabel
             // 
             this.UreaLabel.AutoSize = true;
-            this.UreaLabel.Location = new System.Drawing.Point(995, 210);
+            this.UreaLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.UreaLabel.Location = new System.Drawing.Point(788, 219);
             this.UreaLabel.Name = "UreaLabel";
-            this.UreaLabel.Size = new System.Drawing.Size(40, 20);
+            this.UreaLabel.Size = new System.Drawing.Size(54, 28);
             this.UreaLabel.TabIndex = 46;
             this.UreaLabel.Text = "Urea";
             // 
             // GenderData
             // 
             this.GenderData.AutoSize = true;
-            this.GenderData.Location = new System.Drawing.Point(154, 151);
+            this.GenderData.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.GenderData.Location = new System.Drawing.Point(215, 183);
             this.GenderData.Name = "GenderData";
-            this.GenderData.Size = new System.Drawing.Size(27, 20);
+            this.GenderData.Size = new System.Drawing.Size(36, 28);
             this.GenderData.TabIndex = 57;
             this.GenderData.Text = "---";
             // 
             // IDData
             // 
             this.IDData.AutoSize = true;
-            this.IDData.Location = new System.Drawing.Point(153, 84);
+            this.IDData.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.IDData.Location = new System.Drawing.Point(215, 117);
             this.IDData.Name = "IDData";
-            this.IDData.Size = new System.Drawing.Size(27, 20);
+            this.IDData.Size = new System.Drawing.Size(36, 28);
             this.IDData.TabIndex = 55;
             this.IDData.Text = "---";
             // 
             // LastNameData
             // 
             this.LastNameData.AutoSize = true;
-            this.LastNameData.Location = new System.Drawing.Point(153, 53);
+            this.LastNameData.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.LastNameData.Location = new System.Drawing.Point(215, 83);
             this.LastNameData.Name = "LastNameData";
-            this.LastNameData.Size = new System.Drawing.Size(27, 20);
+            this.LastNameData.Size = new System.Drawing.Size(36, 28);
             this.LastNameData.TabIndex = 54;
             this.LastNameData.Text = "---";
             // 
             // AgeData
             // 
             this.AgeData.AutoSize = true;
-            this.AgeData.Location = new System.Drawing.Point(154, 116);
+            this.AgeData.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.AgeData.Location = new System.Drawing.Point(215, 148);
             this.AgeData.Name = "AgeData";
-            this.AgeData.Size = new System.Drawing.Size(27, 20);
+            this.AgeData.Size = new System.Drawing.Size(36, 28);
             this.AgeData.TabIndex = 56;
             this.AgeData.Text = "---";
             // 
             // FirstNameData
             // 
             this.FirstNameData.AutoSize = true;
-            this.FirstNameData.Location = new System.Drawing.Point(154, 19);
+            this.FirstNameData.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.FirstNameData.Location = new System.Drawing.Point(215, 51);
             this.FirstNameData.Name = "FirstNameData";
-            this.FirstNameData.Size = new System.Drawing.Size(27, 20);
+            this.FirstNameData.Size = new System.Drawing.Size(36, 28);
             this.FirstNameData.TabIndex = 53;
             this.FirstNameData.Text = "---";
             // 
             // HCTData
             // 
             this.HCTData.AutoSize = true;
-            this.HCTData.Location = new System.Drawing.Point(935, 117);
+            this.HCTData.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.HCTData.Location = new System.Drawing.Point(701, 135);
             this.HCTData.Name = "HCTData";
-            this.HCTData.Size = new System.Drawing.Size(27, 20);
+            this.HCTData.Size = new System.Drawing.Size(36, 28);
             this.HCTData.TabIndex = 63;
             this.HCTData.Text = "---";
             // 
             // HDLData
             // 
             this.HDLData.AutoSize = true;
-            this.HDLData.Location = new System.Drawing.Point(934, 151);
+            this.HDLData.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.HDLData.Location = new System.Drawing.Point(701, 163);
             this.HDLData.Name = "HDLData";
-            this.HDLData.Size = new System.Drawing.Size(27, 20);
+            this.HDLData.Size = new System.Drawing.Size(36, 28);
             this.HDLData.TabIndex = 62;
             this.HDLData.Text = "---";
             // 
             // WBCData
             // 
             this.WBCData.AutoSize = true;
-            this.WBCData.Location = new System.Drawing.Point(931, 19);
+            this.WBCData.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.WBCData.Location = new System.Drawing.Point(701, 51);
             this.WBCData.Name = "WBCData";
-            this.WBCData.Size = new System.Drawing.Size(27, 20);
+            this.WBCData.Size = new System.Drawing.Size(36, 28);
             this.WBCData.TabIndex = 61;
             this.WBCData.Text = "---";
             // 
             // LymphData
             // 
             this.LymphData.AutoSize = true;
-            this.LymphData.Location = new System.Drawing.Point(920, 180);
+            this.LymphData.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.LymphData.Location = new System.Drawing.Point(701, 191);
             this.LymphData.Name = "LymphData";
-            this.LymphData.Size = new System.Drawing.Size(27, 20);
+            this.LymphData.Size = new System.Drawing.Size(36, 28);
             this.LymphData.TabIndex = 60;
             this.LymphData.Text = "---";
             // 
             // RBCData
             // 
             this.RBCData.AutoSize = true;
-            this.RBCData.Location = new System.Drawing.Point(936, 85);
+            this.RBCData.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.RBCData.Location = new System.Drawing.Point(701, 107);
             this.RBCData.Name = "RBCData";
-            this.RBCData.Size = new System.Drawing.Size(27, 20);
+            this.RBCData.Size = new System.Drawing.Size(36, 28);
             this.RBCData.TabIndex = 59;
             this.RBCData.Text = "---";
             // 
             // NeutData
             // 
             this.NeutData.AutoSize = true;
-            this.NeutData.Location = new System.Drawing.Point(931, 51);
+            this.NeutData.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.NeutData.Location = new System.Drawing.Point(701, 79);
             this.NeutData.Name = "NeutData";
-            this.NeutData.Size = new System.Drawing.Size(27, 20);
+            this.NeutData.Size = new System.Drawing.Size(36, 28);
             this.NeutData.TabIndex = 58;
             this.NeutData.Text = "---";
             // 
             // IronData
             // 
             this.IronData.AutoSize = true;
-            this.IronData.Location = new System.Drawing.Point(954, 308);
+            this.IronData.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.IronData.Location = new System.Drawing.Point(701, 303);
             this.IronData.Name = "IronData";
-            this.IronData.Size = new System.Drawing.Size(27, 20);
+            this.IronData.Size = new System.Drawing.Size(36, 28);
             this.IronData.TabIndex = 68;
             this.IronData.Text = "---";
             // 
             // APData
             // 
             this.APData.AutoSize = true;
-            this.APData.Location = new System.Drawing.Point(962, 339);
+            this.APData.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.APData.Location = new System.Drawing.Point(701, 331);
             this.APData.Name = "APData";
-            this.APData.Size = new System.Drawing.Size(27, 20);
+            this.APData.Size = new System.Drawing.Size(36, 28);
             this.APData.TabIndex = 67;
             this.APData.Text = "---";
             // 
             // HbData
             // 
             this.HbData.AutoSize = true;
-            this.HbData.Location = new System.Drawing.Point(960, 242);
+            this.HbData.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.HbData.Location = new System.Drawing.Point(701, 247);
             this.HbData.Name = "HbData";
-            this.HbData.Size = new System.Drawing.Size(27, 20);
+            this.HbData.Size = new System.Drawing.Size(36, 28);
             this.HbData.TabIndex = 66;
             this.HbData.Text = "---";
             // 
             // CrtnData
             // 
             this.CrtnData.AutoSize = true;
-            this.CrtnData.Location = new System.Drawing.Point(953, 276);
+            this.CrtnData.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.CrtnData.Location = new System.Drawing.Point(701, 275);
             this.CrtnData.Name = "CrtnData";
-            this.CrtnData.Size = new System.Drawing.Size(27, 20);
+            this.CrtnData.Size = new System.Drawing.Size(36, 28);
             this.CrtnData.TabIndex = 65;
             this.CrtnData.Text = "---";
             // 
             // UreaData
             // 
             this.UreaData.AutoSize = true;
-            this.UreaData.Location = new System.Drawing.Point(949, 210);
+            this.UreaData.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.UreaData.Location = new System.Drawing.Point(701, 219);
             this.UreaData.Name = "UreaData";
-            this.UreaData.Size = new System.Drawing.Size(27, 20);
+            this.UreaData.Size = new System.Drawing.Size(36, 28);
             this.UreaData.TabIndex = 64;
             this.UreaData.Text = "---";
             // 
             // DandRbtn
             // 
-            this.DandRbtn.BackColor = System.Drawing.Color.LightCoral;
+            this.DandRbtn.BackColor = System.Drawing.Color.OrangeRed;
             this.DandRbtn.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.DandRbtn.Location = new System.Drawing.Point(422, 528);
+            this.DandRbtn.Location = new System.Drawing.Point(24, 384);
             this.DandRbtn.Name = "DandRbtn";
-            this.DandRbtn.Size = new System.Drawing.Size(297, 63);
+            this.DandRbtn.Size = new System.Drawing.Size(818, 204);
             this.DandRbtn.TabIndex = 69;
-            this.DandRbtn.Text = "לחץ לאבחון המטופל והמלצות";
+            this.DandRbtn.Text = "לחץ לאבחון המטופל/ת והמלצות\r\n\r\nלצורך קבלת האבחון וההמלצות יופיעו שאלות\r\n שיש לשאו" +
+    "ל את המטופל  - יש לענות בדיוק";
             this.DandRbtn.UseVisualStyleBackColor = false;
             this.DandRbtn.Click += new System.EventHandler(this.DandRbtn_Click);
             // 
@@ -386,11 +409,12 @@
             this.DndRListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2});
-            this.DndRListView.Location = new System.Drawing.Point(180, 432);
+            this.DndRListView.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.DndRListView.Location = new System.Drawing.Point(24, 384);
             this.DndRListView.Name = "DndRListView";
             this.DndRListView.RightToLeftLayout = true;
             this.DndRListView.ShowGroups = false;
-            this.DndRListView.Size = new System.Drawing.Size(767, 234);
+            this.DndRListView.Size = new System.Drawing.Size(818, 204);
             this.DndRListView.TabIndex = 70;
             this.DndRListView.UseCompatibleStateImageBehavior = false;
             this.DndRListView.View = System.Windows.Forms.View.Details;
@@ -405,148 +429,68 @@
             this.columnHeader2.Text = "טיפול מומלץ";
             this.columnHeader2.Width = 300;
             // 
-            // FeverLabel
-            // 
-            this.FeverLabel.AutoSize = true;
-            this.FeverLabel.Location = new System.Drawing.Point(13, 185);
-            this.FeverLabel.Name = "FeverLabel";
-            this.FeverLabel.Size = new System.Drawing.Size(33, 20);
-            this.FeverLabel.TabIndex = 37;
-            this.FeverLabel.Text = "חום";
-            // 
-            // PregLabel
-            // 
-            this.PregLabel.AutoSize = true;
-            this.PregLabel.Location = new System.Drawing.Point(13, 282);
-            this.PregLabel.Name = "PregLabel";
-            this.PregLabel.Size = new System.Drawing.Size(39, 20);
-            this.PregLabel.TabIndex = 44;
-            this.PregLabel.Text = "הריון";
-            // 
-            // SmokerLabel
-            // 
-            this.SmokerLabel.AutoSize = true;
-            this.SmokerLabel.Location = new System.Drawing.Point(13, 219);
-            this.SmokerLabel.Name = "SmokerLabel";
-            this.SmokerLabel.Size = new System.Drawing.Size(44, 20);
-            this.SmokerLabel.TabIndex = 40;
-            this.SmokerLabel.Text = "מעשן";
-            // 
-            // LungLabel
-            // 
-            this.LungLabel.AutoSize = true;
-            this.LungLabel.Location = new System.Drawing.Point(13, 250);
-            this.LungLabel.Name = "LungLabel";
-            this.LungLabel.Size = new System.Drawing.Size(89, 20);
-            this.LungLabel.TabIndex = 42;
-            this.LungLabel.Text = "מחלת ריאות";
-            // 
-            // DiaVomLabel
-            // 
-            this.DiaVomLabel.AutoSize = true;
-            this.DiaVomLabel.Location = new System.Drawing.Point(14, 317);
-            this.DiaVomLabel.Name = "DiaVomLabel";
-            this.DiaVomLabel.Size = new System.Drawing.Size(134, 20);
-            this.DiaVomLabel.TabIndex = 45;
-            this.DiaVomLabel.Text = "שלשולים או הקאות";
-            // 
-            // FeverData
-            // 
-            this.FeverData.AutoSize = true;
-            this.FeverData.Location = new System.Drawing.Point(154, 185);
-            this.FeverData.Name = "FeverData";
-            this.FeverData.Size = new System.Drawing.Size(27, 20);
-            this.FeverData.TabIndex = 53;
-            this.FeverData.Text = "---";
-            // 
-            // PregData
-            // 
-            this.PregData.AutoSize = true;
-            this.PregData.Location = new System.Drawing.Point(153, 282);
-            this.PregData.Name = "PregData";
-            this.PregData.Size = new System.Drawing.Size(27, 20);
-            this.PregData.TabIndex = 56;
-            this.PregData.Text = "---";
-            // 
-            // SmokerData
-            // 
-            this.SmokerData.AutoSize = true;
-            this.SmokerData.Location = new System.Drawing.Point(154, 219);
-            this.SmokerData.Name = "SmokerData";
-            this.SmokerData.Size = new System.Drawing.Size(27, 20);
-            this.SmokerData.TabIndex = 54;
-            this.SmokerData.Text = "---";
-            // 
-            // LungData
-            // 
-            this.LungData.AutoSize = true;
-            this.LungData.Location = new System.Drawing.Point(153, 250);
-            this.LungData.Name = "LungData";
-            this.LungData.Size = new System.Drawing.Size(27, 20);
-            this.LungData.TabIndex = 55;
-            this.LungData.Text = "---";
-            // 
-            // DiaVomData
-            // 
-            this.DiaVomData.AutoSize = true;
-            this.DiaVomData.Location = new System.Drawing.Point(154, 317);
-            this.DiaVomData.Name = "DiaVomData";
-            this.DiaVomData.Size = new System.Drawing.Size(27, 20);
-            this.DiaVomData.TabIndex = 57;
-            this.DiaVomData.Text = "---";
-            // 
-            // VegLabel
-            // 
-            this.VegLabel.AutoSize = true;
-            this.VegLabel.Location = new System.Drawing.Point(14, 357);
-            this.VegLabel.Name = "VegLabel";
-            this.VegLabel.Size = new System.Drawing.Size(52, 20);
-            this.VegLabel.TabIndex = 44;
-            this.VegLabel.Text = "צמחוני";
-            // 
             // EthnLabel
             // 
             this.EthnLabel.AutoSize = true;
-            this.EthnLabel.Location = new System.Drawing.Point(15, 392);
+            this.EthnLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.EthnLabel.Location = new System.Drawing.Point(36, 210);
             this.EthnLabel.Name = "EthnLabel";
-            this.EthnLabel.Size = new System.Drawing.Size(42, 20);
+            this.EthnLabel.Size = new System.Drawing.Size(57, 28);
             this.EthnLabel.TabIndex = 45;
             this.EthnLabel.Text = "מוצא";
-            // 
-            // VegData
-            // 
-            this.VegData.AutoSize = true;
-            this.VegData.Location = new System.Drawing.Point(154, 357);
-            this.VegData.Name = "VegData";
-            this.VegData.Size = new System.Drawing.Size(27, 20);
-            this.VegData.TabIndex = 56;
-            this.VegData.Text = "---";
             // 
             // EthnData
             // 
             this.EthnData.AutoSize = true;
-            this.EthnData.Location = new System.Drawing.Point(154, 392);
+            this.EthnData.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.EthnData.Location = new System.Drawing.Point(215, 210);
             this.EthnData.Name = "EthnData";
-            this.EthnData.Size = new System.Drawing.Size(27, 20);
+            this.EthnData.Size = new System.Drawing.Size(36, 28);
             this.EthnData.TabIndex = 57;
             this.EthnData.Text = "---";
             // 
             // CloseBtn
             // 
-            this.CloseBtn.Location = new System.Drawing.Point(235, 693);
+            this.CloseBtn.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.CloseBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.CloseBtn.Location = new System.Drawing.Point(286, 594);
             this.CloseBtn.Name = "CloseBtn";
-            this.CloseBtn.Size = new System.Drawing.Size(94, 29);
+            this.CloseBtn.Size = new System.Drawing.Size(351, 39);
             this.CloseBtn.TabIndex = 71;
             this.CloseBtn.Text = "סגירה";
-            this.CloseBtn.UseVisualStyleBackColor = true;
+            this.CloseBtn.UseVisualStyleBackColor = false;
             this.CloseBtn.Click += new System.EventHandler(this.CloseBtn_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(24, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(281, 31);
+            this.label1.TabIndex = 72;
+            this.label1.Text = "פרטים אישיים                    ";
+            this.label1.UseMnemonic = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(661, 20);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(181, 31);
+            this.label3.TabIndex = 74;
+            this.label3.Text = "ערכי בדיקות דם ";
+            this.label3.UseMnemonic = false;
             // 
             // PatientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1047, 725);
+            this.BackColor = System.Drawing.Color.LightBlue;
+            this.ClientSize = new System.Drawing.Size(862, 645);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.DandRbtn);
             this.Controls.Add(this.CloseBtn);
             this.Controls.Add(this.DndRListView);
@@ -562,16 +506,10 @@
             this.Controls.Add(this.RBCData);
             this.Controls.Add(this.NeutData);
             this.Controls.Add(this.EthnData);
-            this.Controls.Add(this.DiaVomData);
             this.Controls.Add(this.GenderData);
-            this.Controls.Add(this.LungData);
             this.Controls.Add(this.IDData);
-            this.Controls.Add(this.SmokerData);
             this.Controls.Add(this.LastNameData);
-            this.Controls.Add(this.VegData);
-            this.Controls.Add(this.PregData);
             this.Controls.Add(this.AgeData);
-            this.Controls.Add(this.FeverData);
             this.Controls.Add(this.FirstNameData);
             this.Controls.Add(this.IronLabel);
             this.Controls.Add(this.HCTLabel);
@@ -581,19 +519,13 @@
             this.Controls.Add(this.CrtnLabel);
             this.Controls.Add(this.EthnLabel);
             this.Controls.Add(this.UreaLabel);
-            this.Controls.Add(this.DiaVomLabel);
             this.Controls.Add(this.GenderLabel);
             this.Controls.Add(this.WBCLabel);
-            this.Controls.Add(this.LungLabel);
             this.Controls.Add(this.IDLabel);
             this.Controls.Add(this.LymphLabel);
-            this.Controls.Add(this.SmokerLabel);
             this.Controls.Add(this.LastNameLabel);
             this.Controls.Add(this.RBCLabel);
-            this.Controls.Add(this.VegLabel);
             this.Controls.Add(this.NeutLabel);
-            this.Controls.Add(this.PregLabel);
-            this.Controls.Add(this.FeverLabel);
             this.Controls.Add(this.AgeLabel);
             this.Controls.Add(this.FirstNameLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -643,22 +575,12 @@
         private Label UreaData;
         private Button DandRbtn;
         private ListView DndRListView;
-        private Label FeverLabel;
-        private Label PregLabel;
-        private Label SmokerLabel;
-        private Label LungLabel;
-        private Label DiaVomLabel;
-        private Label FeverData;
-        private Label PregData;
-        private Label SmokerData;
-        private Label LungData;
-        private Label DiaVomData;
-        private Label VegLabel;
         private Label EthnLabel;
-        private Label VegData;
         private Label EthnData;
         private ColumnHeader columnHeader1;
         private ColumnHeader columnHeader2;
         private Button CloseBtn;
+        private Label label1;
+        private Label label3;
     }
 }

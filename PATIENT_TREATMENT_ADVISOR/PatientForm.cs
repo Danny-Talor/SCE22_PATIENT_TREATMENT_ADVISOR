@@ -11,8 +11,6 @@ namespace PATIENT_TREATMENT_ADVISOR
 
         double WBC;
         double Neut;
-        const double Neut_HIGH = 54;
-        const double Neut_LOW = 28;
         double Lymph;
         double RBC;
         double HCT;
@@ -88,16 +86,11 @@ namespace PATIENT_TREATMENT_ADVISOR
                     DandRbtn.Visible = false;
                 }
 
-                isPregnant = PregData.Text = excel_Worksheet.Cells[patientIndex, 10].Value2.ToString();
+                isPregnant =  excel_Worksheet.Cells[patientIndex, 10].Value2.ToString();
 
                 WBC = excel_Worksheet.Cells[patientIndex, 13].Value2;
                 WBCData.Text = WBC.ToString();
                 Neut = excel_Worksheet.Cells[patientIndex, 14].Value2;
-                if (Neut < Neut_LOW || Neut > Neut_HIGH)
-                {
-                    NeutData.BackColor = Color.Red;
-                    NeutData.ForeColor = Color.White;
-                }
                 NeutData.Text = Neut.ToString() + "%";
                 Lymph = excel_Worksheet.Cells[patientIndex, 15].Value2;
                 LymphData.Text = Lymph.ToString() + "%";
@@ -147,19 +140,19 @@ namespace PATIENT_TREATMENT_ADVISOR
 
         private void QuestionDataInit(Excel.Worksheet excel_Worksheet)
         {
-            hasFever = FeverData.Text = excel_Worksheet.Cells[patientIndex, 7].Value2.ToString();
-            isSmoker = SmokerData.Text = excel_Worksheet.Cells[patientIndex, 8].Value2.ToString();
+            hasFever =   excel_Worksheet.Cells[patientIndex, 7].Value2.ToString();
+            isSmoker = excel_Worksheet.Cells[patientIndex, 8].Value2.ToString();
             if (isSmoker == "כן")
             {
                 diagnosis["מעשן"]++;
             }
-            hasLungDisease = LungData.Text = excel_Worksheet.Cells[patientIndex, 9].Value2.ToString();
+            hasLungDisease =  excel_Worksheet.Cells[patientIndex, 9].Value2.ToString();
             if (hasLungDisease == "כן")
             {
                 diagnosis["מחלת ריאות"]++;
             }
-            hasDiaVom = DiaVomData.Text = excel_Worksheet.Cells[patientIndex, 11].Value2.ToString();
-            isVeg = VegData.Text = excel_Worksheet.Cells[patientIndex, 12].Value2.ToString();
+            hasDiaVom =  excel_Worksheet.Cells[patientIndex, 11].Value2.ToString();
+            isVeg =  excel_Worksheet.Cells[patientIndex, 12].Value2.ToString();
         }
 
         private void PatientDiagnosis()
@@ -309,6 +302,8 @@ namespace PATIENT_TREATMENT_ADVISOR
                 {
                     diagnosis["מחלה ויראלית"]++;
                     diagnosis["סרטן"]++;
+                    WBCData.BackColor = Color.Red;
+                    WBCData.ForeColor = Color.White;
                 }
                 else if (WBC > 11000)
                 {
@@ -321,6 +316,8 @@ namespace PATIENT_TREATMENT_ADVISOR
                         diagnosis["סרטן"]++;
                         diagnosis["מחלת דם"]++;
                     }
+                    WBCData.BackColor = Color.Red;
+                    WBCData.ForeColor = Color.White;
                 }
             }
             else if (Age >= 4 && Age <= 17)
@@ -329,6 +326,8 @@ namespace PATIENT_TREATMENT_ADVISOR
                 {
                     diagnosis["מחלה ויראלית"]++;
                     diagnosis["סרטן"]++;
+                    WBCData.BackColor = Color.Red;
+                    WBCData.ForeColor = Color.White;
                 }
                 else if (WBC > 15500)
                 {
@@ -341,6 +340,8 @@ namespace PATIENT_TREATMENT_ADVISOR
                         diagnosis["סרטן"]++;
                         diagnosis["מחלת דם"]++;
                     }
+                    WBCData.BackColor = Color.Red;
+                    WBCData.ForeColor = Color.White;
                 }
             }
             else // Age 0-3
@@ -349,6 +350,8 @@ namespace PATIENT_TREATMENT_ADVISOR
                 {
                     diagnosis["מחלה ויראלית"]++;
                     diagnosis["סרטן"]++;
+                    WBCData.BackColor = Color.Red;
+                    WBCData.ForeColor = Color.White;
                 }
                 else if (WBC > 17500)
                 {
@@ -358,6 +361,8 @@ namespace PATIENT_TREATMENT_ADVISOR
                     }
                     diagnosis["סרטן"]++;
                     diagnosis["מחלת דם"]++;
+                    WBCData.BackColor = Color.Red;
+                    WBCData.ForeColor = Color.White;
                 }
             }
         }
@@ -368,11 +373,14 @@ namespace PATIENT_TREATMENT_ADVISOR
                 diagnosis["הפרעה ביצירת תאי דם"]++;
                 diagnosis["זיהום"]++;
                 diagnosis["סרטן"]++;
-
+                NeutData.BackColor = Color.Red;
+                NeutData.ForeColor = Color.White;
             }
             else if (Neut > 54)
             {
                 diagnosis["זיהום"]++;
+                NeutData.BackColor = Color.Red;
+                NeutData.ForeColor = Color.White;
             }
         }
         private void LymphCheck()
@@ -380,12 +388,15 @@ namespace PATIENT_TREATMENT_ADVISOR
             if (Lymph < 36)
             {
                 diagnosis["הפרעה ביצירת תאי דם"]++;
+                LymphData.BackColor = Color.Red;
+                LymphData.ForeColor = Color.White;
             }
             else if (Lymph > 52)
             {
                 diagnosis["זיהום"]++;
                 diagnosis["סרטן"]++;
-
+                LymphData.BackColor = Color.Red;
+                LymphData.ForeColor = Color.White;
             }
         }
         private void RBCCheck()
@@ -395,7 +406,8 @@ namespace PATIENT_TREATMENT_ADVISOR
                 diagnosis["זיהום"]++;
                 diagnosis["אנמיה"]++;
                 diagnosis["דימום"]++;
-
+                RBCData.BackColor = Color.Red;
+                RBCData.ForeColor = Color.White;
             }
             else if (RBC > 6)
             {
@@ -405,6 +417,8 @@ namespace PATIENT_TREATMENT_ADVISOR
                 }
                 diagnosis["מעשן"]++;
                 diagnosis["מחלת ריאות"]++;
+                RBCData.BackColor = Color.Red;
+                RBCData.ForeColor = Color.White;
             }
         }
         private void HCTCheck()
@@ -415,7 +429,8 @@ namespace PATIENT_TREATMENT_ADVISOR
                 {
                     diagnosis["אנמיה"]++;
                     diagnosis["דימום"]++;
-
+                    HCTData.BackColor = Color.Red;
+                    HCTData.ForeColor = Color.White;
                 }
                 else if (HCT > 54)
                 {
@@ -423,6 +438,8 @@ namespace PATIENT_TREATMENT_ADVISOR
                     {
                         diagnosis["מעשן"]++;
                     }
+                    HCTData.BackColor = Color.Red;
+                    HCTData.ForeColor = Color.White;
                 }
             }
             else // female
@@ -431,6 +448,8 @@ namespace PATIENT_TREATMENT_ADVISOR
                 {
                     diagnosis["אנמיה"]++;
                     diagnosis["דימום"]++;
+                    HCTData.BackColor = Color.Red;
+                    HCTData.ForeColor = Color.White;
                 }
                 else if (HCT > 47)
                 {
@@ -438,6 +457,8 @@ namespace PATIENT_TREATMENT_ADVISOR
                     {
                         diagnosis["מעשן"]++;
                     }
+                    HCTData.BackColor = Color.Red;
+                    HCTData.ForeColor = Color.White;
                 }
             }
         }
@@ -453,6 +474,8 @@ namespace PATIENT_TREATMENT_ADVISOR
                         diagnosis["דיאטה"]++;
                         diagnosis["מחלת כבד"]++;
                     }
+                    UreaData.BackColor = Color.Red;
+                    UreaData.ForeColor = Color.White;
                 }
                 else if (Urea > 47.3)
                 {
@@ -460,6 +483,8 @@ namespace PATIENT_TREATMENT_ADVISOR
                     diagnosis["דיאטה"]++;
                     diagnosis["התייבשות"]++;
                     diagnosis["צריכה מוגברת של בשר"]++;
+                    UreaData.BackColor = Color.Red;
+                    UreaData.ForeColor = Color.White;
                 }
             }
             else // other ethnicity
@@ -472,6 +497,8 @@ namespace PATIENT_TREATMENT_ADVISOR
                         diagnosis["דיאטה"]++;
                         diagnosis["מחלת כבד"]++;
                     }
+                    UreaData.BackColor = Color.Red;
+                    UreaData.ForeColor = Color.White;
                 }
                 else if (Urea > 43)
                 {
@@ -479,6 +506,8 @@ namespace PATIENT_TREATMENT_ADVISOR
                     diagnosis["דיאטה"]++;
                     diagnosis["התייבשות"]++;
                     diagnosis["צריכה מוגברת של בשר"]++;
+                    UreaData.BackColor = Color.Red;
+                    UreaData.ForeColor = Color.White;
                 }
             }
         }
@@ -491,6 +520,8 @@ namespace PATIENT_TREATMENT_ADVISOR
                 diagnosis["הפרעה המטולוגית"]++;
                 diagnosis["דימום"]++;
                 diagnosis["מחסור בברזל"]++;
+                HbData.BackColor = Color.Red;
+                HbData.ForeColor = Color.White;
             }
         }
 
@@ -508,7 +539,8 @@ namespace PATIENT_TREATMENT_ADVISOR
                     {
                         diagnosis["מחלת שריר"]++;
                     }
-
+                    CrtnData.BackColor = Color.Red;
+                    CrtnData.ForeColor = Color.White;
                 }
                 else if (Crtn > 1.2)
                 {
@@ -521,7 +553,8 @@ namespace PATIENT_TREATMENT_ADVISOR
                         diagnosis["מחלת כליה"]++;
                         diagnosis["מחלת שריר"]++;
                     }
-
+                    CrtnData.BackColor = Color.Red;
+                    CrtnData.ForeColor = Color.White;
                 }
             }
             else if (Age >= 18 && Age <= 59)
@@ -536,6 +569,8 @@ namespace PATIENT_TREATMENT_ADVISOR
                     {
                         diagnosis["מחלת שריר"]++;
                     }
+                    CrtnData.BackColor = Color.Red;
+                    CrtnData.ForeColor = Color.White;
                 }
                 else if (Crtn > 1)
                 {
@@ -548,6 +583,8 @@ namespace PATIENT_TREATMENT_ADVISOR
                         diagnosis["מחלת כליה"]++;
                         diagnosis["מחלת שריר"]++;
                     }
+                    CrtnData.BackColor = Color.Red;
+                    CrtnData.ForeColor = Color.White;
                 }
             }
             else if (Age >= 3 && Age <= 17)
@@ -562,6 +599,8 @@ namespace PATIENT_TREATMENT_ADVISOR
                     {
                         diagnosis["מחלת שריר"]++;
                     }
+                    CrtnData.BackColor = Color.Red;
+                    CrtnData.ForeColor = Color.White;
                 }
                 else if (Crtn > 1)
                 {
@@ -574,7 +613,8 @@ namespace PATIENT_TREATMENT_ADVISOR
                         diagnosis["מחלת כליה"]++;
                         diagnosis["מחלת שריר"]++;
                     }
-
+                    CrtnData.BackColor = Color.Red;
+                    CrtnData.ForeColor = Color.White;
                 }
             }
             else // Age 0-2
@@ -589,6 +629,8 @@ namespace PATIENT_TREATMENT_ADVISOR
                     {
                         diagnosis["מחלת שריר"]++;
                     }
+                    CrtnData.BackColor = Color.Red;
+                    CrtnData.ForeColor = Color.White;
                 }
                 else if (Crtn > 0.5)
                 {
@@ -601,7 +643,8 @@ namespace PATIENT_TREATMENT_ADVISOR
                         diagnosis["מחלת כליה"]++;
                         diagnosis["מחלת שריר"]++;
                     }
-
+                    CrtnData.BackColor = Color.Red;
+                    CrtnData.ForeColor = Color.White;
                 }
             }
         }
@@ -615,10 +658,14 @@ namespace PATIENT_TREATMENT_ADVISOR
                     diagnosis["תת תזונה"]++;
                     diagnosis["דימום"]++;
                     diagnosis["מחסור בברזל"]++;
+                    IronData.BackColor = Color.Red;
+                    IronData.ForeColor = Color.White;
                 }
                 else if (Iron > 160)
                 {
                     diagnosis["הרעלת ברזל"]++;
+                    IronData.BackColor = Color.Red;
+                    IronData.ForeColor = Color.White;
                 }
             }
             else // female
@@ -632,10 +679,14 @@ namespace PATIENT_TREATMENT_ADVISOR
 
                     }
                     diagnosis["מחסור בברזל"]++;
+                    IronData.BackColor = Color.Red;
+                    IronData.ForeColor = Color.White;
                 }
                 else if (Iron > 128)
                 {
                     diagnosis["הרעלת ברזל"]++;
+                    IronData.BackColor = Color.Red;
+                    IronData.ForeColor = Color.White;
                 }
             }
         }
@@ -651,6 +702,8 @@ namespace PATIENT_TREATMENT_ADVISOR
                         diagnosis["מחלת לב"]++;
                         diagnosis["היפרליפידמיה"]++;
                         diagnosis["סוכרת מבוגרים"]++;
+                        HDLData.BackColor = Color.Red;
+                        HDLData.ForeColor = Color.White;
                     }
                 }
                 else
@@ -660,6 +713,8 @@ namespace PATIENT_TREATMENT_ADVISOR
                         diagnosis["מחלת לב"]++;
                         diagnosis["היפרליפידמיה"]++;
                         diagnosis["סוכרת מבוגרים"]++;
+                        HDLData.BackColor = Color.Red;
+                        HDLData.ForeColor = Color.White;
                     }
                 }
 
@@ -673,6 +728,8 @@ namespace PATIENT_TREATMENT_ADVISOR
                         diagnosis["מחלת לב"]++;
                         diagnosis["היפרליפידמיה"]++;
                         diagnosis["סוכרת מבוגרים"]++;
+                        HDLData.BackColor = Color.Red;
+                        HDLData.ForeColor = Color.White;
                     }
 
                 }
@@ -683,6 +740,8 @@ namespace PATIENT_TREATMENT_ADVISOR
                         diagnosis["מחלת לב"]++;
                         diagnosis["היפרליפידמיה"]++;
                         diagnosis["סוכרת מבוגרים"]++;
+                        HDLData.BackColor = Color.Red;
+                        HDLData.ForeColor = Color.White;
                     }
 
                 }
@@ -697,6 +756,8 @@ namespace PATIENT_TREATMENT_ADVISOR
                 {
                     diagnosis["דיאטה"]++;
                     diagnosis["חוסר בוויטמינים"]++;
+                    APData.BackColor = Color.Red;
+                    APData.ForeColor = Color.White;
                 }
                 else if (AP > 120)
                 {
@@ -704,6 +765,8 @@ namespace PATIENT_TREATMENT_ADVISOR
                     diagnosis["מחלות בדרכי המרה"]++;
                     diagnosis["פעילות יתר של בלוטת התריס"]++;
                     diagnosis["שימוש בתרופות שונות"]++;
+                    APData.BackColor = Color.Red;
+                    APData.ForeColor = Color.White;
                 }
             }
             else
@@ -712,6 +775,8 @@ namespace PATIENT_TREATMENT_ADVISOR
                 {
                     diagnosis["דיאטה"]++;
                     diagnosis["חוסר בוויטמינים"]++;
+                    APData.BackColor = Color.Red;
+                    APData.ForeColor = Color.White;
                 }
                 else if (AP > 90)
                 {
@@ -719,6 +784,8 @@ namespace PATIENT_TREATMENT_ADVISOR
                     diagnosis["מחלות בדרכי המרה"]++;
                     diagnosis["פעילות יתר של בלוטת התריס"]++;
                     diagnosis["שימוש בתרופות שונות"]++;
+                    APData.BackColor = Color.Red;
+                    APData.ForeColor = Color.White;
                 }
             }
         }

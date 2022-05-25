@@ -138,6 +138,16 @@ namespace PATIENT_TREATMENT_ADVISOR
 
         private void InfoBtn_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("פרויקט בדיקות 2022\nשם מרצה: משה דוידיאן\nנוצר על ידי שגיא קרנר ודני טלאור");
+        }
+
+        private void InfoBtn_MouseHover(object sender, EventArgs e)
+        {
+
+        }
+
+        private void InfoBtn_MouseLeave(object sender, EventArgs e)
+        {
 
         }
     }

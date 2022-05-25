@@ -21,7 +21,7 @@ namespace PATIENT_TREATMENT_ADVISOR
             }
             int usernameCheck = CheckUsername(UsernameBox.Text);
             int PasswordCheck = CheckPassword(PasswordBox.Text);
-            bool IDCheck = CheckID(IDBox.Text);
+            bool IDCheck = Utility.IsIsraeliID(IDBox.Text);
             if (usernameCheck == 1)
             {
                 Ulabel2.Visible = true;
@@ -143,32 +143,6 @@ namespace PATIENT_TREATMENT_ADVISOR
             }
             return 0;
         }
-        private static bool CheckID(string id)
-        {
-            if (id.Length != 9) return false;
-            int counter = 0, incNum, i;
-            for (i = 0; i < 9; i++)
-            {
-                incNum = id[i] - '0';
-                incNum *= (i % 2) + 1;
-                if (incNum > 9) incNum -= 9;
-                counter += incNum;
-            }
-            return (counter % 10 == 0);
-        }
-
-        ///*better id check function in javascript, need to translate to cs*/
-        //function is_israeli_id_number(id)
-        //{
-        //    id = String(id).trim();
-        //    if (id.length > 9 || isNaN(id)) return false;
-        //    id = id.length < 9 ? ("00000000" + id).slice(-9) : id;
-        //    return Array.from(id, Number).reduce((counter, digit, i) =>
-        //    {
-        //        const step = digit * ((i % 2) + 1);
-        //        return counter + (step > 9 ? step - 9 : step);
-        //    }) % 10 === 0;
-        //}
 
         private void RegisterUser(string username, string password, string id)
         {
