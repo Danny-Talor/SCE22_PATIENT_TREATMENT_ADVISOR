@@ -359,19 +359,19 @@ namespace PATIENT_TREATMENT_ADVISOR
                     excel_Worksheet.Cells[i, 4] = AgeBox.Text;
                     excel_Worksheet.Cells[i, 5] = GenderBox.Text;
                     excel_Worksheet.Cells[i, 6] = EthnicityBox.Text;
-                    excel_Worksheet.Cells[i, 7] = "-";
-                    excel_Worksheet.Cells[i, 8] = "-";
-                    excel_Worksheet.Cells[i, 9] = "-";
+                    excel_Worksheet.Cells[i, 7] = "לא";
+                    excel_Worksheet.Cells[i, 8] = "לא";
+                    excel_Worksheet.Cells[i, 9] = "לא";
                     if (GenderBox.Text == "גבר")
                     {
-                        excel_Worksheet.Cells[i, 10] = "-";
+                        excel_Worksheet.Cells[i, 10] = "לא";
                     }
                     else
                     {
                         excel_Worksheet.Cells[i, 10] = QPregCB.Checked ? "כן" : "לא";
                     }
-                    excel_Worksheet.Cells[i, 11] = "-";
-                    excel_Worksheet.Cells[i, 12] = "-";
+                    excel_Worksheet.Cells[i, 11] = "לא";
+                    excel_Worksheet.Cells[i, 12] = "לא";
                     excel_Worksheet.Cells[i, 13] = WBCBox.Text;
                     excel_Worksheet.Cells[i, 14] = NeutBox.Text;
                     excel_Worksheet.Cells[i, 15] = LymphBox.Text;
