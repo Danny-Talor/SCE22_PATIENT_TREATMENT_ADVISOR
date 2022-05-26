@@ -64,6 +64,7 @@ namespace PATIENT_TREATMENT_ADVISOR
             this.patientIndex = index + 2;
             InitializeComponent();
             InitializeData();
+            PatientDiagnosis();
         }
 
         public void InitializeData()
@@ -71,6 +72,8 @@ namespace PATIENT_TREATMENT_ADVISOR
             if (Program.excel_Workbook != null)
             {
                 Excel.Worksheet excel_Worksheet = (Excel.Worksheet)Program.excel_Workbook.Sheets[2]; // Select patients sheet
+
+                //initialize patient personal information
                 FirstNameData.Text = excel_Worksheet.Cells[patientIndex, 1].Value2.ToString();
                 LastNameData.Text = excel_Worksheet.Cells[patientIndex, 2].Value2.ToString();
                 IDData.Text = excel_Worksheet.Cells[patientIndex, 3].Value2.ToString();
@@ -78,16 +81,9 @@ namespace PATIENT_TREATMENT_ADVISOR
                 AgeData.Text = excel_Worksheet.Cells[patientIndex, 4].Value2.ToString();
                 Gender = GenderData.Text = excel_Worksheet.Cells[patientIndex, 5].Value2.ToString();
                 ethnicity = EthnData.Text = excel_Worksheet.Cells[patientIndex, 6].Value2.ToString();
+                isPregnant = excel_Worksheet.Cells[patientIndex, 10].Value2.ToString();
 
-                if (excel_Worksheet.Cells[patientIndex, 7].Value != "-")
-                {
-                    DndRListViewInit(excel_Worksheet);
-                    QuestionDataInit(excel_Worksheet);
-                    DandRbtn.Visible = false;
-                }
-
-                isPregnant =  excel_Worksheet.Cells[patientIndex, 10].Value2.ToString();
-
+                //initialize patient blood test results
                 WBC = excel_Worksheet.Cells[patientIndex, 13].Value2;
                 WBCData.Text = WBC.ToString();
                 Neut = excel_Worksheet.Cells[patientIndex, 14].Value2;
@@ -111,6 +107,13 @@ namespace PATIENT_TREATMENT_ADVISOR
                 AP = excel_Worksheet.Cells[patientIndex, 23].Value2;
                 APData.Text = AP.ToString();
 
+                // if questions were already asked, show existing diagnosis and recommendations
+                if (excel_Worksheet.Cells[patientIndex, 7].Value != "-")
+                {
+                    DndRListViewInit(excel_Worksheet);
+                    DandRbtn.Visible = false;
+                }
+
                 System.Runtime.InteropServices.Marshal.FinalReleaseComObject(excel_Worksheet);
             }
         }
@@ -120,24 +123,13 @@ namespace PATIENT_TREATMENT_ADVISOR
             if (Program.excel_Workbook != null)
             {
                 Excel.Worksheet excel_Worksheet = (Excel.Worksheet)Program.excel_Workbook.Sheets[2]; // Select patients sheet
-                if (excel_Worksheet.Cells[patientIndex, 7].Value == "-")
-                {
-                    QuestionForm qform = new(patientIndex);
-                    qform.feverVis();
-                    qform.dimvis();
-                    qform.rbcvis();
-                    if (qform.feverVis() == true || qform.dimvis() == true || qform.rbcvis() == true)
-                    {
-                        qform.ShowDialog();
-                    }
-                    QuestionDataInit(excel_Worksheet);
-                }
-                else
-                {
-                    QuestionDataInit(excel_Worksheet);
-                }
+                QuestionForm qform = new(patientIndex);
+                qform.FeverVis(excel_Worksheet);
+                qform.DimVis(excel_Worksheet);
+                qform.RbcVis(excel_Worksheet);
+                qform.ShowDialog();
+                QuestionDataInit(excel_Worksheet);
                 DandRbtn.Visible = false;
-                PatientDiagnosis();
                 PatientRecommendation(excel_Worksheet);
                 DndRListViewInit(excel_Worksheet);
                 System.Runtime.InteropServices.Marshal.FinalReleaseComObject(excel_Worksheet);
@@ -146,19 +138,23 @@ namespace PATIENT_TREATMENT_ADVISOR
 
         private void QuestionDataInit(Excel.Worksheet excel_Worksheet)
         {
-            hasFever =   excel_Worksheet.Cells[patientIndex, 7].Value2.ToString();
+            hasFever = excel_Worksheet.Cells[patientIndex, 7].Value2.ToString();
+
             isSmoker = excel_Worksheet.Cells[patientIndex, 8].Value2.ToString();
             if (isSmoker == "כן")
-            {
                 diagnosis["מעשן"]++;
-            }
-            hasLungDisease =  excel_Worksheet.Cells[patientIndex, 9].Value2.ToString();
+
+            hasLungDisease = excel_Worksheet.Cells[patientIndex, 9].Value2.ToString();
             if (hasLungDisease == "כן")
-            {
                 diagnosis["מחלת ריאות"]++;
-            }
-            hasDiaVom =  excel_Worksheet.Cells[patientIndex, 11].Value2.ToString();
-            isVeg =  excel_Worksheet.Cells[patientIndex, 12].Value2.ToString();
+
+            hasDiaVom = excel_Worksheet.Cells[patientIndex, 11].Value2.ToString();
+            if (hasDiaVom == "כן")
+                diagnosis["התייבשות"]++;
+
+            isVeg = excel_Worksheet.Cells[patientIndex, 12].Value2.ToString();
+            if (isVeg == "כן")
+                diagnosis["תת תזונה"]++;
         }
 
         private void PatientDiagnosis()
@@ -253,7 +249,7 @@ namespace PATIENT_TREATMENT_ADVISOR
                         case "סוכרת מבוגרים":
                             recommendations += knownRecommendations[21];
                             break;
-                        case "סרטן":    
+                        case "סרטן":
                             recommendations += knownRecommendations[22];
                             break;
                         case "צריכה מוגברת של בשר":
@@ -269,12 +265,12 @@ namespace PATIENT_TREATMENT_ADVISOR
                             break;
                     }
                 }
-                
+
             }
-            if(diseases != "" && recommendations != "")
+            if (diseases != "" && recommendations != "")
             {
-                excel_Worksheet.Cells[patientIndex, 24] = diseases.Remove(0,1);
-                excel_Worksheet.Cells[patientIndex, 25] = recommendations.Remove(0,1);
+                excel_Worksheet.Cells[patientIndex, 24] = diseases.Remove(0, 1);
+                excel_Worksheet.Cells[patientIndex, 25] = recommendations.Remove(0, 1);
             }
             if (Program.excel_Workbook != null)
             {
@@ -283,6 +279,7 @@ namespace PATIENT_TREATMENT_ADVISOR
         }
         private void DndRListViewInit(Excel.Worksheet excel_Worksheet)
         {
+            //if diagnosis and recommendations already exist
             if (excel_Worksheet.Cells[patientIndex, 24].Value != null || excel_Worksheet.Cells[patientIndex, 25].Value != null)
             {
                 ListViewItem item;

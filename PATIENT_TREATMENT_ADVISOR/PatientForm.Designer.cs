@@ -105,11 +105,11 @@
             // 
             this.LymphLabel.AutoSize = true;
             this.LymphLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LymphLabel.Location = new System.Drawing.Point(752, 191);
+            this.LymphLabel.Location = new System.Drawing.Point(768, 191);
             this.LymphLabel.Name = "LymphLabel";
-            this.LymphLabel.Size = new System.Drawing.Size(90, 28);
+            this.LymphLabel.Size = new System.Drawing.Size(73, 28);
             this.LymphLabel.TabIndex = 41;
-            this.LymphLabel.Text = "%Lymph";
+            this.LymphLabel.Text = "Lymph";
             // 
             // LastNameLabel
             // 
@@ -135,11 +135,11 @@
             // 
             this.NeutLabel.AutoSize = true;
             this.NeutLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.NeutLabel.Location = new System.Drawing.Point(768, 79);
+            this.NeutLabel.Location = new System.Drawing.Point(785, 79);
             this.NeutLabel.Name = "NeutLabel";
-            this.NeutLabel.Size = new System.Drawing.Size(74, 28);
+            this.NeutLabel.Size = new System.Drawing.Size(57, 28);
             this.NeutLabel.TabIndex = 38;
-            this.NeutLabel.Text = "%Neut";
+            this.NeutLabel.Text = "Neut";
             // 
             // AgeLabel
             // 
@@ -175,11 +175,11 @@
             // 
             this.HCTLabel.AutoSize = true;
             this.HCTLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.HCTLabel.Location = new System.Drawing.Point(775, 135);
+            this.HCTLabel.Location = new System.Drawing.Point(791, 135);
             this.HCTLabel.Name = "HCTLabel";
-            this.HCTLabel.Size = new System.Drawing.Size(67, 28);
+            this.HCTLabel.Size = new System.Drawing.Size(50, 28);
             this.HCTLabel.TabIndex = 51;
-            this.HCTLabel.Text = "%HCT";
+            this.HCTLabel.Text = "HCT";
             // 
             // APLabel
             // 

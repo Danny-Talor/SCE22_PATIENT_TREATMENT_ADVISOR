@@ -63,6 +63,8 @@ namespace PATIENT_TREATMENT_ADVISOR
                 System.Runtime.InteropServices.Marshal.FinalReleaseComObject(excel_Worksheet); // Cleanup
                 if (login_success)
                 {
+                    UsernameBox.Text = "";
+                    PasswordBox.Text = "";
                     this.Hide();
                     TreatmentPage treatment = new(doctor_UserName);
                     treatment.ShowDialog();
@@ -143,12 +145,12 @@ namespace PATIENT_TREATMENT_ADVISOR
 
         private void InfoBtn_MouseHover(object sender, EventArgs e)
         {
-
+            InfoBtn.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
         }
 
         private void InfoBtn_MouseLeave(object sender, EventArgs e)
         {
-
+            InfoBtn.BorderStyle = System.Windows.Forms.BorderStyle.None;
         }
     }
 }

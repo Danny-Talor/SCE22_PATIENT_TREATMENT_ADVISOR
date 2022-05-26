@@ -188,12 +188,13 @@
             // InfoBtn
             // 
             this.InfoBtn.BackColor = System.Drawing.Color.Transparent;
+            this.InfoBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.InfoBtn.Image = global::PATIENT_TREATMENT_ADVISOR.Properties.Resources.infoicon1;
             this.InfoBtn.InitialImage = global::PATIENT_TREATMENT_ADVISOR.Properties.Resources.infoicon1;
             this.InfoBtn.Location = new System.Drawing.Point(957, 532);
             this.InfoBtn.Name = "InfoBtn";
             this.InfoBtn.Size = new System.Drawing.Size(55, 56);
-            this.InfoBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.InfoBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.InfoBtn.TabIndex = 12;
             this.InfoBtn.TabStop = false;
             this.InfoBtn.Click += new System.EventHandler(this.InfoBtn_Click);

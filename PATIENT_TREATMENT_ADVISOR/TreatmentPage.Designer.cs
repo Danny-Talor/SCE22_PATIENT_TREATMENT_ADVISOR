@@ -215,7 +215,7 @@
             this.InstructionsLabel.BackColor = System.Drawing.Color.Transparent;
             this.InstructionsLabel.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.InstructionsLabel.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.InstructionsLabel.Location = new System.Drawing.Point(142, 659);
+            this.InstructionsLabel.Location = new System.Drawing.Point(120, 632);
             this.InstructionsLabel.Name = "InstructionsLabel";
             this.InstructionsLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.InstructionsLabel.Size = new System.Drawing.Size(701, 62);

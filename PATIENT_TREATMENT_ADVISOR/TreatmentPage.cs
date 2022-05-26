@@ -119,11 +119,15 @@ namespace PATIENT_TREATMENT_ADVISOR
 
         private void ExportPatientsBtn_Click(object sender, EventArgs e)
         {
-            SaveFileDialog.ShowDialog();
+            if (PatientListView.Items.Count > 0)
+                SaveFileDialog.ShowDialog();
+            else
+                MessageBox.Show("אין מטופלים לייצא");
         }
 
         private void SaveFileDialog_FileOk(object sender, CancelEventArgs e)
         {
+
             if (Program.excel_Application != null && Program.excel_Workbook != null)
             {
                 Program.excel_Workbook.SaveCopyAs(SaveFileDialog.FileName); // Save copy of workbook
@@ -148,8 +152,10 @@ namespace PATIENT_TREATMENT_ADVISOR
                 System.Runtime.InteropServices.Marshal.FinalReleaseComObject(excel_Worksheet); // Cleanup
                 Program.excel_Workbook.Close(true); // Close workbook with saving
                 Program.excel_Workbook = Program.excel_Application.Workbooks.Open(Program.db_path); // Reopen database
-
             }
         }
+
+
     }
 }
+
