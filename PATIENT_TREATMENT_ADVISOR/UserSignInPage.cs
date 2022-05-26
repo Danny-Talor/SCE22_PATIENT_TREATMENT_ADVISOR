@@ -16,7 +16,6 @@ namespace PATIENT_TREATMENT_ADVISOR
         public UserSignInPage()
         {
             InitializeComponent();
-
         }
 
         private void LoginUserButton_Click(object sender, EventArgs e)
@@ -140,7 +139,7 @@ namespace PATIENT_TREATMENT_ADVISOR
 
         private void InfoBtn_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("פרויקט בדיקות 2022\nשם מרצה: משה דוידיאן\nנוצר על ידי שגיא קרנר ודני טלאור");
+            MessageBox.Show("פרויקט בדיקות 2022\nשם מרצה: משה דוידיאן\nנוצר על ידי שגיא קרנר ודני טלאור", "", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, MessageBoxOptions.RtlReading | MessageBoxOptions.RightAlign);
         }
 
         private void InfoBtn_MouseHover(object sender, EventArgs e)

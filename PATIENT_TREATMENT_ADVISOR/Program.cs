@@ -1,4 +1,6 @@
 ﻿using Excel = Microsoft.Office.Interop.Excel;
+using System.Runtime.InteropServices;
+using System.Diagnostics;
 namespace PATIENT_TREATMENT_ADVISOR
 {
     internal static class Program
@@ -6,6 +8,9 @@ namespace PATIENT_TREATMENT_ADVISOR
         public static readonly string db_path = Directory.GetCurrentDirectory() + @"\database.xlsx";
         public static Excel.Application? excel_Application;
         public static Excel.Workbook? excel_Workbook;
+        static int excelPID;
+        [DllImport("user32.dll")]
+        static extern int GetWindowThreadProcessId(int hWnd, out int lpdwProcessId);
 
         /// <summary>
         ///  The main entry point for the application.
@@ -18,6 +23,7 @@ namespace PATIENT_TREATMENT_ADVISOR
                 // To customize application configuration such as set high DPI settings or default font,
                 // see https://aka.ms/applicationconfiguration.
                 excel_Application = new(); // Launch Excel
+                _=GetWindowThreadProcessId(excel_Application.Hwnd, out excelPID);
                 ApplicationConfiguration.Initialize();
                 InitializeDatabase();
                 Application.Run(new UserSignInPage());
@@ -39,6 +45,10 @@ namespace PATIENT_TREATMENT_ADVISOR
                     excel_Application.Quit(); // Quit Excel
                     System.Runtime.InteropServices.Marshal.FinalReleaseComObject(excel_Application); // Cleanup
                     excel_Application = null;
+                }
+                if(Process.GetProcessById(excelPID) != null)
+                {
+                    Process.GetProcessById(excelPID).Kill();
                 }
             }
         }

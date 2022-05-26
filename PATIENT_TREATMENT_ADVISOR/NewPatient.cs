@@ -70,7 +70,7 @@ namespace PATIENT_TREATMENT_ADVISOR
                 if (Regex.IsMatch(AgeBox.Text, "[^0-9]"))
                 {
                     ToolTip tt = new();
-                    tt.Show("!מספרים בלבד", (TextBox)sender, 0, 20, 3000);
+                    tt.Show("!אנא הכנס מספרים בלבד", (TextBox)sender, 0, 20, 3000);
                     AgeBox.Text = AgeBox.Text.Remove(AgeBox.Text.Length - 1);
                 }
             }
@@ -328,23 +328,35 @@ namespace PATIENT_TREATMENT_ADVISOR
         {
             if (CheckInputIsEmpty())
             {
-                MessageBox.Show("אנא מלא את כל התאים");
+                MessageBox.Show("אנא מלא את כל התאים", "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.RtlReading | MessageBoxOptions.RightAlign);
             }
             else if (!Utility.IsIsraeliID(IDBox.Text))
             {
-                MessageBox.Show("מספר זהות אינו תקין");
+                MessageBox.Show("מספר זהות אינו תקין", "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.RtlReading | MessageBoxOptions.RightAlign);
             }
             else if(Int32.Parse(AgeBox.Text) < 0 || Int32.Parse(AgeBox.Text) > 125)
             {
-                MessageBox.Show("גיל אינו תקין");
+                MessageBox.Show("גיל אינו תקין","", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.RtlReading | MessageBoxOptions.RightAlign);
             }
             else if(FirstNameBox.Text.Length < 2 || FirstNameBox.Text.Length > 64)
             {
-                MessageBox.Show("שם אינו תקין");
+                MessageBox.Show("שם אינו תקין", "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.RtlReading | MessageBoxOptions.RightAlign);
             }
             else if (LastNameBox.Text.Length < 2 || LastNameBox.Text.Length > 64)
             {
-                MessageBox.Show("שם משפחה אינו תקין");
+                MessageBox.Show("שם משפחה אינו תקין", "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.RtlReading | MessageBoxOptions.RightAlign);
+            }
+            else if (Int32.Parse(NeutBox.Text) < 0 || Int32.Parse(NeutBox.Text) > 100)
+            {
+                MessageBox.Show("אנא הכנס ערך Neut בין 0% ל 100%", "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.RtlReading | MessageBoxOptions.RightAlign);
+            }
+            else if (Int32.Parse(LymphBox.Text) < 0 || Int32.Parse(LymphBox.Text) > 100)
+            {
+                MessageBox.Show("אנא הכנס ערך Lymph בין 0% ל 100%", "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.RtlReading | MessageBoxOptions.RightAlign);
+            }
+            else if (Int32.Parse(HCTBox.Text) < 0 || Int32.Parse(HCTBox.Text) > 100)
+            {
+                MessageBox.Show("אנא הכנס ערך HCT בין 0% ל 100%", "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.RtlReading | MessageBoxOptions.RightAlign);
             }
             else
             {
