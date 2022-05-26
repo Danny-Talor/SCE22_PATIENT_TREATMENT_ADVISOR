@@ -57,7 +57,7 @@
             this.QLungCB.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.QLungCB.AutoSize = true;
             this.QLungCB.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.QLungCB.Location = new System.Drawing.Point(125, 125);
+            this.QLungCB.Location = new System.Drawing.Point(125, 105);
             this.QLungCB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.QLungCB.Name = "QLungCB";
             this.QLungCB.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -72,7 +72,7 @@
             this.QFeverCB.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.QFeverCB.AutoSize = true;
             this.QFeverCB.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.QFeverCB.Location = new System.Drawing.Point(178, 100);
+            this.QFeverCB.Location = new System.Drawing.Point(178, 78);
             this.QFeverCB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.QFeverCB.Name = "QFeverCB";
             this.QFeverCB.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -125,7 +125,7 @@
             this.QVegCB.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.QVegCB.AutoSize = true;
             this.QVegCB.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.QVegCB.Location = new System.Drawing.Point(143, 76);
+            this.QVegCB.Location = new System.Drawing.Point(143, 123);
             this.QVegCB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.QVegCB.Name = "QVegCB";
             this.QVegCB.RightToLeft = System.Windows.Forms.RightToLeft.Yes;

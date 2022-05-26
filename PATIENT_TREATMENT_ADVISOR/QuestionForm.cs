@@ -43,9 +43,19 @@ namespace PATIENT_TREATMENT_ADVISOR
         }
         public bool feverVis()
         {
-            if ((excel_Worksheet.Cells[patientIndex, 4].Value2 >= 18 && excel_Worksheet.Cells[patientIndex, 13].Value2 > 11000) ||
-                        (((excel_Worksheet.Cells[patientIndex, 4].Value2 >= 4) && (excel_Worksheet.Cells[patientIndex, 4].Value2 <= 17)) && excel_Worksheet.Cells[patientIndex, 13].Value2 > 15500) ||
-                        (((excel_Worksheet.Cells[patientIndex, 4].Value2 >= 0) && (excel_Worksheet.Cells[patientIndex, 4].Value2 <= 3)) && (excel_Worksheet.Cells[patientIndex, 13].Value2 > 17500)))
+            if ((excel_Worksheet.Cells[patientIndex, 4].Value2 >= 18) && (excel_Worksheet.Cells[patientIndex, 13].Value2 > 11000))
+            {
+                QFeverCB.Visible = true;
+                return true;
+            }
+
+            else if(((excel_Worksheet.Cells[patientIndex, 4].Value2 >= 4) && (excel_Worksheet.Cells[patientIndex, 4].Value2 <= 17)) && excel_Worksheet.Cells[patientIndex, 13].Value2 > 15500)
+            {
+                QFeverCB.Visible = true;
+                return true;
+            }
+
+            else if(((excel_Worksheet.Cells[patientIndex, 4].Value2 >= 0) && (excel_Worksheet.Cells[patientIndex, 4].Value2 <= 3)) && (excel_Worksheet.Cells[patientIndex, 13].Value2 > 17500))
             {
                 QFeverCB.Visible = true;
                 return true;
@@ -60,8 +70,8 @@ namespace PATIENT_TREATMENT_ADVISOR
                 QLungCB.Visible = true;
                 return true;
             }
-            else if ((excel_Worksheet.Cells[patientIndex, 5].Value2.ToString() == "גבר" && excel_Worksheet.Cells[patientIndex, 17].Value2 > 54) ||
-                       (excel_Worksheet.Cells[patientIndex, 5].Value2.ToString() == "גבר" && excel_Worksheet.Cells[patientIndex, 17].Value2 > 47))
+            else if (((excel_Worksheet.Cells[patientIndex, 5].Value2.ToString() == "גבר") && (excel_Worksheet.Cells[patientIndex, 17].Value2 > 54)) ||
+                       ((excel_Worksheet.Cells[patientIndex, 5].Value2.ToString() == "גבר" )&& (excel_Worksheet.Cells[patientIndex, 17].Value2 > 47)))
             {
                 QSmokerCB.Visible = true;
                 return true;
@@ -71,9 +81,9 @@ namespace PATIENT_TREATMENT_ADVISOR
         public bool dimvis()
         {
 
-            if ((excel_Worksheet.Cells[patientIndex, 4].Value2 >= 60 && excel_Worksheet.Cells[patientIndex, 20].Value2 > 1.2) ||
+            if (((excel_Worksheet.Cells[patientIndex, 4].Value2 >= 60) && (excel_Worksheet.Cells[patientIndex, 20].Value2 > 1.2)) ||
                     (((excel_Worksheet.Cells[patientIndex, 4].Value2 >= 3) && (excel_Worksheet.Cells[patientIndex, 4].Value2 <= 59)) && excel_Worksheet.Cells[patientIndex, 20].Value2 > 1) ||
-                    (((excel_Worksheet.Cells[patientIndex, 4].Value2 >= 0) && (excel_Worksheet.Cells[patientIndex, 4].Value2 <= 2)) && (excel_Worksheet.Cells[patientIndex, 13].Value2 > 0.5)))
+                    (((excel_Worksheet.Cells[patientIndex, 4].Value2 >= 0) && (excel_Worksheet.Cells[patientIndex, 4].Value2 <= 2)) && (excel_Worksheet.Cells[patientIndex, 20].Value2 > 0.5)))
             {
                 QDiaVomCV.Visible = true;
                 return true;

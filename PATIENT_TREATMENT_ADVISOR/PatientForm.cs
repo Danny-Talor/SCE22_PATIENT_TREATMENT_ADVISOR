@@ -123,6 +123,9 @@ namespace PATIENT_TREATMENT_ADVISOR
                 if (excel_Worksheet.Cells[patientIndex, 7].Value == "-")
                 {
                     QuestionForm qform = new(patientIndex);
+                    qform.feverVis();
+                    qform.dimvis();
+                    qform.rbcvis();
                     if (qform.feverVis() == true || qform.dimvis() == true || qform.rbcvis() == true)
                     {
                         qform.ShowDialog();
