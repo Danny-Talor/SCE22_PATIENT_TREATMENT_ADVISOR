@@ -5,7 +5,7 @@ obj/
 Properties/
 
 #database
-*.xlsx
+PATIENT_TREATMENT_ADVISOR/*.xlsx
 
 # User-specific files
 *.suo
